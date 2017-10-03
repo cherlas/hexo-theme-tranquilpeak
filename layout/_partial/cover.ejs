@@ -9,4 +9,41 @@
         coverImageUrl = url_for(theme.image_dir + '/' + theme.cover_image);
     }
 %>
-<div id="cover" style="background-image:url('<%= coverImageUrl %>');"></div>
+
+<!-- Define author's picture -->
+<% var authorPicture = null; %>
+<% if (theme.gravatar_email && theme.gravatar_email.length) { %>
+    <% authorPicture = gravatar(theme.gravatar_email, 110); %>
+<% } else if (theme.author.picture && theme.author.picture.length) { %>
+    <% if (is_remote_url(theme.author.picture)) { %>
+        <% authorPicture = theme.author.picture; %>
+    <% } else { %>
+        <% authorPicture = url_for(theme.image_dir + '/' + theme.author.picture); %>
+    <% } %>
+<% } %>
+<div id="cover" style="background-image:url('<%= coverImageUrl %>');">
+    <div class="full-screen-head">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">
+            <a href="<%- url_for('/#blog') %>" class="blog-button-full">
+                <img class="sidebar-profile-picture"
+                     src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
+                <div class="info">
+                    <div class="info-back">
+                        <h2>
+                            <% if(theme.author.major){ %>
+                            <%= theme.author.major %>
+                            <% } %>
+                        </h2>
+                        <p>
+                            <% if(theme.author.hobby){ %>
+                            <%= theme.author.hobby %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+    </div>
+</div>
