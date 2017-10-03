@@ -61,6 +61,156 @@
             margin-top: 5px;
         }
     }
+
+    /*头像效果*/
+    .ih-item.circle.effect {
+        margin: 0 auto;
+        -webkit-perspective: 900px;
+        -moz-perspective: 900px;
+        perspective: 900px;
+    }
+    .ih-item.circle.effect .sidebar-profile-picture {
+        z-index: 11;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .ih-item.circle.effect .info {
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .ih-item.circle.effect .info .info-back {
+
+        opacity: 1;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        /*background: #333333;*/
+    }
+    .ih-item.circle.effect .info h2 {
+        color: #fff;
+        position: relative;
+        font-size: 16px;
+        margin: 0 auto;
+        padding-top: 30px;
+        height: 24px;
+        /*text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);*/
+    }
+    .ih-item.circle.effect .info p {
+        color: #e6e6e6;
+        padding: 0px 0px 0px 0px;
+        font-style: italic;
+        font-size: 16px;
+    }
+    .ih-item.circle.effect .info p, h2 {
+        text-shadow: 0 0 1px white, 0 1px 1px rgba(0, 0, 0, 0.2);
+        font-weight: normal;
+        letter-spacing: normal;
+    }
+    .ih-item.circle.effect.bottom_to_top .sidebar-profile-picture {
+        -webkit-transform-origin: 50% 0;
+        -moz-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+        -o-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+    }
+    .ih-item.circle.effect.bottom_to_top a:hover .sidebar-profile-picture {
+        -webkit-transform: rotate3d(1, 0, 0, 180deg);
+        -moz-transform: rotate3d(1, 0, 0, 180deg);
+        -ms-transform: rotate3d(1, 0, 0, 180deg);
+        -o-transform: rotate3d(1, 0, 0, 180deg);
+        transform: rotate3d(1, 0, 0, 180deg);
+    }
+    .ih-item.circle.effect.top_to_bottom .sidebar-profile-picture {
+        -webkit-transform-origin: 50% 100%;
+        -moz-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+        -o-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+    }
+    .ih-item.circle.effect.top_to_bottom a:hover .sidebar-profile-picture {
+        -webkit-transform: rotate3d(1, 0, 0, -180deg);
+        -moz-transform: rotate3d(1, 0, 0, -180deg);
+        -ms-transform: rotate3d(1, 0, 0, -180deg);
+        -o-transform: rotate3d(1, 0, 0, -180deg);
+        transform: rotate3d(1, 0, 0, -180deg);
+    }
+    .ih-item.circle.effect.left_to_right .sidebar-profile-picture {
+        -webkit-transform-origin: 100% 50%;
+        -moz-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        -o-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+    }
+    .ih-item.circle.effect.left_to_right a:hover .sidebar-profile-picture {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg);
+        -moz-transform: rotate3d(0, 1, 0, 180deg);
+        -ms-transform: rotate3d(0, 1, 0, 180deg);
+        -o-transform: rotate3d(0, 1, 0, 180deg);
+        transform: rotate3d(0, 1, 0, 180deg);
+    }
+    .ih-item.circle.effect.right_to_left .sidebar-profile-picture {
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform-origin: 0% 50%;
+        -ms-transform-origin: 0% 50%;
+        -o-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+    }
+    .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
+        -webkit-transform: rotate3d(0, 1, 0, -180deg);
+        -moz-transform: rotate3d(0, 1, 0, -180deg);
+        -ms-transform: rotate3d(0, 1, 0, -180deg);
+        -o-transform: rotate3d(0, 1, 0, -180deg);
+        transform: rotate3d(0, 1, 0, -180deg);
+    }
+    .ih-item a {
+        color: #333;
+    }
+    .ih-item a:hover {
+        text-decoration: none;
+    }
+    .ih-item img {
+        width: 100%;
+        height: 100%;
+    }
+    .ih-item.circle {
+        position: relative;
+        border-radius: 50%;
+    }
+    .ih-item.circle .sidebar-profile-picture {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+    .ih-item.circle .sidebar-profile-picture:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out;
+    }
+    .ih-item.circle .sidebar-profile-picture img {
+        border-radius: 50%;
+    }
+    .ih-item.circle .info {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        border-radius: 50%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
 }
 
 // Define sidebar behavior configured in `_config.yml` for small screen
