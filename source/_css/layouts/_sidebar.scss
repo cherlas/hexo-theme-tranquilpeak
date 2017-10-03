@@ -237,6 +237,19 @@
 // Define sidebar behavior configured in `_config.yml` for medium screen
 @media #{$medium-only} {
     #sidebar {
+        // used to hide portrait text
+        .info {
+            display: none;
+        }
+
+        .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
+            -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            -moz-transform: rotate3d(0, 1, 0, 0deg);
+            -ms-transform: rotate3d(0, 1, 0, 0deg);
+            -o-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg);
+        }
+
         &[data-behavior="1"],
         &[data-behavior="2"],
         &[data-behavior="3"] {
@@ -257,6 +270,14 @@
 // Define sidebar behavior configured in `_config.yml` for large screen
 @media #{$large-only} {
     #sidebar {
+        // used to hide portrait text
+        .info {
+            -webkit-animation-name: fadeIn; /*动画名称*/
+            -webkit-animation-duration: 2s; /*动画持续时间*/
+            -webkit-animation-iteration-count: 1; /*动画次数*/
+            -webkit-animation-delay: 0s; /*延迟时间*/
+        }
+
         &[data-behavior="1"],
         &[data-behavior="2"] {
             @include sidebar-lg;
@@ -322,5 +343,17 @@
 @media print {
     #sidebar {
         display: none;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+    50% {
+        opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
     }
 }
