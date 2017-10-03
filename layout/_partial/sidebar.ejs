@@ -13,9 +13,28 @@
     <div class="sidebar-container">
         <% if (authorPicture) { %>
             <div class="sidebar-profile">
-                <a href="<%- url_for('/#about') %>">
-                    <img class="sidebar-profile-picture" src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
-                </a>
+                <!-- 头像效果-start -->
+                <div class="ih-item circle effect right_to_left">
+                    <a href="<%- url_for('/#blog') %>" class="blog-button">
+                        <img class="sidebar-profile-picture"
+                             src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
+                        <div class="info">
+                            <div class="info-back">
+                                <h2>
+                                    <% if(theme.author.major){ %>
+                                    <%= theme.author.major %>
+                                    <% } %>
+                                </h2>
+                                <p>
+                                    <% if(theme.author.hobby){ %>
+                                    <%= theme.author.hobby %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 头像效果-end -->
                 <h4 class="sidebar-profile-name"><%= config.author %></h4>
                 <% if (__('author.bio')) { %>
                     <h5 class="sidebar-profile-bio"><%- markdown(__('author.bio')) %></h5>
