@@ -86,7 +86,9 @@ $screen-min: (
      // you have to change value of `mediumScreenWidth` too in `source/_js/sidebar.js`
     'md-min': 768px,
     'lg-min': 1024px,
-    'xlg-min': 1280px
+    'xlg-min': 1280px,
+    'fpw-min': 288px, // first page width
+    'fph-min': 580px, // first page height
 );
 $screen-max: (
     'xs-max': map-get($screen-min, sm-min) - 1,
@@ -96,6 +98,9 @@ $screen-max: (
 );
 // Merged screen-* Maps
 $screen: map-merge($screen-min, $screen-max);
+// add for don't display first-page-desc
+$mw-first-page-desc: "only screen and (max-width : #{map-get($screen, fpw-min)})" !default;
+$mh-first-page-desc: "only screen and (max-height : #{map-get($screen, fph-min)})" !default;
 // Shortcuts for medias
 $xsmall-and-down: "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
 $small-and-down:  "only screen and (max-width : #{map-get($screen, sm-max)})" !default;
