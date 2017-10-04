@@ -63,7 +63,7 @@ $colors: (
 // `c-` prefix for components
 $z-indexes: (
     // position the cover below the whole blog
-    'l-cover':             1050,
+    'l-cover':             -1,
     'l-main':              10,
     'c-post-header-cover': 15,
     'l-header':            20,
