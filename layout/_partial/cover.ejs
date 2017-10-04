@@ -22,10 +22,10 @@
     <% } %>
 <% } %>
 <div id="cover" style="background-image:url('<%= coverImageUrl %>');">
-    <div class="full-screen-head">
+    <div class="full-screen-head hidden">
         <!-- 头像效果-start -->
         <div class="ih-item circle effect right_to_left">
-            <a href="<%- url_for('/#blog') %>" class="blog-button-full">
+            <a href="<%- url_for('/#blog') %>" class="blog-button-full-screen">
                 <img class="sidebar-profile-picture"
                      src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
                 <div class="info">
