@@ -21,6 +21,7 @@
     // in `source/_css/utils/variables.scss`
     this.$body = $('body');
     this.$headProfile = $('.full-screen-head');
+    this.$firstPageDesc = $('.first-page-desc');
     this.mediumScreenWidth = 768;
   };
 
@@ -34,6 +35,8 @@
       // Detect the click on the open button
       this.$openBtn.click(function() {
         if (!self.$sidebar.hasClass('pushed')) {
+          // hide the picture in full screen
+          self.addHiddenClass();
           self.openSidebar();
         }
       });
@@ -56,6 +59,10 @@
       });
     },
 
+    addHiddenClass: function() {
+      this.$headProfile.addClass('hidden');
+      this.$firstPageDesc.addClass('hidden');
+    },
     /**
      * Open the sidebar by swiping to the right the sidebar and the blog
      * @return {void}
@@ -114,8 +121,6 @@
      * @return {void}
      */
     swipeSidebarToLeft: function() {
-      // hide the picture in full screen
-      this.$headProfile.addClass('hidden');
       // Check if the sidebar is swiped
       // and prevent multiple click on the close button with `.processing` class
       if (this.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
