@@ -16,7 +16,9 @@
 # Image directory (default: images)
 image_dir: assets/images
 
+post_asset_folder: true
 
+relative_link: false
 # Sidebar Configuration
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
@@ -149,13 +151,13 @@ author:
 sidebar_behavior: 2
 # Hide sidebar on all article page to let article take full width to improve reading, and
 # enjoy wide images and cover images. (true: enable, false: disable)
-clear_reading: true
+clear_reading: false
 # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
 thumbnail_image: true
 # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
 # Set this value to `right` if you have old posts to keep the old style on them
 # and define `thumbnailImagePosition` on a post to overwrite this setting
-thumbnail_image_position: right
+thumbnail_image_position: left
 # Automatically select the cover image or the first photo from the gallery of a post if
 # there is no thumbnail image as the thumbnail image
 # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
