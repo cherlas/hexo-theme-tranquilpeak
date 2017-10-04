@@ -20,6 +20,7 @@
     // you have to change value of `$screen-min: (md-min)` too
     // in `source/_css/utils/variables.scss`
     this.$body = $('body');
+    this.$headProfile = $('.full-screen-head');
     this.mediumScreenWidth = 768;
   };
 
@@ -113,6 +114,8 @@
      * @return {void}
      */
     swipeSidebarToLeft: function() {
+      // hide the picture in full screen
+      this.$headProfile.addClass('hidden');
       // Check if the sidebar is swiped
       // and prevent multiple click on the close button with `.processing` class
       if (this.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
