@@ -16,6 +16,7 @@
     <div class="header-title">
         <a class="header-title-link" href="<%- url_for(' ') %>"><%= config.title %></a>
     </div>
+    <i class="btn-open-search fa fa-lg fa-search"></i>
     <% if (theme.header && theme.header.right_link) { %>
         <% if (theme.header.right_link.url && url_for(theme.header.right_link.url).indexOf(config.url) < 0 && url_for(theme.header.right_link.url).indexOf(':') >= 0) { %>
             <a  class="<%= (theme.header.right_link.icon ? 'header-right-icon ' : 'header-right-picture ') %><% if (theme.header.right_link.class) { %><%= theme.header.right_link.class %><% } %>"
