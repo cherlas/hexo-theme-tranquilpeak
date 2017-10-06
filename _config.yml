@@ -53,7 +53,8 @@ sidebar:
             icon: archive
         search:
             title: global.search
-            url: /#search
+            # url is false only for search button
+            url: false
             icon: search
             # `open-algolia-search` classes are used to open algolia search modal
             class: open-algolia-search
