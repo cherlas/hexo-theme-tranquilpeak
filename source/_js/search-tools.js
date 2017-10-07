@@ -77,7 +77,7 @@
     open: function() {
       this.showSearchToolsCol();
       this.showOverlay();
-      this.$searchInput.focus();
+      // this.$searchInput.focus();
     },
 
         /**
