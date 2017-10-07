@@ -1,0 +1,110 @@
+// TODO 浏览器动画适配
+// in
+// for big size sidebar
+@keyframes largeLeftIn {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(275px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(240px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(255px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(250px, 0, 0);
+  }
+}
+
+// for small sidebar
+@keyframes smallLeftIn {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(40px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(15, 0, 0);
+  }
+}
+
+// for screen width <768
+@keyframes xSmallLeftIn {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+//out
+@keyframes smallLeftOut {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    transform: translate3d(333px, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+//mobileSmallLeftIn for mobile
