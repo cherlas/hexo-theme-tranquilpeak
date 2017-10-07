@@ -57,7 +57,7 @@ sidebar:
             url: false
             icon: search
             # `open-algolia-search` classes are used to open algolia search modal
-            class: open-algolia-search
+            class: open-search-col
         about:
             title: global.about
             url: /#about
