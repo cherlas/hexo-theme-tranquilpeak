@@ -1,0 +1,55 @@
+<div class="tools-col hide">
+    <div class="tools-wrap">
+        <section class="tools-section tools-section-all">
+            <div class="search-wrap">
+                <input class="search-ipt" type="text" placeholder="find something…">
+                <i class="icon-search icon"></i>
+                <i class="icon-close icon "></i>
+            </div>
+            <div class="widget tagcloud search-tag">
+                <p class="search-tag-wording">tag:</p>
+                <ul class="article-tag-list">
+                    <% site.tags.forEach(function(tag, i){ %>
+                    <li class="article-tag-list-item">
+                        <a class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+                    </li>
+                    <% }) %>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+
+            <div class="json-content-false">
+                <p style="padding: 20px; font-size: 12px;" class="">
+                    缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+                    3、在根目录_config.yml里添加配置：
+    <pre style="font-size: 12px;">
+      jsonContent:
+        meta: false
+        pages: false
+        posts:
+          title: true
+          date: true
+          path: true
+          text: false
+          raw: false
+          content: false
+          slug: false
+          updated: false
+          comments: false
+          link: false
+          permalink: false
+          excerpt: false
+          categories: false
+          tags: true
+    </pre>
+                </p>
+            </div>
+            <p class="results-count"></p>
+            <ul class="search-result-ul">
+                <% page.posts.each(function(post) { %>
+                    <%- partial('search-result-list')%>
+                <% })%>
+            </ul>
+        </section>
+    </div>
+</div>
