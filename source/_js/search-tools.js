@@ -18,10 +18,10 @@
   };
 
   SearchModal.prototype = {
-        /**
-         * Run feature
-         * @returns {void}
-         */
+    /**
+     * Run feature
+     * @returns {void}
+     */
     run: function() {
       var self = this;
 
@@ -44,57 +44,57 @@
         }
       });
 
-            // close button when overlay is clicked
+      // close button when overlay is clicked
       self.$searchModal.click(function(e) {
         if (e.target === this) {
           self.close();
         }
       });
 
-            // close modal when close button is clicked
+      // close modal when close button is clicked
       self.$closeButton.click(function() {
         self.close();
       });
 
-            // close modal when `ESC` button is pressed
+      // close modal when `ESC` button is pressed
       $(document).keyup(function(e) {
         if (e.keyCode === 27 && self.$searchModal.is(':visible')) {
           self.close();
         }
       });
 
-            // send search when form is submitted
+      // send search when form is submitted
       self.$searchForm.submit(function(event) {
         event.preventDefault();
         self.search(self.$searchInput.val());
       });
     },
 
-        /**
-         * Open search modal and display overlay
-         * @returns {void}
-         */
+    /**
+     * Open search modal and display overlay
+     * @returns {void}
+     */
     open: function() {
       this.showSearchToolsCol();
       this.showOverlay();
       // this.$searchInput.focus();
     },
 
-        /**
-         * Close search modal and overlay
-         * @returns {void}
-         */
+    /**
+     * Close search modal and overlay
+     * @returns {void}
+     */
     close: function() {
       this.hideSearchToolsCol();
       this.hideOverlay();
       this.$searchInput.blur();
     },
 
-        /**
-         * Search with Algolia API and display results
-         * @param {String} search
-         * @returns {void}
-         */
+    /**
+     * Search with Algolia API and display results
+     * @param {String} search
+     * @returns {void}
+     */
     search: function(search) {
       var self = this;
       this.algolia.search(search, function(err, content) {
@@ -105,11 +105,11 @@
       });
     },
 
-        /**
-         * Display results
-         * @param {Array} posts
-         * @returns {void}
-         */
+    /**
+     * Display results
+     * @param {Array} posts
+     * @returns {void}
+     */
     showResults: function(posts) {
       var html = '';
       posts.forEach(function(post) {
@@ -144,27 +144,27 @@
       this.$results.html(html);
     },
 
-        /**
-         * Show search modal
-         * @returns {void}
-         */
+    /**
+     * Show search modal
+     * @returns {void}
+     */
     showSearchToolsCol: function() {
       this.$searchModal.fadeIn();
     },
 
-        /**
-         * Hide search modal
-         * @returns {void}
-         */
+    /**
+     * Hide search modal
+     * @returns {void}
+     */
     hideSearchToolsCol: function() {
       this.$searchModal.fadeOut();
     },
 
-        /**
-         * Display messages and counts of results
-         * @param {Number} count
-         * @returns {void}
-         */
+    /**
+     * Display messages and counts of results
+     * @param {Number} count
+     * @returns {void}
+     */
     showResultsCount: function(count) {
       var string = '';
       if (count < 1) {
@@ -182,20 +182,20 @@
       this.$resultsCount.html(string);
     },
 
-        /**
-         * Show overlay
-         * @returns {void}
-         */
+    /**
+     * Show overlay
+     * @returns {void}
+     */
     showOverlay: function() {
       $('body').append('<div class="overlay"></div>');
       $('.overlay').fadeIn();
       $('body').css('overflow', 'hidden');
     },
 
-        /**
-         * Hide overlay
-         * @returns {void}
-         */
+    /**
+     * Hide overlay
+     * @returns {void}
+     */
     hideOverlay: function() {
       $('.overlay').fadeOut(function() {
         $(this).remove();
