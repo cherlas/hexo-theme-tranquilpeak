@@ -37,7 +37,7 @@
             <%- partial('_partial/about', null, {cache: !config.relative_link}) %>
             <%- partial('_partial/cover', null, {cache: !config.relative_link}) %>
             <%- partial('_partial/script', {post: page}) %>
-            <%- partial('_partial/search-tools', {post: page}, {cache: true}) %>
+            <%- partial('_partial/search-tools', {post: page, sidebarBehavior: sidebarBehavior}, {cache: true}) %>
         </div>
     </body>
 </html>
