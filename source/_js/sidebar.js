@@ -12,7 +12,7 @@
     this.$openBtn = $('#btn-open-sidebar');
     this.$searchToolsCol = $('.search-tools-col');
     // Elements where the user can click to close the sidebar
-    this.$closeBtn = $('#header, #main, .post-header-cover');
+    this.$closeBtn = $('#main, .post-header-cover');
     // Elements affected by the swipe of the sidebar
     // The `pushed` class is added to each elements
     // Each element has a different behavior when the sidebar is opened
@@ -45,6 +45,7 @@
       this.$closeBtn.click(function() {
         if (self.$sidebar.hasClass('pushed')) {
           self.closeSidebar();
+          self.resetSearchToolsCol();
         }
       });
       // Detect resize of the windows
