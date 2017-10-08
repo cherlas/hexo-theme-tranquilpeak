@@ -218,9 +218,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: largeLeftIn;
+          animation-name: largeLeftInSearch;
         }
       }
     }
@@ -230,9 +230,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: mediumLeftIn;
+          animation-name: mediumLeftInSearch;
         }
       }
     }
@@ -248,7 +248,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumLeftIn;
+        animation-name: mediumLeftInSearch;
       }
     }
     &[data-behavior="4"],
@@ -257,9 +257,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: largeLeftIn;
+          animation-name: largeLeftInSearch;
         }
       }
     }
@@ -268,9 +268,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: mediumLeftIn;
+          animation-name: mediumLeftInSearch;
         }
       }
     }
@@ -285,7 +285,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeLeftIn;
+        animation-name: largeLeftInSearch;
       }
     }
     &[data-behavior="3"] {
@@ -293,7 +293,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumLeftIn;
+        animation-name: mediumLeftInSearch;
       }
     }
     &[data-behavior="4"],
@@ -302,9 +302,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: largeLeftIn;
+          animation-name: largeLeftInSearch;
         }
       }
     }
@@ -313,9 +313,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: mediumLeftIn;
+          animation-name: mediumLeftInSearch;
         }
       }
     }
@@ -329,7 +329,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: xLargeLeftIn;
+        animation-name: xLargeLeftInSearch;
       }
     }
     &[data-behavior="2"] {
@@ -337,7 +337,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeLeftIn;
+        animation-name: largeLeftInSearch;
       }
     }
     &[data-behavior="3"],
@@ -346,9 +346,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: xLargeLeftIn;
+          animation-name: xLargeLeftInSearch;
         }
       }
     }
@@ -357,9 +357,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: largeLeftIn;
+          animation-name: largeLeftInSearch;
         }
       }
     }
@@ -368,9 +368,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftIn;
+        animation-name: smallLeftInSearch;
         &.pushed {
-          animation-name: mediumLeftIn;
+          animation-name: mediumLeftInSearch;
         }
       }
     }
