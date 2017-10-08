@@ -109,9 +109,9 @@
 }
 
 
-/*----in for main----*/
+/*----Out for main----*/
 // for x-large size sidebar
-@keyframes xLargeLeftInMain {
+@keyframes xLargeRightOutMain {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
@@ -138,7 +138,7 @@
 }
 
 // for large size sidebar
-@keyframes largeLeftInMain {
+@keyframes largeRightOutMain {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
@@ -165,7 +165,7 @@
 }
 
 // for medium sidebar
-@keyframes mediumLeftInMain {
+@keyframes mediumRightOutMain {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
@@ -175,24 +175,24 @@
   }
 
   60% {
-    transform: translate3d(100px, 0, 0);
+    transform: translate3d(358px, 0, 0);
   }
 
   75% {
-    transform: translate3d(65px, 0, 0);
+    transform: translate3d(323px, 0, 0);
   }
 
   90% {
-    transform: translate3d(80px, 0, 0);
+    transform: translate3d(338px, 0, 0);
   }
 
   to {
-    transform: translate3d(75px, 0, 0);
+    transform: translate3d(333px, 0, 0);
   }
 }
 
 // for screen width <768
-@keyframes smallLeftInMain {
+@keyframes smallRightOutMain {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
