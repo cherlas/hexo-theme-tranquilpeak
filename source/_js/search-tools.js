@@ -7,8 +7,10 @@
      * @constructor
      */
   var SearchToolsColModal = function() {
-    this.$searchToolsColModal = $('.tools-col');
+    this.$searchToolsColModal = $('.search-tools-col');
     this.$openButton = $('.open-search-col');
+    this.$container = $('#container');
+    this.$main = $('#main');
     this.$searchButton = this.$searchToolsColModal.find('.icon-search');
     this.$closeButton = this.$searchToolsColModal.find('.icon-close');
     this.$searchInput = $('.search-ipt');
@@ -76,9 +78,9 @@
      */
     open: function() {
       this.showSearchToolsCol();
-      this.showOverlay();
+      // this.showOverlay();
       this.ani();
-      this.$searchInput.focus();
+      // this.$searchInput.focus();
     },
 
     /**
@@ -154,6 +156,12 @@
         this.$searchToolsColModal.removeClass('hide');
         this.$searchToolsColModal.addClass('show');
       }
+      if (!this.$container.hasClass('show')) {
+        this.$container.addClass('show');
+      }
+      if (!this.$main.hasClass('show')){
+        this.$main.addClass('show');
+      }
     },
 
     /**
@@ -212,7 +220,6 @@
      * @returns {void}
      */
     ani: function() {
-      console.log("anim");
       var width;
       var height;
       var largeHeader;
