@@ -45,9 +45,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: largeLeftInMain;
+          animation-name: largeLeftOutMain;
         }
       }
     }
@@ -59,9 +59,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: mediumLeftInMain;
+          animation-name: mediumLeftOutMain;
         }
       }
     }
@@ -79,7 +79,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumLeftInMain;
+        animation-name: mediumLeftOutMain;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -91,9 +91,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: largeLeftInMain;
+          animation-name: largeLeftOutMain;
         }
       }
     }
@@ -105,9 +105,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: mediumLeftInMain;
+          animation-name: mediumLeftOutMain;
         }
       }
     }
@@ -124,7 +124,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeLeftInMain;
+        animation-name: largeLeftOutMain;
       }
     }
     // Display `main` div in medium size
@@ -134,7 +134,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumLeftInMain;
+        animation-name: mediumLeftOutMain;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -146,9 +146,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: largeLeftInMain;
+          animation-name: largeLeftOutMain;
         }
       }
     }
@@ -160,9 +160,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: mediumLeftInMain;
+          animation-name: mediumLeftOutMain;
         }
       }
     }
@@ -178,7 +178,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: xLargeLeftInMain;
+        animation-name: xLargeLeftOutMain;
       }
     }
     // Display `main` div in small size
@@ -188,7 +188,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeLeftInMain;
+        animation-name: largeLeftOutMain;
       }
     }
     // Display `main` div in medium size
@@ -198,9 +198,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: xLargeLeftInMain;
+          animation-name: xLargeLeftOutMain;
         }
       }
     }
@@ -212,9 +212,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: xLargeLeftInMain;
+          animation-name: xLargeLeftOutMain;
         }
       }
     }
@@ -226,9 +226,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: largeLeftInMain;
+          animation-name: largeLeftOutMain;
         }
       }
     }
@@ -240,9 +240,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallLeftInMain;
+        animation-name: smallLeftOutMain;
         &.pushed {
-          animation-name: mediumLeftInMain;
+          animation-name: mediumLeftOutMain;
         }
       }
     }
