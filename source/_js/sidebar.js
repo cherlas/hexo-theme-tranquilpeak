@@ -10,6 +10,7 @@
   var Sidebar = function() {
     this.$sidebar = $('#sidebar');
     this.$openBtn = $('#btn-open-sidebar');
+    this.$searchToolsCol = $('.search-tools-col');
     // Elements where the user can click to close the sidebar
     this.$closeBtn = $('#header, #main, .post-header-cover');
     // Elements affected by the swipe of the sidebar
@@ -56,6 +57,7 @@
         else {
           self.closeSidebar();
         }
+        self.resetSearchToolsCol();
       });
     },
 
@@ -70,6 +72,7 @@
     openSidebar: function() {
       this.swipeBlogToRight();
       this.swipeSidebarToRight();
+      this.pushSearchToolsCol();
     },
 
     /**
@@ -98,6 +101,15 @@
     },
 
     /**
+     * Reset search tools col position
+     * @return {void}
+     */
+    resetSearchToolsCol: function() {
+      if (this.$searchToolsCol.hasClass('pushed')) {
+        this.$searchToolsCol.removeClass('pushed');
+      }
+    },
+    /**
      * Swipe the sidebar to the right
      * @return {void}
      */
@@ -113,6 +125,16 @@
         setTimeout(function() {
           self.$sidebar.removeClass('processing');
         }, 250);
+      }
+    },
+
+    /**
+     * push the search tools col when sidebar pushed
+     * @return {void}
+     */
+    pushSearchToolsCol: function() {
+      if (!this.$searchToolsCol.hasClass('pushed')) {
+        this.$searchToolsCol.addClass('pushed');
       }
     },
 
