@@ -1,23 +1,23 @@
+/* eslint-disable brace-style,guard-for-in,no-unused-vars */
 (function($) {
   'use strict';
 
     /**
-     * Search modal with Algolia
+     * Open search modal
      * @constructor
      */
-  var SearchModal = function() {
-    this.$openButton = $('.open-algolia-search');
-    this.$searchModal = $('#algolia-search-modal');
-    this.$closeButton = this.$searchModal.find('.close-button');
-    this.$searchForm = $('#algolia-search-form');
-    this.$searchInput = $('#algolia-search-input');
-    this.$results = this.$searchModal.find('.results');
-    this.$noResults = this.$searchModal.find('.no-result');
-    this.$resultsCount = this.$searchModal.find('.results-count');
-    this.algolia = algoliaIndex;
+  var SearchToolsColModal = function() {
+    this.$searchToolsColModal = $('.tools-col');
+    this.$openButton = $('.open-search-col');
+    this.$searchButton = this.$searchToolsColModal.find('.icon-search');
+    this.$closeButton = this.$searchToolsColModal.find('.icon-close');
+    this.$searchInput = $('.search-ipt');
+    this.$jsonContentFalse = $('.json-content-false');
+    this.$results = this.$searchToolsColModal.find('.search-result-ul');
+    this.$resultsCount = this.$searchToolsColModal.find('.results-count');
   };
 
-  SearchModal.prototype = {
+  SearchToolsColModal.prototype = {
     /**
      * Run feature
      * @returns {void}
@@ -39,13 +39,13 @@
           return;
         }
 
-        if (event.keyCode === 83 && !self.$searchModal.is(':visible')) {
+        if (event.keyCode === 83 && !self.$searchToolsColModal.is(':visible')) {
           self.open();
         }
       });
 
       // close button when overlay is clicked
-      self.$searchModal.click(function(e) {
+      self.$searchToolsColModal.click(function(e) {
         if (e.target === this) {
           self.close();
         }
@@ -58,16 +58,16 @@
 
       // close modal when `ESC` button is pressed
       $(document).keyup(function(e) {
-        if (e.keyCode === 27 && self.$searchModal.is(':visible')) {
+        if (e.keyCode === 27 && self.$searchToolsColModal.is(':visible')) {
           self.close();
         }
       });
 
       // send search when form is submitted
-      self.$searchForm.submit(function(event) {
-        event.preventDefault();
-        self.search(self.$searchInput.val());
-      });
+      // self.$searchForm.submit(function(event) {
+      //   event.preventDefault();
+      //   self.search(self.$searchInput.val());
+      // });
     },
 
     /**
@@ -77,7 +77,8 @@
     open: function() {
       this.showSearchToolsCol();
       this.showOverlay();
-      // this.$searchInput.focus();
+      this.ani();
+      this.$searchInput.focus();
     },
 
     /**
@@ -149,7 +150,10 @@
      * @returns {void}
      */
     showSearchToolsCol: function() {
-      this.$searchModal.fadeIn();
+      if (this.$searchToolsColModal.hasClass('hide')) {
+        this.$searchToolsColModal.removeClass('hide');
+        this.$searchToolsColModal.addClass('show');
+      }
     },
 
     /**
@@ -157,7 +161,7 @@
      * @returns {void}
      */
     hideSearchToolsCol: function() {
-      this.$searchModal.fadeOut();
+      this.$searchToolsColModal.fadeOut();
     },
 
     /**
@@ -201,14 +205,117 @@
         $(this).remove();
         $('body').css('overflow', 'auto');
       });
+    },
+
+    /**
+     * animation for search modal
+     * @returns {void}
+     */
+    ani: function() {
+      console.log("anim");
+      var width;
+      var height;
+      var largeHeader;
+      var canvas;
+      var ctx;
+      var circles;
+      var target;
+      var animateHeader = true;
+
+      // Main
+      initHeader();
+      addListeners();
+
+      function initHeader() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        target = {x: 0, y: height};
+
+        largeHeader = document.getElementById('container');
+        largeHeader.style.height = height + 'px';
+
+        canvas = document.getElementById('anm-canvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+
+        // create particles
+        circles = [];
+        for (var x = 0; x < width * 0.5; x++) {
+          var c = new Circle();
+          circles.push(c);
+        }
+        animate();
+      }
+
+      // Event handling
+      function addListeners() {
+        window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('resize', resize);
+      }
+
+      function scrollCheck() {
+        if (document.body.scrollTop > height) {
+          animateHeader = false;
+        } else {
+          animateHeader = true;
+        }
+      }
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        largeHeader.style.height = height + 'px';
+        canvas.width = width;
+        canvas.height = height;
+      }
+
+      function animate() {
+        if (animateHeader) {
+          ctx.clearRect(0, 0, width, height);
+          for (var i in circles) {
+            circles[i].draw();
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      // Canvas manipulation
+      function Circle() {
+        var _this = this;
+
+        // constructor
+        (function() {
+          _this.pos = {};
+          init();
+          // console.log(_this);
+        })();
+
+        function init() {
+          _this.pos.x = Math.random() * width;
+          _this.pos.y = height + Math.random() * 100;
+          _this.alpha = 0.1 + Math.random() * 0.3;
+          _this.scale = 0.1 + Math.random() * 0.3;
+          _this.velocity = Math.random();
+        }
+
+        this.draw = function() {
+          if (_this.alpha <= 0) {
+            init();
+          }
+          _this.pos.y -= _this.velocity;
+          _this.alpha -= 0.0005;
+          ctx.beginPath();
+          ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+          ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+          ctx.fill();
+        };
+      }
     }
   };
 
   $(document).ready(function() {
-        // launch feature only if there is an Algolia index available
-    if (typeof algoliaIndex !== 'undefined') {
-      var searchModal = new SearchModal();
-      searchModal.run();
-    }
+    var searchToolsColModal = new SearchToolsColModal();
+    searchToolsColModal.run();
   });
 })(jQuery);
