@@ -157,6 +157,13 @@
             <meta class="swiftype" name="image" data-type="enum" content="<%= photo %>" />
         <% }) %>
     <% } %>
+    <!--search background-->
+    <style type="text/css">
+        <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
+        #container.show {
+            background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
+        }
+    </style>
     <!--STYLES-->
     <%- css('assets/css/font-awesome.css') %>
     <%- css('assets/css/jquery.fancybox.css') %>
