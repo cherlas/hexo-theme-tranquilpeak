@@ -156,10 +156,26 @@
         this.$searchToolsColModal.removeClass('hide');
         this.$searchToolsColModal.addClass('show');
       }
+      this.addBackground();
+      this.thinMainCol();
+    },
+
+    /**
+     * add background for search
+     * @returns {void}
+     */
+    addBackground: function() {
       if (!this.$container.hasClass('show')) {
         this.$container.addClass('show');
       }
-      if (!this.$main.hasClass('show')){
+    },
+
+    /**
+     * thin main col for search
+     * @returns {void}
+     */
+    thinMainCol: function() {
+      if (!this.$main.hasClass('show')) {
         this.$main.addClass('show');
       }
     },
