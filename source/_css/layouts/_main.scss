@@ -41,11 +41,29 @@
     &[data-behavior="4"],
     &[data-behavior="5"] {
       @include main-pushed-lg;
+      .show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: largeLeftInMain;
+        }
+      }
     }
     // Push `main` div from the size of the medium sidebar
     &[data-behavior="3"],
     &[data-behavior="6"] {
       @include main-pushed-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: mediumLeftInMain;
+        }
+      }
     }
   }
 }
@@ -57,17 +75,41 @@
     &[data-behavior="2"],
     &[data-behavior="3"] {
       @include main-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: mediumLeftInMain;
+      }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
     &[data-behavior="4"],
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: largeLeftInMain;
+        }
+      }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: mediumLeftInMain;
+        }
+      }
     }
   }
 }
@@ -78,21 +120,51 @@
     &[data-behavior="1"],
     &[data-behavior="2"] {
       @include main-sm;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: largeLeftInMain;
+      }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: mediumLeftInMain;
+      }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
     &[data-behavior="4"],
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: largeLeftInMain;
+        }
+      }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: mediumLeftInMain;
+        }
+      }
     }
   }
 }
@@ -102,29 +174,77 @@
     // Display `main` div in extra small size
     &[data-behavior="1"] {
       @include main-xs;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: xLargeLeftInMain;
+      }
     }
     // Display `main` div in small size
     &[data-behavior="2"] {
       @include main-sm;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: largeLeftInMain;
+      }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: xLargeLeftInMain;
+        }
+      }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
     &[data-behavior="4"] {
       @include main-lg;
       @include main-pushed-xlg;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: xLargeLeftInMain;
+        }
+      }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: largeLeftInMain;
+        }
+      }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
+      &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: smallLeftInMain;
+        &.pushed {
+          animation-name: mediumLeftInMain;
+        }
+      }
     }
   }
 }
