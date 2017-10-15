@@ -30,6 +30,7 @@
   }
 }
 
+//TODO optimise show header main search
 @media #{$small-and-down} {
   #main {
     // Display `main` div in large size
@@ -45,9 +46,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -59,9 +60,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -79,7 +80,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -91,9 +92,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -105,9 +106,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -124,7 +125,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
       }
     }
     // Display `main` div in medium size
@@ -134,7 +135,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -146,9 +147,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -160,9 +161,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -178,7 +179,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: xLargeRightOutMain;
+        animation-name: rightOutMain;
       }
     }
     // Display `main` div in small size
@@ -188,7 +189,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
       }
     }
     // Display `main` div in medium size
@@ -198,9 +199,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: xLargeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -212,9 +213,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: xLargeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -226,9 +227,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: largeRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }
@@ -240,9 +241,9 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: smallRightOutMain;
-        &.pushed {
-          animation-name: mediumRightOutMain;
+        animation-name: rightOutMain;
+        &.push {
+          animation-name: rightOutMain;
         }
       }
     }

@@ -22,7 +22,6 @@
     // in `source/_css/utils/variables.scss`
     this.$body = $('body');
     this.$headProfile = $('.full-screen-head');
-    this.$firstPageDesc = $('.first-page-desc');
     this.mediumScreenWidth = 768;
   };
 
@@ -37,7 +36,6 @@
       this.$openBtn.click(function() {
         if (!self.$sidebar.hasClass('pushed')) {
           // hide the picture in full screen
-          self.addHiddenClass();
           self.openSidebar();
         }
       });
@@ -60,11 +58,6 @@
         }
         self.resetSearchToolsCol();
       });
-    },
-
-    addHiddenClass: function() {
-      this.$headProfile.addClass('hidden');
-      this.$firstPageDesc.addClass('hidden');
     },
     /**
      * Open the sidebar by swiping to the right the sidebar and the blog

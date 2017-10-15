@@ -11,6 +11,7 @@
     this.$openButton = $('.open-search-col');
     this.$container = $('#container');
     this.$main = $('#main');
+    this.$header = $('#header');
     this.$searchButton = this.$searchToolsColModal.find('.icon-search');
     this.$closeButton = this.$searchToolsColModal.find('.icon-close');
     this.$searchInput = $('.search-ipt');
@@ -156,8 +157,10 @@
         this.$searchToolsColModal.removeClass('hide');
         this.$searchToolsColModal.addClass('show');
       }
+      // TODO optimise
       this.addBackground();
       this.thinMainCol();
+      this.thinHeader();
     },
 
     /**
@@ -177,6 +180,16 @@
     thinMainCol: function() {
       if (!this.$main.hasClass('show')) {
         this.$main.addClass('show');
+      }
+    },
+
+    /**
+     * thin header for search
+     * @returns {void}
+     */
+    thinHeader: function() {
+      if (!this.$header.hasClass('show')) {
+        this.$header.addClass('show');
       }
     },
 

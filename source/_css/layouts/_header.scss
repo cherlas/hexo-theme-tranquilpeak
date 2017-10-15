@@ -86,6 +86,12 @@
     &[data-behavior="4"],
     &[data-behavior="5"] {
         @include header-pushed-lg;
+        &.show {
+            opacity: 1;
+            animation-duration: .8s;
+            animation-fill-mode: both;
+            animation-name: rightOutMain;
+        }
     }
 
     // Push the header from the size of the medium sidebar

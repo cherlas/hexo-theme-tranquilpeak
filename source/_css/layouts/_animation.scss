@@ -110,8 +110,7 @@
 
 
 /*----Out for main----*/
-// for x-large size sidebar
-@keyframes xLargeRightOutMain {
+@keyframes rightOutMain {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
@@ -121,103 +120,22 @@
   }
 
   60% {
-    transform: translate3d(525px, 0, 0);
+    transform: translate3d(345px, 0, 0);
   }
 
   75% {
-    transform: translate3d(490px, 0, 0);
+    transform: translate3d(310px, 0, 0);
   }
 
   90% {
-    transform: translate3d(505px, 0, 0);
+    transform: translate3d(325px, 0, 0);
   }
 
   to {
-    transform: translate3d(500px, 0, 0);
+    transform: translate3d(320px, 0, 0);
   }
 }
 
-// for large size sidebar
-@keyframes largeRightOutMain {
-  from, 60%, 75%, 90%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  60% {
-    transform: translate3d(275px, 0, 0);
-  }
-
-  75% {
-    transform: translate3d(240px, 0, 0);
-  }
-
-  90% {
-    transform: translate3d(255px, 0, 0);
-  }
-
-  to {
-    transform: translate3d(250px, 0, 0);
-  }
-}
-
-// for medium sidebar
-@keyframes mediumRightOutMain {
-  from, 60%, 75%, 90%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  60% {
-    transform: translate3d(358px, 0, 0);
-  }
-
-  75% {
-    transform: translate3d(323px, 0, 0);
-  }
-
-  90% {
-    transform: translate3d(338px, 0, 0);
-  }
-
-  to {
-    transform: translate3d(333px, 0, 0);
-  }
-}
-
-// for screen width <768
-@keyframes smallRightOutMain {
-  from, 60%, 75%, 90%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  60% {
-    transform: translate3d(25px, 0, 0);
-  }
-
-  75% {
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  90% {
-    transform: translate3d(5px, 0, 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-//out
 @keyframes smallLeftOut {
   from, 60%, 75%, 90%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
