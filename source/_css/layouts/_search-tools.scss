@@ -7,6 +7,9 @@
   z-index: 1100;
   padding: 0;
   opacity: 0;
+  border-right: 0.2px solid transparent;
+  -moz-box-shadow: 3px 0 5px #888888; /* 老的 Firefox */
+  box-shadow: 3px 0 5px #888888;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
   @extend %trans;
@@ -16,7 +19,6 @@
   .tools-wrap, .tools-section {
     height: 100%;
     color: #e5e5e5;
-    width: 360px;
     overflow: hidden;
     overflow-y: auto;
     ::-webkit-scrollbar {
