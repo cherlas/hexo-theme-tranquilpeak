@@ -164,16 +164,6 @@
     },
 
     /**
-     * add background for search
-     * @returns {void}
-     */
-    addBackground: function() {
-      if (!this.$container.hasClass('show')) {
-        this.$container.addClass('show');
-      }
-    },
-
-    /**
      * thin main col for search
      * @returns {void}
      */
@@ -257,22 +247,27 @@
       var circles;
       var target;
       var animateHeader = true;
+      var sidebarWidth;
 
       // Main
       initHeader();
       addListeners();
 
       function initHeader() {
-        width = window.innerWidth;
+        sidebarWidth = $('#sidebar').width();
+        width = window.innerWidth - sidebarWidth;
         height = window.innerHeight;
         target = {x: 0, y: height};
 
         largeHeader = document.getElementById('container');
+
+        console.log(sidebarWidth + "---" + window.innerWidth);
         largeHeader.style.height = height + 'px';
 
         canvas = document.getElementById('anm-canvas');
         canvas.width = width;
         canvas.height = height;
+        canvas.style.marginLeft = sidebarWidth + 'px';
         ctx = canvas.getContext('2d');
 
         // create particles
