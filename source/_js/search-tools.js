@@ -158,7 +158,6 @@
         this.$searchToolsColModal.addClass('show');
       }
       // TODO optimise
-      this.addBackground();
       this.thinMainCol();
       this.thinHeader();
     },
@@ -261,7 +260,6 @@
 
         largeHeader = document.getElementById('container');
 
-        console.log(sidebarWidth + "---" + window.innerWidth);
         largeHeader.style.height = height + 'px';
 
         canvas = document.getElementById('anm-canvas');
@@ -294,11 +292,14 @@
       }
 
       function resize() {
-        width = window.innerWidth;
+        sidebarWidth = $('#sidebar').width();
+        width = window.innerWidth - sidebarWidth;
         height = window.innerHeight;
         largeHeader.style.height = height + 'px';
         canvas.width = width;
         canvas.height = height;
+        canvas.style.marginLeft = sidebarWidth + 'px';
+        console.log(sidebarWidth + "---" + window.innerWidth);
       }
 
       function animate() {
