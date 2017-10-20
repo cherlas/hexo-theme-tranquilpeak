@@ -22,26 +22,25 @@
       var self = this;
       // Detect the click on the open button
       self.$blogButton.click(function() {
-        if (location.hash && location.hash == "#blog") {
+        if (location.hash && location.hash === "#blog") {
           return;
         }
         self.removeFullScreen();
       });
 
       /* first page*/
-      if (window.location.hash == "" && window.location.pathname == "/") {
+      if (window.location.hash === "" && window.location.pathname === "/") {
         this.$cover.css('z-index', '100');
         this.$headProfile.removeClass('hidden');
         return;
       }
 
-      if (window.location.hash && window.location.hash == "#blog") {
+      if (window.location.hash && window.location.hash === "#blog") {
         self.removeFullScreen();
         return;
       }
-      if (window.location.hash == "") {
+      if (window.location.hash === "") {
         self.removeFullScreen();
-        return;
       }
       // self.removeFullScreen();
       // console.log("common");
