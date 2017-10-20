@@ -33,6 +33,7 @@
   }
   &.hide {
     opacity: 1;
+    display: block;
     animation-duration: .8s;
     animation-fill-mode: both;
     animation-name: rightInMain;
