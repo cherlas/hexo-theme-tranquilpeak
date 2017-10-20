@@ -2,18 +2,19 @@
 (function($) {
   'use strict';
 
-    /**
-     * Open search modal
-     * @constructor
-     */
+  /**
+   * Open search modal
+   * @constructor
+   */
   var SearchToolsColModal = function() {
     this.$searchToolsColModal = $('.search-tools-col');
     this.$openButton = $('.open-search-col');
     this.$container = $('#container');
     this.$main = $('#main');
+    this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
     this.$searchButton = this.$searchToolsColModal.find('.icon-search');
-    this.$closeButton = this.$searchToolsColModal.find('.icon-close');
+    this.$closeButton = $('#main, #header, .sidebar-whitespace');
     this.$searchInput = $('.search-ipt');
     this.$jsonContentFalse = $('.json-content-false');
     this.$results = this.$searchToolsColModal.find('.search-result-ul');
@@ -28,15 +29,15 @@
     run: function() {
       var self = this;
 
-            // open modal when open button is clicked
+      // open modal when open button is clicked
       self.$openButton.click(function() {
         self.open();
       });
 
-            // open modal when `s` button is pressed
+      // open modal when `s` button is pressed
       $(document).keyup(function(event) {
         var target = event.target || event.srcElement;
-                // exit if user is focusing an input or textarea
+        // exit if user is focusing an input or textarea
         var tagName = target.tagName.toUpperCase();
         if (tagName === 'INPUT' || tagName === 'TEXTAREA') {
           return;
@@ -47,7 +48,7 @@
         }
       });
 
-      // close button when overlay is clicked
+      // // close button when overlay is clicked
       self.$searchToolsColModal.click(function(e) {
         if (e.target === this) {
           self.close();
@@ -55,8 +56,11 @@
       });
 
       // close modal when close button is clicked
-      self.$closeButton.click(function() {
+      self.$closeButton.click(function(e) {
+        // console.log(e.target().className());
+        // if (e.target() != self.$searchToolsColModal) {
         self.close();
+        // }
       });
 
       // close modal when `ESC` button is pressed
@@ -90,7 +94,9 @@
      */
     close: function() {
       this.hideSearchToolsCol();
-      this.hideOverlay();
+      // this.hideOverlay();
+      this.recoverMainCol();
+      this.recoverHeader();
       this.$searchInput.blur();
     },
 
@@ -124,8 +130,8 @@
           html += '<div class="media-left">';
           html += '<a class="link-unstyled" href="' + (post.link || post.permalink) + '">';
           html += '<img class="media-image" ' +
-                        'src="' + post.thumbnailImageUrl + '" ' +
-                        'width="90" height="90"/>';
+            'src="' + post.thumbnailImageUrl + '" ' +
+            'width="90" height="90"/>';
           html += '</a>';
           html += '</div>';
         }
@@ -157,9 +163,26 @@
         this.$searchToolsColModal.removeClass('hide');
         this.$searchToolsColModal.addClass('show');
       }
+      if (this.$canvas.hasClass('hidden')) {
+        this.$canvas.removeClass('hidden');
+      }
       // TODO optimise
       this.thinMainCol();
       this.thinHeader();
+    },
+
+    /**
+     * Hide search modal
+     * @returns {void}
+     */
+    hideSearchToolsCol: function() {
+      if (this.$searchToolsColModal.hasClass('show')) {
+        this.$searchToolsColModal.removeClass('show');
+        this.$searchToolsColModal.addClass('hide');
+      }
+      if (!this.$canvas.hasClass('hidden')) {
+        this.$canvas.addClass('hidden');
+      }
     },
 
     /**
@@ -167,8 +190,24 @@
      * @returns {void}
      */
     thinMainCol: function() {
+      if (this.$main.hasClass('hide')) {
+        this.$main.removeClass('hide');
+      }
       if (!this.$main.hasClass('show')) {
         this.$main.addClass('show');
+      }
+    },
+
+    /**
+     * recover main col for search
+     * @returns {void}
+     */
+    recoverMainCol: function() {
+      if (this.$main.hasClass('show')) {
+        this.$main.removeClass('show');
+      }
+      if (!this.$main.hasClass('hide')) {
+        this.$main.addClass('hide');
       }
     },
 
@@ -183,11 +222,13 @@
     },
 
     /**
-     * Hide search modal
+     * recover header for search
      * @returns {void}
      */
-    hideSearchToolsCol: function() {
-      this.$searchToolsColModal.fadeOut();
+    recoverHeader: function() {
+      if (!this.$header.hasClass('show')) {
+        this.$header.removeClass('show');
+      }
     },
 
     /**
@@ -205,10 +246,10 @@
         string = this.$resultsCount.data('message-one');
         this.$noResults.hide();
       }
-            else if (count > 1) {
-              string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
-              this.$noResults.hide();
-            }
+      else if (count > 1) {
+        string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
+        this.$noResults.hide();
+      }
       this.$resultsCount.html(string);
     },
 
