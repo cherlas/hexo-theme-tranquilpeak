@@ -1,4 +1,4 @@
-/* eslint-disable brace-style,guard-for-in,no-unused-vars */
+/* eslint-disable brace-style,guard-for-in,no-unused-vars,require-jsdoc */
 (function($) {
   'use strict';
 
@@ -57,10 +57,7 @@
 
       // close modal when close button is clicked
       self.$closeButton.click(function(e) {
-        // console.log(e.target().className());
-        // if (e.target() != self.$searchToolsColModal) {
         self.close();
-        // }
       });
 
       // close modal when `ESC` button is pressed
@@ -293,6 +290,7 @@
       initHeader();
       addListeners();
 
+      // initial for animation
       function initHeader() {
         sidebarWidth = $('#sidebar').width();
         width = window.innerWidth - sidebarWidth;
@@ -340,7 +338,6 @@
         canvas.width = width;
         canvas.height = height;
         canvas.style.marginLeft = sidebarWidth + 'px';
-        console.log(sidebarWidth + "---" + window.innerWidth);
       }
 
       function animate() {
