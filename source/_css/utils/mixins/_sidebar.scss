@@ -2,6 +2,10 @@
 @mixin sidebar-md {
     width: map-get($sidebar, md-screen-width);
 
+    .sidebar-whitespace {
+        width: map-get($sidebar, md-screen-width);
+    }
+
     // Author information
     .sidebar-profile {
         .sidebar-profile-picture {
@@ -48,6 +52,10 @@
 /// Mixin helper to display the sidebar in large size
 @mixin sidebar-lg {
     width: map-get($sidebar, lg-screen-width);
+
+    .sidebar-whitespace {
+        width: map-get($sidebar, lg-screen-width);
+    }
 
     // Author information
     .sidebar-profile {
@@ -116,6 +124,10 @@
     display:         flex;
     flex-direction:  column;
     justify-content: center;
+
+    .sidebar-whitespace {
+        width: map-get($sidebar, xlg-screen-width);
+    }
 
     .sidebar-container {
         position: relative;

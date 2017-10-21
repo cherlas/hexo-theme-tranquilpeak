@@ -214,6 +214,10 @@
     }
 }
 
+.sidebar-whitespace {
+    height: 100%;
+    position: fixed;
+}
 // Define sidebar behavior configured in `_config.yml` for small screen
 // On `$small-and-down` (small screen): It hide by default the sidebar
 // and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
