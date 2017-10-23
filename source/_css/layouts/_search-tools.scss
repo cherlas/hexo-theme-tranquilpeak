@@ -201,6 +201,13 @@
     color: #fffdd8;
     text-shadow: 1px 1px rgba(77, 77, 77, 0.45);
   }
+
+  &.show {
+    opacity: 1;
+    animation-duration: .8s;
+    animation-fill-mode: both;
+    animation-name: leftInSearch;
+  }
 }
 
 /*----animation-----*/
@@ -217,24 +224,18 @@
     &[data-behavior="4"],
     &[data-behavior="5"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -225px;
         &.pushed {
-          animation-name: largeLeftInSearch;
+          left:-50px;
         }
       }
     }
     &[data-behavior="3"],
     &[data-behavior="6"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: mediumLeftInSearch;
+          left: -225px;
         }
       }
     }
@@ -247,32 +248,23 @@
     &[data-behavior="2"],
     &[data-behavior="3"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: mediumLeftInSearch;
+        left: -225px;
       }
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: largeLeftInSearch;
+          left: -50px;
         }
       }
     }
     &[data-behavior="6"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: mediumLeftInSearch;
+          left: -225px;
         }
       }
     }
@@ -284,40 +276,28 @@
     &[data-behavior="1"],
     &[data-behavior="2"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: largeLeftInSearch;
+        left: -50px;
       }
     }
     &[data-behavior="3"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: mediumLeftInSearch;
+        left: -225px;
       }
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: largeLeftInSearch;
+          left: -50px;
         }
       }
     }
     &[data-behavior="6"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: mediumLeftInSearch;
+          left: -225px;
         }
       }
     }
@@ -328,51 +308,36 @@
   .search-tools-col {
     &[data-behavior="1"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: xLargeLeftInSearch;
+        left: 200px;
       }
     }
     &[data-behavior="2"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: largeLeftInSearch;
+        left: -50px;
       }
     }
     &[data-behavior="3"],
     &[data-behavior="4"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: xLargeLeftInSearch;
+          left: 200px;
         }
       }
     }
     &[data-behavior="5"]{
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: largeLeftInSearch;
+          left: -50px;
         }
       }
     }
     &[data-behavior="6"] {
       &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: smallLeftInSearch;
+        left: -300px;
         &.pushed {
-          animation-name: mediumLeftInSearch;
+          left: -225px;
         }
       }
     }
