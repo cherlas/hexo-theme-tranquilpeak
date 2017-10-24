@@ -2,7 +2,6 @@
   width: 300px;
   height: 100%;
   position: fixed;
-  left: 0;
   top: 0;
   z-index: 1100;
   padding: 0;
@@ -249,6 +248,9 @@
     &[data-behavior="3"] {
       &.show {
         left: -225px;
+        &.pushed {
+          left: -50px;
+        }
       }
     }
     &[data-behavior="4"],
