@@ -14,11 +14,14 @@
     this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
     this.$searchButton = this.$searchToolsColModal.find('.icon-search');
-    this.$closeButton = $('#main, #header, .sidebar-whitespace');
+    this.$closeButton = $('#main, #header, .sidebar-top-whitespace, .sidebar-bottom-whitespace');
+    this.topWhitespace = $('.sidebar-top-whitespace');
+    this.bottomWhitespace = $('.sidebar-bottom-whitespace');
     this.$searchInput = $('.search-ipt');
     this.$jsonContentFalse = $('.json-content-false');
     this.$results = this.$searchToolsColModal.find('.search-result-ul');
     this.$resultsCount = this.$searchToolsColModal.find('.results-count');
+    this.$sidebarContainer = $('.sidebar-container');
   };
 
   SearchToolsColModal.prototype = {
@@ -28,6 +31,8 @@
      */
     run: function() {
       var self = this;
+
+      self.setWhiteSpace();
 
       // open modal when open button is clicked
       self.$openButton.click(function() {
@@ -72,6 +77,23 @@
       //   event.preventDefault();
       //   self.search(self.$searchInput.val());
       // });
+
+      // Detect resize of the windows
+      $(window).resize(function() {
+        self.setWhiteSpace();
+      });
+    },
+
+    /**
+     * set whitespace height
+     * @returns {void}
+     */
+    setWhiteSpace: function() {
+      var topWhitespaceHeight = this.$sidebarContainer.position().top;
+      var bottomWhitespaceHeight = $(window).height() - this.$sidebarContainer.height() -
+                                    topWhitespaceHeight;
+      this.topWhitespace.css('height', topWhitespaceHeight + 'px');
+      this.bottomWhitespace.css('height', bottomWhitespaceHeight + 'px');
     },
 
     /**
