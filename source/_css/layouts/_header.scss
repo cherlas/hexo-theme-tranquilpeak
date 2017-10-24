@@ -80,17 +80,21 @@
         @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
     }
 
+    &.show {
+        opacity: 1;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: rightOutMain;
+    }
+
     // Push the header from the size of the large sidebar
     &[data-behavior="1"],
     &[data-behavior="2"],
     &[data-behavior="4"],
     &[data-behavior="5"] {
         @include header-pushed-lg;
-        &.show {
-            opacity: 1;
-            animation-duration: .8s;
-            animation-fill-mode: both;
-            animation-name: rightOutMain;
+        &.show.pushed {
+            animation-name: rightOutMainPushedLarge;
         }
     }
 
@@ -98,6 +102,9 @@
     &[data-behavior="3"],
     &[data-behavior="6"] {
         @include header-pushed-md;
+        &.show.pushed {
+            animation-name: rightOutMainPushedLarge;
+        }
     }
 }
 
@@ -118,10 +125,16 @@
         &[data-behavior="1"],
         &[data-behavior="4"] {
             @include header-pushed-xlg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         &[data-behavior="2"],
         &[data-behavior="5"] {
             @include header-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
     }
 }
