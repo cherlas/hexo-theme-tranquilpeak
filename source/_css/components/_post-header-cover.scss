@@ -65,6 +65,14 @@
             }
         }
     }
+
+    &.show {
+        background: none;
+        opacity: 0.9;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: rightOutMain;
+    }
 }
 
 // Decrease height of cover image
@@ -109,11 +117,17 @@
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Push post header cover div from the size of the medium sidebar
         &[data-behavior="3"],
         &[data-behavior="6"] {
             @include post-header-cover-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
     }
 }
@@ -132,17 +146,26 @@
         &[data-behavior="2"],
         &[data-behavior="3"] {
             @include post-header-cover-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
     }
 }
