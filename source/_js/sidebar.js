@@ -21,6 +21,7 @@
     // you have to change value of `$screen-min: (md-min)` too
     // in `source/_css/utils/variables.scss`
     this.$body = $('body');
+    this.$main = $('#main');
     this.$headProfile = $('.full-screen-head');
     this.mediumScreenWidth = 768;
   };
@@ -64,9 +65,18 @@
      * @return {void}
      */
     openSidebar: function() {
+      this.removeMainHideClass();
       this.swipeBlogToRight();
       this.swipeSidebarToRight();
       this.pushSearchToolsCol();
+    },
+
+    /**
+     * remove hide class for main
+     * @return {void}
+     */
+    removeMainHideClass: function() {
+      this.$main.removeClass('hide');
     },
 
     /**
