@@ -7,20 +7,21 @@
    * @constructor
    */
   var SearchToolsColModal = function() {
-    this.$searchToolsColModal = $('.search-tools-col');
+    this.$searchToolsCol = $('.search-tools-col');
     this.$openButton = $('.open-search-col');
     this.$container = $('#container');
     this.$main = $('#main');
     this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
-    this.$searchButton = this.$searchToolsColModal.find('.icon-search');
-    this.$closeButton = $('#main, #header, .sidebar-top-whitespace, .sidebar-bottom-whitespace');
+    this.$searchButton = this.$searchToolsCol.find('.icon-search');
+    this.$closeButton = $('#main, #header, .sidebar-top-whitespace, .sidebar-bottom-whitespace,' +
+      '.post-header');
     this.topWhitespace = $('.sidebar-top-whitespace');
     this.bottomWhitespace = $('.sidebar-bottom-whitespace');
     this.$searchInput = $('.search-ipt');
     this.$jsonContentFalse = $('.json-content-false');
-    this.$results = this.$searchToolsColModal.find('.search-result-ul');
-    this.$resultsCount = this.$searchToolsColModal.find('.results-count');
+    this.$results = this.$searchToolsCol.find('.search-result-ul');
+    this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
   };
 
@@ -48,13 +49,13 @@
           return;
         }
 
-        if (event.keyCode === 83 && !self.$searchToolsColModal.is(':visible')) {
+        if (event.keyCode === 83 && !self.$searchToolsCol.is(':visible')) {
           self.open();
         }
       });
 
       // // close button when overlay is clicked
-      self.$searchToolsColModal.click(function(e) {
+      self.$searchToolsCol.click(function(e) {
         if (e.target === this) {
           self.close();
         }
@@ -67,7 +68,7 @@
 
       // close modal when `ESC` button is pressed
       $(document).keyup(function(e) {
-        if (e.keyCode === 27 && self.$searchToolsColModal.is(':visible')) {
+        if (e.keyCode === 27 && self.$searchToolsCol.is(':visible')) {
           self.close();
         }
       });
@@ -178,9 +179,9 @@
      * @returns {void}
      */
     showSearchToolsCol: function() {
-      if (this.$searchToolsColModal.hasClass('hide')) {
-        this.$searchToolsColModal.removeClass('hide');
-        this.$searchToolsColModal.addClass('show');
+      if (this.$searchToolsCol.hasClass('hide')) {
+        this.$searchToolsCol.removeClass('hide');
+        this.$searchToolsCol.addClass('show');
       }
       if (this.$canvas.hasClass('hidden')) {
         this.$canvas.removeClass('hidden');
@@ -195,9 +196,9 @@
      * @returns {void}
      */
     hideSearchToolsCol: function() {
-      if (this.$searchToolsColModal.hasClass('show')) {
-        this.$searchToolsColModal.removeClass('show');
-        this.$searchToolsColModal.addClass('hide');
+      if (this.$searchToolsCol.hasClass('show')) {
+        this.$searchToolsCol.removeClass('show');
+        this.$searchToolsCol.addClass('hide');
       }
       if (!this.$canvas.hasClass('hidden')) {
         this.$canvas.addClass('hidden');
@@ -225,9 +226,9 @@
       if (this.$main.hasClass('show')) {
         this.$main.removeClass('show');
       }
-      if (!this.$main.hasClass('hide')) {
-        this.$main.addClass('hide');
-      }
+      // if (!this.$main.hasClass('hide')) {
+      //   this.$main.addClass('hide');
+      // }
     },
 
     /**
@@ -245,8 +246,9 @@
      * @returns {void}
      */
     recoverHeader: function() {
-      if (!this.$header.hasClass('show')) {
+      if (this.$header.hasClass('show')) {
         this.$header.removeClass('show');
+        this.$header.addClass('recover');
       }
     },
 
