@@ -77,8 +77,8 @@
     */
     removeHiddenClass: function() {
       // this.$main.css('display', 'block');
-      if (this.$firstPageDesc.hasClass('hidden')) {
-        this.$firstPageDesc.removeClass('hidden');
+      if (!this.$firstPageDesc.hasClass('hidden')) {
+        this.$firstPageDesc.addClass('hidden');
       }
       if (this.$main.hasClass('hidden')) {
         this.$main.removeClass('hidden');
