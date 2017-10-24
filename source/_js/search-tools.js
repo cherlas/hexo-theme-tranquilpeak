@@ -24,6 +24,7 @@
     this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
     this.$postHeaderCover = $('.post-header-cover');
+    this.$sidebar = $('#sidebar');
   };
 
   SearchToolsColModal.prototype = {
@@ -319,6 +320,7 @@
      * @returns {void}
      */
     ani: function() {
+      var self = this;
       var width;
       var height;
       var largeHeader;
@@ -345,9 +347,18 @@
         largeHeader.style.height = height + 'px';
 
         canvas = document.getElementById('anm-canvas');
-        canvas.width = width;
         canvas.height = height;
-        canvas.style.marginLeft = sidebarWidth + 'px';
+        if (width < 768 && !self.$sidebar.hasClass('pushed')) {
+          canvas.width = window.innerWidth;
+          canvas.style.marginLeft = 0;
+        } else if (width < 768 && self.$sidebar.hasClass('pushed')) {
+          canvas.width = width;
+          canvas.style.marginLeft = sidebarWidth + 'px';
+          console.log("canvas");
+        } else {
+          canvas.width = width;
+          canvas.style.marginLeft = sidebarWidth + 'px';
+        }
         ctx = canvas.getContext('2d');
 
         // create particles
@@ -378,9 +389,14 @@
         width = window.innerWidth - sidebarWidth;
         height = window.innerHeight;
         largeHeader.style.height = height + 'px';
-        canvas.width = width;
         canvas.height = height;
-        canvas.style.marginLeft = sidebarWidth + 'px';
+        if (width < 768) {
+          canvas.width = window.innerWidth;
+          canvas.style.marginLeft = 0;
+        } else {
+          canvas.width = width;
+          canvas.style.marginLeft = sidebarWidth + 'px';
+        }
       }
 
       function animate() {
