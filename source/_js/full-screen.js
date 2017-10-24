@@ -12,6 +12,9 @@
     this.$headProfile = $('.full-screen-head');
     this.$cover = $('#cover');
     this.$firstPageDesc = $('.first-page-desc-container');
+    this.topWhitespace = $('.sidebar-top-whitespace');
+    this.bottomWhitespace = $('.sidebar-bottom-whitespace');
+    this.$sidebarContainer = $('.sidebar-container');
   };
 
   HeadProfile.prototype = {
@@ -21,6 +24,7 @@
     */
     run: function() {
       var self = this;
+
       // Detect the click on the open button
       self.$blogButton.click(function() {
         if (location.hash && location.hash === "#blog") {
@@ -56,6 +60,18 @@
     },
 
     /**
+     * set whitespace height
+     * @returns {void}
+     */
+    setWhiteSpace: function() {
+      var topWhitespaceHeight = this.$sidebarContainer.position().top;
+      var bottomWhitespaceHeight = $(window).height() - this.$sidebarContainer.height() -
+        topWhitespaceHeight;
+      this.topWhitespace.css('height', topWhitespaceHeight + 'px');
+      this.bottomWhitespace.css('height', bottomWhitespaceHeight + 'px');
+    },
+
+    /**
     * remove hidden class for #main, #sidebar
     * @return {void}
     */
@@ -70,6 +86,8 @@
       if (this.$sidebar.hasClass('hidden')) {
         this.$sidebar.removeClass('hidden');
       }
+
+      this.setWhiteSpace();
     },
 
       /**
