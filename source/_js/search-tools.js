@@ -8,13 +8,13 @@
    */
   var SearchToolsColModal = function() {
     this.$searchToolsCol = $('.search-tools-col');
-    this.$openButton = $('.open-search-col');
+    this.$openButton = $('.open-search-col, .btn-open-search');
     this.$container = $('#container');
     this.$main = $('#main');
     this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
     this.$searchButton = this.$searchToolsCol.find('.icon-search');
-    this.$closeButton = $('#main, #header, .sidebar-top-whitespace, .sidebar-bottom-whitespace,' +
+    this.$closeButton = $('#main, .sidebar-top-whitespace, .sidebar-bottom-whitespace,' +
       '.post-header');
     this.topWhitespace = $('.sidebar-top-whitespace');
     this.bottomWhitespace = $('.sidebar-bottom-whitespace');
@@ -23,6 +23,7 @@
     this.$results = this.$searchToolsCol.find('.search-result-ul');
     this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
+    this.$postHeaderCover = $('.post-header-cover');
   };
 
   SearchToolsColModal.prototype = {
@@ -117,6 +118,7 @@
       // this.hideOverlay();
       this.recoverMainCol();
       this.recoverHeader();
+      this.recoverPostHeaderCover();
       this.$searchInput.blur();
     },
 
@@ -189,6 +191,23 @@
       // TODO optimise
       this.thinMainCol();
       this.thinHeader();
+      this.thinPostHeaderCover();
+    },
+
+    /**
+     * thin post header cover
+     * @returns {void}
+     */
+    thinPostHeaderCover: function() {
+      this.$postHeaderCover.addClass('show');
+    },
+
+    /**
+     * thin post header cover
+     * @returns {void}
+     */
+    recoverPostHeaderCover: function() {
+      this.$postHeaderCover.removeClass('show');
     },
 
     /**
