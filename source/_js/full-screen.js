@@ -11,6 +11,7 @@
     this.$blogButton = $('.blog-button-full-screen');
     this.$headProfile = $('.full-screen-head');
     this.$cover = $('#cover');
+    this.$firstPageDesc = $('.first-page-desc-container');
   };
 
   HeadProfile.prototype = {
@@ -32,6 +33,7 @@
       if (window.location.hash === "" && window.location.pathname === "/") {
         this.$cover.css('z-index', '100');
         this.$headProfile.removeClass('hidden');
+        this.$firstPageDesc.removeClass('hidden');
         return;
       }
 
@@ -59,6 +61,9 @@
     */
     removeHiddenClass: function() {
       // this.$main.css('display', 'block');
+      if (this.$firstPageDesc.hasClass('hidden')) {
+        this.$firstPageDesc.removeClass('hidden');
+      }
       if (this.$main.hasClass('hidden')) {
         this.$main.removeClass('hidden');
       }
