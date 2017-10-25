@@ -374,15 +374,28 @@
       }
 
       function drawCanvas() {
-        if (windowWidth < 768 && !self.$sidebar.hasClass('pushed')) {
-          canvas.width = window.innerWidth;
-          canvas.style.marginLeft = 0;
-          // canvas.style.marginLeft = sidebarWidth + 'px';
-        } else if (windowWidth < 768 && self.$sidebar.hasClass('pushed')) {
-          canvas.width = width;
-        } else {
-          canvas.width = width;
+        var sidebar = $('#sidebar');
+        sidebarWidth = sidebar.width();
+        windowWidth = window.innerWidth;
+        width = window.innerWidth - sidebarWidth;
+        height = window.innerHeight;
+
+        canvas.width = windowWidth;
+        if (windowWidth < 768) {
+          if (sidebar.hasClass('pushed')) {
+            canvas.style.marginLeft = 0;
+            console.log("111");
+          } else {
+            canvas.style.marginLeft = 0;
+
+            console.log("222");
+          }
+        } else if (sidebar.hasClass('pushed')) {
           canvas.style.marginLeft = sidebarWidth + 'px';
+          console.log("333");
+        } else {
+          canvas.style.marginLeft = sidebarWidth + 'px';
+          console.log("444");
         }
       }
 
