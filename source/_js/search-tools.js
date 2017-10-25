@@ -338,23 +338,10 @@
 
       // initial for animation
       function initHeader() {
-        sidebarWidth = $('#sidebar').width();
-        width = window.innerWidth - sidebarWidth;
-        windowWidth = window.innerWidth;
-        height = window.innerHeight;
         target = {x: 0, y: height};
 
-        largeHeader = document.getElementById('container');
-
-        largeHeader.style.height = height + 'px';
-
-        canvas = document.getElementById('anm-canvas');
-        canvas.height = height;
-
         drawCanvas();
-
         ctx = canvas.getContext('2d');
-
         createCircles();
         animate();
       }
@@ -374,29 +361,17 @@
       }
 
       function drawCanvas() {
-        var sidebar = $('#sidebar');
-        sidebarWidth = sidebar.width();
-        windowWidth = window.innerWidth;
-        width = window.innerWidth - sidebarWidth;
+        largeHeader = document.getElementById('container');
+        canvas = document.getElementById('anm-canvas');
+
+        sidebarWidth = $('#sidebar').width();
+        width = window.innerWidth;
         height = window.innerHeight;
 
-        canvas.width = windowWidth;
-        if (windowWidth < 768) {
-          if (sidebar.hasClass('pushed')) {
-            canvas.style.marginLeft = 0;
-            console.log("111");
-          } else {
-            canvas.style.marginLeft = 0;
+        largeHeader.style.height = height + 'px';
 
-            console.log("222");
-          }
-        } else if (sidebar.hasClass('pushed')) {
-          canvas.style.marginLeft = sidebarWidth + 'px';
-          console.log("333");
-        } else {
-          canvas.style.marginLeft = sidebarWidth + 'px';
-          console.log("444");
-        }
+        canvas.height = height;
+        canvas.width = width;
       }
 
       function scrollCheck() {
@@ -408,16 +383,7 @@
       }
 
       function resize() {
-        sidebarWidth = $('#sidebar').width();
-        windowWidth = window.innerWidth;
-        width = window.innerWidth - sidebarWidth;
-        height = window.innerHeight;
-        largeHeader.style.height = height + 'px';
-        canvas.height = height;
         drawCanvas();
-        if (windowWidth < 768 && self.$sidebar.hasClass('pushed')) {
-          canvas.style.marginLeft = sidebarWidth + 'px';
-        }
       }
 
       function animate() {
