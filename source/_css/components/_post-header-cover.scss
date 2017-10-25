@@ -183,21 +183,33 @@
         &[data-behavior="1"],
         &[data-behavior="2"] {
             @include post-header-cover-sm;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Display post header cover div in medium size
         &[data-behavior="3"] {
             @include post-header-cover-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
     }
 }
@@ -214,29 +226,47 @@
         // Display post header cover div in extra small size
         &[data-behavior="1"] {
             @include post-header-cover-xs;
+            &.show.pushed {
+                animation-name: rightOutMainPushedXLarge;
+            }
         }
         // Display post header cover div in small size
         &[data-behavior="2"] {
             @include post-header-cover-sm;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Display post header cover div in medium size
         &[data-behavior="3"] {
             @include post-header-cover-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-xlg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedXLarge;
+            }
         }
         // Display post header cover div in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutMainPushedLarge;
+            }
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMainPushedMedium;
+            }
         }
     }
 }
