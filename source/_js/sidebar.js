@@ -22,6 +22,7 @@
     // in `source/_css/utils/variables.scss`
     this.$body = $('body');
     this.$main = $('#main');
+    this.$canvas = $('.anm-canvas');
     this.$headProfile = $('.full-screen-head');
     this.mediumScreenWidth = 768;
   };
@@ -69,6 +70,17 @@
       this.swipeBlogToRight();
       this.swipeSidebarToRight();
       this.pushSearchToolsCol();
+      this.pushAniCanvas();
+    },
+
+    /**
+     * push ani-canvas
+     * @returns {void}
+     */
+    pushAniCanvas: function() {
+      if (!this.$searchToolsCol.hasClass('hidden')) {
+        this.$canvas.addClass('pushed');
+      }
     },
 
     /**
@@ -86,6 +98,15 @@
     closeSidebar: function() {
       this.swipeSidebarToLeft();
       this.swipeBlogToLeft();
+      this.removeCanvasPushed();
+    },
+
+    /**
+     * remove class 'pushed' for canvas
+     * @returns {void}
+     */
+    removeCanvasPushed: function() {
+      this.$canvas.removeClass('pushed');
     },
 
     /**
