@@ -5,19 +5,105 @@
   overflow-y: auto;
   background: linear-gradient(200deg, #a0cfe4, #e8c37e);
 }
+/*----media----*/
 @media #{$small-and-down} {
   #anm-canvas {
-    // Push `canvas` div from the size of the large sidebar
     &[data-behavior="1"],
     &[data-behavior="2"],
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      @include canvas-pushed-lg;
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, lg-screen-width)};
+      }
     }
-    // Push `main` div from the size of the medium sidebar
     &[data-behavior="3"],
     &[data-behavior="6"] {
-      @include canvas-pushed-md;
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, md-screen-width)};
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+  #anm-canvas {
+    &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="3"] {
+      margin-left: #{map-get($sidebar, md-screen-width)};
+      &.pushed {
+        margin-left: #{map-get($sidebar, lg-screen-width)};
+      }
+    }
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, lg-screen-width)};
+      }
+    }
+    &[data-behavior="6"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, md-screen-width)};
+      }
+    }
+  }
+}
+
+@media #{$large-only} {
+  #anm-canvas {
+    &[data-behavior="1"],
+    &[data-behavior="2"] {
+      margin-left: #{map-get($sidebar, lg-screen-width)};
+    }
+    &[data-behavior="3"] {
+      margin-left: #{map-get($sidebar, md-screen-width)};
+    }
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, lg-screen-width)};
+      }
+    }
+    &[data-behavior="6"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, md-screen-width)};
+      }
+    }
+  }
+}
+
+@media #{$xlarge-and-up} {
+  #anm-canvas {
+    &[data-behavior="1"] {
+      margin-left: #{map-get($sidebar, xlg-screen-width)};
+    }
+    &[data-behavior="2"] {
+      margin-left: #{map-get($sidebar, lg-screen-width)};
+    }
+    &[data-behavior="3"],
+    &[data-behavior="4"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, xlg-screen-width)};
+      }
+    }
+    &[data-behavior="5"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, lg-screen-width)};
+      }
+    }
+    &[data-behavior="6"] {
+      margin-left: 0;
+      &.pushed {
+        margin-left: #{map-get($sidebar, md-screen-width)};
+      }
     }
   }
 }
