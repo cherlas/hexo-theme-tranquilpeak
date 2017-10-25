@@ -355,15 +355,18 @@
 
         ctx = canvas.getContext('2d');
 
+        createCircles();
+        animate();
+      }
+
+      function createCircles() {
         // create particles
         circles = [];
         for (var x = 0; x < width * 0.5; x++) {
           var c = new Circle();
           circles.push(c);
         }
-        animate();
       }
-
       // Event handling
       function addListeners() {
         window.addEventListener('scroll', scrollCheck);
@@ -398,7 +401,6 @@
         height = window.innerHeight;
         largeHeader.style.height = height + 'px';
         canvas.height = height;
-
         drawCanvas();
         if (windowWidth < 768 && self.$sidebar.hasClass('pushed')) {
           canvas.style.marginLeft = sidebarWidth + 'px';
