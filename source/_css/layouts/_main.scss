@@ -107,14 +107,14 @@
     &[data-behavior="2"] {
       @include main-sm;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedLarge;
       }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedMedium;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -123,7 +123,7 @@
       @include main-lg;
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
@@ -131,7 +131,7 @@
       @include main-lg;
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedMedium;
       }
     }
   }
@@ -143,21 +143,21 @@
     &[data-behavior="1"] {
       @include main-xs;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedXLarge;
       }
     }
     // Display `main` div in small size
     &[data-behavior="2"] {
       @include main-sm;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedLarge;
       }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedMedium;
       }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
@@ -165,7 +165,7 @@
       @include main-lg;
       @include main-pushed-xlg;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedXLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
@@ -173,7 +173,7 @@
       @include main-lg;
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
@@ -181,7 +181,7 @@
       @include main-lg;
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushed;
+        animation-name: rightOutMainPushedMedium;
       }
     }
   }
