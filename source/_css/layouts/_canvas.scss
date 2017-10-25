@@ -3,3 +3,19 @@
   position: fixed;
   background: linear-gradient(200deg, #a0cfe4, #e8c37e);
 }
+@media #{$small-and-down} {
+  #anm-canvas {
+    // Push `canvas` div from the size of the large sidebar
+    &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      @include canvas-pushed-lg;
+    }
+    // Push `main` div from the size of the medium sidebar
+    &[data-behavior="3"],
+    &[data-behavior="6"] {
+      @include canvas-pushed-md;
+    }
+  }
+}
