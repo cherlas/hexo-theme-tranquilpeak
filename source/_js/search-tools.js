@@ -25,6 +25,7 @@
     this.$sidebarContainer = $('.sidebar-container');
     this.$postHeaderCover = $('.post-header-cover');
     this.$sidebar = $('#sidebar');
+    this.$body = $('body');
   };
 
   SearchToolsColModal.prototype = {
@@ -189,6 +190,7 @@
       if (this.$canvas.hasClass('hidden')) {
         this.$canvas.removeClass('hidden');
       }
+      this.$body.css('overflow-x', 'hidden');
       // TODO optimise
       this.thinMainCol();
       this.thinHeader();
