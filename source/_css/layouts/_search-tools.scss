@@ -12,9 +12,6 @@
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
   @extend %trans;
-  .tools-nav {
-    display: none;
-  }
   .tools-wrap, .tools-section {
     height: 100%;
     color: #e5e5e5;
@@ -123,13 +120,10 @@
       }
       .article-tag-list {
         @extend %trans;
-        display: none;
+        display: block;
         margin: 15px 10px 0;
         padding: 10px;
         background: rgba(255, 255, 255, 0.2);
-        &.show {
-          display: block;
-        }
       }
       .a {
         float: initial;
