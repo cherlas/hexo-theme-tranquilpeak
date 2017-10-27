@@ -36,6 +36,8 @@
     run: function() {
       var self = this;
 
+      self.handleSearch();
+
       self.setWhiteSpace();
 
       // open modal when open button is clicked
@@ -125,18 +127,25 @@
     },
 
     /**
-     * Search with Algolia API and display results
-     * @param {String} search
+     * handle search and display results
      * @returns {void}
      */
-    search: function(search) {
+    handleSearch: function() {
       var self = this;
-      this.algolia.search(search, function(err, content) {
-        if (!err) {
-          self.showResults(content.hits);
-          self.showResultsCount(content.nbHits);
-        }
+      self.$searchInput.on('input propertychange', function() {
+        var val = $(this).val();
+        console.log(val);
+        self.search(val);
       });
+    },
+
+    /**
+     * search and display the result
+     * @param {String} val
+     * @returns {void}
+     */
+    search: function(val) {
+      
     },
 
     /**
