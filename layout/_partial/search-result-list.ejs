@@ -1,11 +1,17 @@
 <li class="search-li">
-    <a class="search-title"><i class="icon-quo-left icon"></i><span id="search-post-title"></span></a>
+    <a class="search-title" href="<%- url_for(post.path)%>" ><i class="icon-quo-left icon"></i><span id="search-post-title"><%= post.title %></span></a>
     <p class="search-time">
         <i class="icon-calendar icon"></i>
-        <span></span>
+        <span><%- full_date(post.date, 'YYYY-MM-DD') %></span>
     </p>
     <p class="search-tag">
         <i class="icon-price-tags icon"></i>
-        <span id="search-post-tags"></span>
+        <% if ((post.tags) && (post.tags.length > 0)) { %>
+        <% post.tags.each(function(tag) { %>
+            <span id="search-post-tags">
+                # <%-tag.name%>
+            </span>
+        <% }) %>
+        <% } %>
     </p>
 </li>
