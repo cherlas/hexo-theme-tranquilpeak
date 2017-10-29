@@ -99,9 +99,6 @@
         &:hover {
           background: rgba(255, 255, 255, 0.2);
         }
-        &.clearfix {
-          clear: both ;
-        }
       }
       .search-title {
         overflow: hidden;
@@ -143,6 +140,9 @@
         span {
           margin-right: 5px;
         }
+      }
+      div.clearfix {
+        clear: both;
       }
     }
   }
