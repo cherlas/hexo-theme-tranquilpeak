@@ -75,12 +75,6 @@
         }
       });
 
-      // send search when form is submitted
-      // self.$searchForm.submit(function(event) {
-      //   event.preventDefault();
-      //   self.search(self.$searchInput.val());
-      // });
-
       // Detect resize of the windows
       $(window).resize(function() {
         self.setWhiteSpace();
@@ -210,7 +204,7 @@
         this.$canvas.removeClass('hidden');
       }
       this.$body.css('overflow-x', 'hidden');
-      // TODO optimise
+      // TODO optimize
       this.thinMainCol();
       this.thinHeader();
       this.thinPostHeaderCover();
@@ -267,9 +261,6 @@
       if (this.$main.hasClass('show')) {
         this.$main.removeClass('show');
       }
-      // if (!this.$main.hasClass('hide')) {
-      //   this.$main.addClass('hide');
-      // }
     },
 
     /**
@@ -341,7 +332,6 @@
      * @returns {void}
      */
     ani: function() {
-      var self = this;
       var width;
       var height;
       var largeHeader;
@@ -351,7 +341,6 @@
       var target;
       var animateHeader = true;
       var sidebarWidth;
-      var windowWidth;
 
       // Main
       initHeader();
