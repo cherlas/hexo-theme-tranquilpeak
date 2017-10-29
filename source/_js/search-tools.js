@@ -134,7 +134,6 @@
       var self = this;
       self.$searchInput.on('input propertychange', function() {
         var val = $(this).val();
-        console.log(val);
         self.search(val);
       });
     },
@@ -144,9 +143,35 @@
      * @param {String} val
      * @returns {void}
      */
-    search: function(val) {
-      
+    search: function(path, val) {
+      val = (val || '').toLowerCase();
+      var type = 'title';
+      if (val.indexOf('#') === 0) {
+        val = val.substr(1, val.length);
+        type = 'tag';
+      }
+
     },
+
+    //   // title
+    //   items.forEach((item) {
+    //     var matchTitle = false;
+    //     if (item.title.toLowerCase().indexOf(val) > -1) {
+    //       matchTitle = true;
+    //     }
+    //   //
+    //   // // tag
+    //   //   var matchTags = false;
+    //   //
+    //   //
+    //   //   if ((type === 'title' && matchTitle) || (type === 'tag' && matchTags)) {
+    //   //     item.isShow = true;
+    //   //   } else {
+    //   //     item.isShow = false;
+    //   //   }
+    //   // });
+    //   // app.$set('items', items);
+    // }),
 
     /**
      * Display results
