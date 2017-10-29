@@ -9,11 +9,9 @@
   var SearchToolsColModal = function() {
     this.$searchToolsCol = $('.search-tools-col');
     this.$openButton = $('.open-search-col, .btn-open-search');
-    this.$container = $('#container');
     this.$main = $('#main');
     this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
-    this.$searchButton = this.$searchToolsCol.find('.icon-search');
     this.$closeButton = $('#main, .sidebar-top-whitespace, .sidebar-bottom-whitespace,' +
       '.post-header');
     this.topWhitespace = $('.sidebar-top-whitespace');
@@ -134,7 +132,7 @@
       var self = this;
       self.$searchInput.on('input propertychange', function() {
         var val = $(this).val();
-        self.search(val);
+        self.searchWithDom(val);
       });
     },
 
@@ -143,36 +141,12 @@
      * @param {String} val
      * @returns {void}
      */
-    search: function(path, val) {
-      val = (val || '').toLowerCase();
-      var type = 'title';
-      if (val.indexOf('#') === 0) {
-        val = val.substr(1, val.length);
-        type = 'tag';
-      }
+    searchWithJsonContent: function(val) {
+      $.getJSON("/assets/js/content.json", function(result) {
 
+      });
     },
-
-    //   // title
-    //   items.forEach((item) {
-    //     var matchTitle = false;
-    //     if (item.title.toLowerCase().indexOf(val) > -1) {
-    //       matchTitle = true;
-    //     }
-    //   //
-    //   // // tag
-    //   //   var matchTags = false;
-    //   //
-    //   //
-    //   //   if ((type === 'title' && matchTitle) || (type === 'tag' && matchTags)) {
-    //   //     item.isShow = true;
-    //   //   } else {
-    //   //     item.isShow = false;
-    //   //   }
-    //   // });
-    //   // app.$set('items', items);
-    // }),
-
+    
     /**
      * Display results
      * @param {Array} posts
