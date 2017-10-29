@@ -34,6 +34,7 @@
       var self = this;
 
       self.searchWithDom(self.$searchInput.val());
+      self.$resultsCount.addClass('hide');
 
       self.handleSearch();
 
@@ -162,9 +163,6 @@
         var itemTitle = $(this).find('#search-post-title').text().toLowerCase();
         var itemTime = $(this).find('.search-time').text().trim().toLowerCase();
         var itemTags = $(this).find('#search-post-tags').text().trim().toLowerCase();
-        console.log(itemTitle);
-        console.log(itemTime);
-        console.log(itemTags);
 
         if (type === 'title' && itemTitle.indexOf(val) > -1) {
           matchTitle = true;
