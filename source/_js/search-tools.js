@@ -1,12 +1,12 @@
 /* eslint-disable brace-style,guard-for-in,no-unused-vars,require-jsdoc */
-(function($) {
+(function ($) {
   'use strict';
 
   /**
    * Open search modal
    * @constructor
    */
-  var SearchToolsColModal = function() {
+  var SearchToolsColModal = function () {
     this.$searchToolsCol = $('.search-tools-col');
     this.$openButton = $('.open-search-col, .btn-open-search');
     this.$main = $('#main');
@@ -31,7 +31,7 @@
      * Run feature
      * @returns {void}
      */
-    run: function() {
+    run: function () {
       var self = this;
 
       self.handleSearch();
@@ -39,12 +39,12 @@
       self.setWhiteSpace();
 
       // open modal when open button is clicked
-      self.$openButton.click(function() {
+      self.$openButton.click(function () {
         self.open();
       });
 
       // open modal when `s` button is pressed
-      $(document).keyup(function(event) {
+      $(document).keyup(function (event) {
         var target = event.target || event.srcElement;
         // exit if user is focusing an input or textarea
         var tagName = target.tagName.toUpperCase();
@@ -58,19 +58,19 @@
       });
 
       // // close button when overlay is clicked
-      self.$searchToolsCol.click(function(e) {
+      self.$searchToolsCol.click(function (e) {
         if (e.target === this) {
           self.close();
         }
       });
 
       // close modal when close button is clicked
-      self.$closeButton.click(function(e) {
+      self.$closeButton.click(function (e) {
         self.close();
       });
 
       // close modal when `ESC` button is pressed
-      $(document).keyup(function(e) {
+      $(document).keyup(function (e) {
         if (e.keyCode === 27 && self.$searchToolsCol.is(':visible')) {
           self.close();
         }
@@ -83,7 +83,7 @@
       // });
 
       // Detect resize of the windows
-      $(window).resize(function() {
+      $(window).resize(function () {
         self.setWhiteSpace();
       });
     },
@@ -92,10 +92,10 @@
      * set whitespace height
      * @returns {void}
      */
-    setWhiteSpace: function() {
+    setWhiteSpace: function () {
       var topWhitespaceHeight = this.$sidebarContainer.position().top;
       var bottomWhitespaceHeight = $(window).height() - this.$sidebarContainer.height() -
-                                    topWhitespaceHeight;
+        topWhitespaceHeight;
       this.topWhitespace.css('height', topWhitespaceHeight + 'px');
       this.bottomWhitespace.css('height', bottomWhitespaceHeight + 'px');
     },
@@ -104,7 +104,7 @@
      * Open search modal and display overlay
      * @returns {void}
      */
-    open: function() {
+    open: function () {
       this.showSearchToolsCol();
       // this.showOverlay();
       this.ani();
@@ -115,7 +115,7 @@
      * Close search modal and overlay
      * @returns {void}
      */
-    close: function() {
+    close: function () {
       this.hideSearchToolsCol();
       // this.hideOverlay();
       this.recoverMainCol();
@@ -128,9 +128,9 @@
      * handle search and display results
      * @returns {void}
      */
-    handleSearch: function() {
+    handleSearch: function () {
       var self = this;
-      self.$searchInput.on('input propertychange', function() {
+      self.$searchInput.on('input propertychange', function () {
         var val = $(this).val();
         self.searchWithDom(val);
       });
@@ -141,20 +141,75 @@
      * @param {String} val
      * @returns {void}
      */
-    searchWithJsonContent: function(val) {
-      $.getJSON("/assets/js/content.json", function(result) {
+    searchWithJsonContent: function (val) {
+      $.getJSON("/assets/js/content.json", function (result) {
 
       });
     },
-    
+
+    searchWithDom: function (val) {
+      var self = this;
+
+      val = (val || '').toLowerCase();
+      var type = 'title';
+      if (val.indexOf('#') === 0) {
+        val = val.substr(1, val.length);
+        type = 'tag';
+      }
+      if (val.indexOf('*') === 0) {
+        val = val.substr(1, val.length);
+        type = 'time';
+      }
+
+      var children = this.$results.children();
+      var count = 0;
+
+      children.each(function() {
+        var matchTitle = false;
+        var matchTime = false;
+        var matchTags = false;
+        var itemTitle = $(this).find('#search-post-title').text().toLowerCase();
+        var itemTime = $(this).find('.search-time').text().trim().toLowerCase();
+        var itemTags = $(this).find('#search-post-tags').text().trim().toLowerCase();
+        console.log(itemTitle);
+        console.log(itemTime);
+        console.log(itemTags);
+
+        if (type === 'title' && itemTitle.indexOf(val) > -1) {
+          matchTitle = true;
+          count++;
+        } else if (type === 'time' && itemTime.indexOf(val) > -1) {
+          matchTime = true;
+          count++;
+        } else if (type === 'tag' && itemTags.indexOf(val) > -1) {
+          matchTags = true;
+          count++;
+        }
+        if (count > 0) {
+          if (self.$resultsCount.hasClass('hide')) {
+            self.$resultsCount.removeClass('hide');
+          }
+          self.$resultsCount.text('result: ' + count + 'items');
+        } else if (count === 0) {
+          self.$resultsCount.text('result: no items found');
+        }
+
+        if (matchTitle || matchTime || matchTags) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    },
+
     /**
      * Display results
      * @param {Array} posts
      * @returns {void}
      */
-    showResults: function(posts) {
+    showResults: function (posts) {
       var html = '';
-      posts.forEach(function(post) {
+      posts.forEach(function (post) {
         var lang = window.navigator.userLanguage || window.navigator.language || post.lang;
 
         html += '<div class="media">';
@@ -190,7 +245,7 @@
      * Show search modal
      * @returns {void}
      */
-    showSearchToolsCol: function() {
+    showSearchToolsCol: function () {
       if (this.$searchToolsCol.hasClass('hide')) {
         this.$searchToolsCol.removeClass('hide');
         this.$searchToolsCol.addClass('show');
@@ -209,7 +264,7 @@
      * thin post header cover
      * @returns {void}
      */
-    thinPostHeaderCover: function() {
+    thinPostHeaderCover: function () {
       this.$postHeaderCover.addClass('show');
     },
 
@@ -217,7 +272,7 @@
      * thin post header cover
      * @returns {void}
      */
-    recoverPostHeaderCover: function() {
+    recoverPostHeaderCover: function () {
       this.$postHeaderCover.removeClass('show');
     },
 
@@ -225,7 +280,7 @@
      * Hide search modal
      * @returns {void}
      */
-    hideSearchToolsCol: function() {
+    hideSearchToolsCol: function () {
       if (this.$searchToolsCol.hasClass('show')) {
         this.$searchToolsCol.removeClass('show');
         this.$searchToolsCol.addClass('hide');
@@ -239,7 +294,7 @@
      * thin main col for search
      * @returns {void}
      */
-    thinMainCol: function() {
+    thinMainCol: function () {
       if (this.$main.hasClass('hide')) {
         this.$main.removeClass('hide');
       }
@@ -252,7 +307,7 @@
      * recover main col for search
      * @returns {void}
      */
-    recoverMainCol: function() {
+    recoverMainCol: function () {
       if (this.$main.hasClass('show')) {
         this.$main.removeClass('show');
       }
@@ -265,7 +320,7 @@
      * thin header for search
      * @returns {void}
      */
-    thinHeader: function() {
+    thinHeader: function () {
       if (!this.$header.hasClass('show')) {
         this.$header.addClass('show');
       }
@@ -275,7 +330,7 @@
      * recover header for search
      * @returns {void}
      */
-    recoverHeader: function() {
+    recoverHeader: function () {
       if (this.$header.hasClass('show')) {
         this.$header.removeClass('show');
         this.$header.addClass('recover');
@@ -287,7 +342,7 @@
      * @param {Number} count
      * @returns {void}
      */
-    showResultsCount: function(count) {
+    showResultsCount: function (count) {
       var string = '';
       if (count < 1) {
         string = this.$resultsCount.data('message-zero');
@@ -308,7 +363,7 @@
      * Show overlay
      * @returns {void}
      */
-    showOverlay: function() {
+    showOverlay: function () {
       $('body').append('<div class="overlay"></div>');
       $('.overlay').fadeIn();
       $('body').css('overflow', 'hidden');
@@ -318,8 +373,8 @@
      * Hide overlay
      * @returns {void}
      */
-    hideOverlay: function() {
-      $('.overlay').fadeOut(function() {
+    hideOverlay: function () {
+      $('.overlay').fadeOut(function () {
         $(this).remove();
         $('body').css('overflow', 'auto');
       });
@@ -329,7 +384,7 @@
      * animation for search modal
      * @returns {void}
      */
-    ani: function() {
+    ani: function () {
       var self = this;
       var width;
       var height;
@@ -364,6 +419,7 @@
           circles.push(c);
         }
       }
+
       // Event handling
       function addListeners() {
         window.addEventListener('scroll', scrollCheck);
@@ -411,7 +467,7 @@
         var _this = this;
 
         // constructor
-        (function() {
+        (function () {
           _this.pos = {};
           init();
           // console.log(_this);
@@ -425,7 +481,7 @@
           _this.velocity = Math.random();
         }
 
-        this.draw = function() {
+        this.draw = function () {
           if (_this.alpha <= 0) {
             init();
           }
@@ -440,7 +496,7 @@
     }
   };
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     var searchToolsColModal = new SearchToolsColModal();
     searchToolsColModal.run();
   });
