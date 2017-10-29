@@ -81,14 +81,20 @@
         list-style: none;
       }
     }
-    .search-ul {
+    .results-count {
+      padding: 10px 0 0 12px;
+      font-size: 14px;
+    }
+    .search-result-ul {
+      padding-left: 0px;
       margin-top: 10px;
       color: rgba(77, 77, 77, 0.75);
       -webkit-overflow-scrolling: touch;
       overflow-scrolling: touch;
       overflow-y: auto;
       .search-li {
-        padding: 10px 20px;
+        list-style: none;
+        padding: 10px 10px 0 12px;
         border-bottom: 1px dotted #dcdcdc;
         &:hover {
           background: rgba(255, 255, 255, 0.2);
@@ -108,12 +114,14 @@
         &:hover {
           color: #fff;
           @extend %trans;
+          text-decoration: none;
         }
       }
       .search-time, .search-tag {
         font-size: 12px;
         color: #fffdd8;
         margin-right: 10px;
+        margin-bottom: 0;
         .icon {
           margin-right: 0px;
         }
@@ -141,6 +149,28 @@
     animation-duration: .8s;
     animation-fill-mode: both;
     animation-name: leftInSearch;
+  }
+
+  .icon {
+    font-family: iconfont !important;
+    speak: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.icon-quo-left:before {
+      content: "\E7F5";
+    }
+    &.icon-calendar:before {
+      content: "\E667";
+    }
+    &.icon-price-tags:before {
+      content: "\E6F9";
+    }
   }
 }
 
