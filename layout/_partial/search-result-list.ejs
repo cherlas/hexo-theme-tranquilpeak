@@ -4,14 +4,15 @@
         <i class="icon-calendar icon"></i>
         <span><%- full_date(post.date, 'YYYY-MM-DD') %></span>
     </p>
+    <% if ((post.tags) && (post.tags.length > 0)) { %>
     <p class="search-tag">
-        <i class="icon-price-tags icon"></i>
-        <% if ((post.tags) && (post.tags.length > 0)) { %>
+    <i class="icon-price-tags icon"></i>
         <% post.tags.each(function(tag) { %>
             <span id="search-post-tags">
                 #<%-tag.name%>
             </span>
         <% }) %>
-        <% } %>
     </p>
+    <% } %>
+    <div class="clearfix"></div>
 </li>
