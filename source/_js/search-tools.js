@@ -33,6 +33,8 @@
     run: function() {
       var self = this;
 
+      self.searchWithDom(self.$searchInput.val());
+
       self.handleSearch();
 
       self.setWhiteSpace();
@@ -261,6 +263,9 @@
       if (this.$main.hasClass('show')) {
         this.$main.removeClass('show');
       }
+      // if (!this.$main.hasClass('hide')) {
+      //   this.$main.addClass('hide');
+      // }
     },
 
     /**
@@ -282,28 +287,6 @@
         this.$header.removeClass('show');
         this.$header.addClass('recover');
       }
-    },
-
-    /**
-     * Display messages and counts of results
-     * @param {Number} count
-     * @returns {void}
-     */
-    showResultsCount: function(count) {
-      var string = '';
-      if (count < 1) {
-        string = this.$resultsCount.data('message-zero');
-        this.$noResults.show();
-      }
-      else if (count === 1) {
-        string = this.$resultsCount.data('message-one');
-        this.$noResults.hide();
-      }
-      else if (count > 1) {
-        string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
-        this.$noResults.hide();
-      }
-      this.$resultsCount.html(string);
     },
 
     /**
@@ -332,6 +315,7 @@
      * @returns {void}
      */
     ani: function() {
+      var self = this;
       var width;
       var height;
       var largeHeader;
