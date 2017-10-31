@@ -29,18 +29,21 @@
     .first-page-desc {
         font-family: Georgia, Consolas, Menlo, monospace;
         font-style: italic;
-        padding-left:20px;
-        padding-right:20px;
-        text-align:center;
-        width:fit-content;
-        width:-webkit-fit-content;
-        width:-moz-fit-content;
-        height:fit-content;
-        height:-webkit-fit-content;
-        height:-moz-fit-content;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        width: fit-content;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        height: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         margin: auto;
         position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
+        top: 0;
+        left: 0; 
+        bottom: 0;
+        right: 0;
     }
 
     /*头像效果*/
@@ -74,7 +77,7 @@
                 //text-shadow: 0 0 1px white, 0 1px 1px rgba(0, 0, 0, 0.2);
                 font-weight: bold;
                 //letter-spacing: normal;
-                font-family: Consolas, 'Open Sans',monospace;
+                font-family: $font-family-base;
             }
             p {
                 color: #e6e6e6;
