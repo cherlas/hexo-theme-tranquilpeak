@@ -154,6 +154,12 @@
     animation-name: leftInSearch;
   }
 
+  &.recover {
+    animation-duration: .8s;
+    animation-fill-mode: both;
+    animation-name: leftOutSearch;
+  }
+
   .icon {
     font-family: iconfont !important;
     speak: none;
