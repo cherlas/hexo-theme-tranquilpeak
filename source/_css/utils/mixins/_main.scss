@@ -33,14 +33,14 @@
     }
 }
 
-/// Mixin helper to push `main` div from large sidebar size
+/// Mixin helper to push `canvas` div from large sidebar size
 @mixin main-pushed-lg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }
 
-/// Mixin helper to push `main` div from extra large sidebar size
+/// Mixin helper to push `canvas` div from extra large sidebar size
 @mixin main-pushed-xlg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
@@ -53,14 +53,14 @@
     }
 }
 
-/// Mixin helper to push `main` div from large sidebar size
+/// Mixin helper to push `canvas` div from large sidebar size
 @mixin canvas-pushed-lg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
     }
 }
 
-/// Mixin helper to push `main` div from extra large sidebar size
+/// Mixin helper to push `canvas` div from extra large sidebar size
 @mixin canvas-pushed-xlg {
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
