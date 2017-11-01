@@ -200,6 +200,9 @@
         this.$searchToolsCol.removeClass('hide');
         this.$searchToolsCol.addClass('show');
       }
+      if (this.$searchToolsCol.hasClass('recover')) {
+        this.$searchToolsCol.removeClass('recover');
+      }
       if (this.$canvas.hasClass('hidden')) {
         this.$canvas.removeClass('hidden');
       }
@@ -234,6 +237,7 @@
       if (this.$searchToolsCol.hasClass('show')) {
         this.$searchToolsCol.removeClass('show');
         this.$searchToolsCol.addClass('hide');
+        this.$searchToolsCol.addClass('recover');
       }
       if (!this.$canvas.hasClass('hidden')) {
         this.$canvas.addClass('hidden');
