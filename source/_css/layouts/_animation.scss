@@ -34,7 +34,7 @@
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
   0% {
-    transform: translate3d(300, 0, 0);
+    transform: translate3d(75, 0, 0);
   }
   60% {
     transform: translate3d(345px, 0, 0);
@@ -118,25 +118,26 @@
 
 /*----right in for main----*/
 @keyframes rightInMain {
-  from, 60%, 75%, 90%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  from, 25%, 50%, 75%, to {
+    animation-timing-function: ease-in-out;
   }
   0% {
     transform: translate3d(320, 0, 0);
   }
-  60% {
-    transform: translate3d(10px, 0, 0);
+  25% {
+    transform: translate3d(240px, 0, 0);
+  }
+  50% {
+    transform: translate3d(160px, 0, 0);
   }
   75% {
-    transform: translate3d(45px, 0, 0);
-  }
-  90% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(80px, 0, 0);
   }
   to {
     transform: translate3d(0px, 0, 0);
   }
 }
+
 
 /*----in for main pushed xlarge----*/
 @keyframes rightInMainPushedXLarge {
