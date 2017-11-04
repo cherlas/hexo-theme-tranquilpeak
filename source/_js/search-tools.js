@@ -23,6 +23,8 @@
     this.$postHeaderCover = $('.post-header-cover');
     this.$sidebar = $('#sidebar');
     this.$body = $('body');
+    this.$articleTagListItem = $('.article-tag-list-item');
+    this.$searchPostTags = $('span#search-post-tags');
   };
 
   SearchToolsColModal.prototype = {
@@ -82,6 +84,23 @@
       $(window).resize(function() {
         self.setWhiteSpace();
       });
+      
+      self.$articleTagListItem.each(function() {
+        $(this).click(function() {
+          var tagName = '#' + $(this).text().trim();
+          self.$searchInput.val(tagName);
+          self.searchWithDom(tagName);
+        });
+      });
+
+      self.$searchPostTags.each(function() {
+        $(this).click(function() {
+          var tagName = $(this).text().trim();
+          self.$searchInput.val(tagName);
+          self.$searchInput.focus();
+          self.searchWithDom(tagName);
+        });
+      });
     },
 
     /**
@@ -103,6 +122,7 @@
     open: function() {
       this.showSearchToolsCol();
       this.ani();
+      console.log(this.$searchPostTags.length);
     },
 
     /**
