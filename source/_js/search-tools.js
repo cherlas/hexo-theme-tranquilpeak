@@ -84,7 +84,17 @@
       $(window).resize(function() {
         self.setWhiteSpace();
       });
-      
+
+      self.setArticleTagListItemClick();
+      self.setSearchPostTags();
+    },
+
+    /**
+     * set whitespace height
+     * @returns {void}
+     */
+    setArticleTagListItemClick: function() {
+      var self = this;
       self.$articleTagListItem.each(function() {
         $(this).click(function() {
           var tagName = '#' + $(this).text().trim();
@@ -92,7 +102,14 @@
           self.searchWithDom(tagName);
         });
       });
+    },
 
+    /**
+     * set search post tags click function
+     * @returns {void}
+     */
+    setSearchPostTags: function() {
+      var self = this;
       self.$searchPostTags.each(function() {
         $(this).click(function() {
           var tagName = $(this).text().trim();
