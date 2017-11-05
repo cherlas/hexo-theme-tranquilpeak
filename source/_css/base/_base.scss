@@ -37,14 +37,15 @@ h6 {
     letter-spacing: -0.04em;
     font-family:    map-get($font-families, 'headings');
     font-weight:    700;
-    line-height:    1.45em;
+    line-height:    1.35em;
     color:          #4a4a4a;
 }
 
 h1,
 h2,
 h3 {
-    margin: 1em 0 1em 0;
+    margin-top:     1.2em;
+    margin-bottom:  0.6em;
 }
 
 h4,
