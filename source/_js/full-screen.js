@@ -96,6 +96,8 @@
        */
     changeZIndex: function() {
       this.$cover.css('z-index', '-1');
+      this.$firstPageDesc.addClass('hide');
+      this.$headProfile.addClass('hide');
     }
   };
 
