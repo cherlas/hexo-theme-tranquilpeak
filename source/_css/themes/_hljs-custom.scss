@@ -8,44 +8,135 @@
 // 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment`
 // 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
 // 7. Run `grunt buildProd` to build the theme and see the result
-/*
+
 // Default code block
 pre > code {
-    background: ;
-    color: ;
+    background: map-get($highlight, 'code-background');
+    color: map-get($highlight, 'code-color');
 }
 
 // Default inline code
 code {
-    background-color: ;
+    background-color: map-get($highlight, 'background');
 }
 
 // Tabbed code block tab
 // If your theme is dark then use a lighter background
 // to see clearly which tab is active
 .codeblock--tabbed figcaption .tab.active {
-    background: ;
-    color: ;
+    background: map-get($highlight, 'code-background');
+    color: map-get($highlight, 'code-color');
 }
 
 // highlight code block
 figure.highlight,
 .codeblock {
-    background: ;
-    color: ;
+    background: map-get($highlight, 'code-background');
+    color: map-get($highlight, 'code-color');
 
     figcaption {
-        background: ;
-        color: ;
+        background: map-get($highlight, 'code-background');
+        color: map-get($highlight, 'code-color');
     }
     .gutter {
-        background: ;
-        border-right-color: ;
+        background: map-get($highlight, 'code-background');
+        border-right-color: #999999;
         .line {
-            color: ;
+            color: map-get($highlight, 'code-color');
         }
     }
     // PUT YOUR THEME HERE
+  .comment,
+  .quote {
+    color: #bc9458;
+    font-style: italic;
+  }
+
+  .keyword,
+  .selector-tag {
+    color: #c26230;
+  }
+
+  .string,
+  .number,
+  .regexp,
+  .variable,
+  .template-variable {
+    color: #a5c261;
+  }
+
+  .subst {
+    color: #519f50;
+  }
+
+  .tag,
+  .name {
+    color: #e8bf6a;
+  }
+
+  .type {
+    color: #da4939;
+  }
+
+
+  .symbol,
+  .bullet,
+  .built_in,
+  .builtin-name,
+  .attr,
+  .link {
+    color: #6d9cbe;
+  }
+
+  .params {
+    color: #d0d0ff;
+  }
+
+  .attribute {
+    color: #cda869;
+  }
+
+  .meta {
+    color: #9b859d;
+  }
+
+  .title,
+  .section {
+    color: #ffc66d;
+  }
+
+  .addition {
+    background-color: #144212;
+    color: #e6e1dc;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .deletion {
+    background-color: #600;
+    color: #e6e1dc;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .selector-class {
+    color: #9b703f;
+  }
+
+  .selector-id {
+    color: #8b98ab;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .link {
+    text-decoration: underline;
+  }
 
 }
-*/
