@@ -20,7 +20,7 @@
     run: function() {
       var self = this;
       // resize all codeblocks
-      self.resize();
+      // self.resize();
       // resize codeblocks when window is resized
       $(window).smartresize(function() {
         self.resize();
