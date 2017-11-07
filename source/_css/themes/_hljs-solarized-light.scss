@@ -1,0 +1,124 @@
+// Highlight.js custom theme
+// Follow guidelines
+// 1. Uncomment the block just below - remove `/*` and `*/`
+// 2. Fill `background`, `color`, `border-right-color` properties
+// with properties of `.hljs` CSS class of your theme
+// 3. Put your theme where it's indicated just below
+// 4. Remove `.hljs {...}` rules
+// 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment`
+// 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
+// 7. Run `grunt buildProd` to build the theme and see the result
+
+// Default code block
+pre > code {
+    background: map-get($highlight, 'code-background-solarized');
+    color: map-get($highlight, 'code-color-solarized');
+}
+
+// Default inline code
+code {
+    background-color: map-get($highlight, 'ode-background-solarized');
+}
+
+// Tabbed code block tab
+// If your theme is dark then use a lighter background
+// to see clearly which tab is active
+.codeblock--tabbed figcaption .tab.active {
+    background: map-get($highlight, 'code-background-solarized');
+    color: map-get($highlight, 'code-color-solarized');
+}
+
+// highlight code block
+figure.highlight {
+  border-radius: 8px;
+}
+
+figure.highlight,
+.codeblock {
+    background: map-get($highlight, 'code-background-solarized');
+    color: map-get($highlight, 'code-color-solarized');
+
+    figcaption {
+        background: map-get($highlight, 'code-background-solarized');
+        color: map-get($highlight, 'code-color-solarized');
+    }
+    .gutter {
+        background: map-get($highlight, 'code-background-solarized');
+        border-right-color: #999999;
+        .line {
+            color: map-get($highlight, 'code-color-solarized');
+        }
+    }
+    // PUT YOUR THEME HERE
+  .comment,
+  .quote {
+    color: #93a1a1;
+  }
+
+  /* Solarized Green */
+  .keyword,
+  .selector-tag,
+  .addition {
+    color: #859900;
+  }
+
+  /* Solarized Cyan */
+  .number,
+  .string,
+  .meta .meta-string,
+  .literal,
+  .doctag,
+  .regexp {
+    color: #2aa198;
+  }
+
+  /* Solarized Blue */
+  .title,
+  .section,
+  .name,
+  .selector-id,
+  .selector-class {
+    color: #268bd2;
+  }
+
+  /* Solarized Yellow */
+  .attribute,
+  .attr,
+  .variable,
+  .template-variable,
+  .class .title,
+  .type {
+    color: #b58900;
+  }
+
+  /* Solarized Orange */
+  .symbol,
+  .bullet,
+  .subst,
+  .meta,
+  .meta .keyword,
+  .selector-attr,
+  .selector-pseudo,
+  .link {
+    color: #cb4b16;
+  }
+
+  /* Solarized Red */
+  .built_in,
+  .deletion {
+    color: #dc322f;
+  }
+
+  .formula {
+    background: #eee8d5;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+}
