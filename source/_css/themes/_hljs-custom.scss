@@ -29,6 +29,10 @@ code {
 }
 
 // highlight code block
+figure.highlight {
+  border-radius: 8px;
+}
+
 figure.highlight,
 .codeblock {
     background: map-get($highlight, 'code-background');
