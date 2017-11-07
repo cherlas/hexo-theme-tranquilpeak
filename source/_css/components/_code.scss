@@ -61,7 +61,7 @@ figure.highlight,
             max-width:  calc(#{map-get($main-content, 'max-width')} - 50px);
             overflow-x: auto;
             overflow-y: hidden;
-            width:100% !important;
+            //width:100% !important;
         }
     }
     // All lines in gutter and code container
@@ -104,5 +104,11 @@ figure.highlight,
         font-family: map-get($font-families, 'highlight');
         font-size:   1em;
         margin:      0 0 5px 0;
+    }
+}
+
+@media #{$small-and-down} {
+    .gutter {
+        display: none;
     }
 }
