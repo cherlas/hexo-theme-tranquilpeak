@@ -36,6 +36,11 @@
         a {
             color: map-get($colors, light);
         }
+
+        & img {
+            width: 18px;
+            float: left;
+        }
     }
     .postShorten-meta,
     .postShorten-readingtime {
