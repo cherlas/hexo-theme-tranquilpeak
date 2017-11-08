@@ -1,6 +1,7 @@
 <div class="<%= (classes ? classes.join(' ') : '') %>">
     <time itemprop="datePublished" datetime="<%= post.date.format() %>">
-	<% if (post.lang) { %>
+        <img src="/assets/images/calendar.png" />
+        <% if (post.lang) { %>
 		    <%= post.date.locale(post.lang).format(__('date_format')) %>
     	<% } else { %>
 		    <%= post.date.locale(page.lang).format(__('date_format')) %>
