@@ -17,7 +17,8 @@ pre > code {
 
 // Default inline code
 code {
-    background-color: map-get($highlight, 'ode-background-solarized');
+    background-color: map-get($highlight, 'code-background-solarized');
+  color: #c7254e;
 }
 
 // Tabbed code block tab
