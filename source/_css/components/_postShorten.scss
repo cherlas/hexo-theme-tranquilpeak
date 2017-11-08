@@ -35,11 +35,18 @@
 
         a {
             color: map-get($colors, light);
+            font-size: map-get($font-size, small);
         }
 
-        & img.category {
+        & img.calendar {
             width: 18px;
             float: left;
+        }
+
+        & img.tag {
+            width: 14px;
+            vertical-align: top ;
+            padding-top: 2px;
         }
     }
     .postShorten-meta,
