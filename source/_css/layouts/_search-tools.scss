@@ -116,6 +116,9 @@
           @extend %trans;
           text-decoration: none;
         }
+        #search-post-title {
+          font-size:   map-get($font-size, medium);
+        }
       }
       .search-time, .search-tag {
         font-size: 12px;
