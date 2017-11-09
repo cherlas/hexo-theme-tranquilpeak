@@ -13,7 +13,7 @@
     this.$canvas = $('#anm-canvas');
     this.$header = $('#header');
     this.$closeButton = $('#main, .sidebar-top-whitespace, .sidebar-bottom-whitespace,' +
-      '.post-header');
+      '.post-header, #search-post-title');
     this.topWhitespace = $('.sidebar-top-whitespace');
     this.bottomWhitespace = $('.sidebar-bottom-whitespace');
     this.$searchInput = $('.search-ipt');
@@ -25,6 +25,7 @@
     this.$body = $('body');
     this.$articleTagListItem = $('.article-tag-list-item');
     this.$searchPostTags = $('span#search-post-tags');
+    this.$searchTime = $('.search-time').find('span');
   };
 
   SearchToolsColModal.prototype = {
@@ -87,6 +88,7 @@
 
       self.setArticleTagListItemClick();
       self.setSearchPostTags();
+      self.setSearchTime();
     },
 
     /**
@@ -116,6 +118,18 @@
           self.$searchInput.val(tagName);
           self.$searchInput.focus();
           self.searchWithDom(tagName);
+        });
+      });
+    },
+
+    setSearchTime: function() {
+      var self = this;
+      self.$searchTime.each(function() {
+        $(this).click(function() {
+          var time = $(this).text().trim();
+          self.$searchInput.val(time);
+          self.$searchInput.focus();
+          self.searchWithDom(time);
         });
       });
     },
