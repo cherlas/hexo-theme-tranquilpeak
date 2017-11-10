@@ -126,7 +126,7 @@
       var self = this;
       self.$searchTime.each(function() {
         $(this).click(function() {
-          var time = $(this).text().trim();
+          var time = "*" + $(this).text().trim();
           self.$searchInput.val(time);
           self.$searchInput.focus();
           self.searchWithDom(time);
@@ -153,7 +153,6 @@
     open: function() {
       this.showSearchToolsCol();
       this.ani();
-      console.log(this.$searchPostTags.length);
     },
 
     /**
@@ -193,16 +192,46 @@
     searchWithDom: function(val) {
       var self = this;
 
-      val = (val || '').toLowerCase();
+      var temp = val.split(/[*#]/);
+
+      var tagIndex = val.indexOf('#');
+      var timeIndex = val.indexOf('*');
+
+      var titleVal = temp[0];
+      var tagVal = '';
+      var timeVal = '';
+
       var type = 'title';
-      if (val.indexOf('#') === 0) {
-        val = val.substr(1, val.length);
-        type = 'tag';
+
+      if (tagIndex === -1 && timeIndex === -1) {
+        tagVal = '';
+        timeVal = '';
+      } else if (timeIndex === -1) {
+        tagVal = temp[1];
+        type = 'titleTag';
+      } else if (tagIndex === -1) {
+        timeVal = temp[1];
+        type = 'titleTime';
+      } else {
+        if (titleVal === '') {
+          type = 'timeTag';
+        } else {
+          type = 'titleTimeTag';
+        }
+        if (tagIndex > timeIndex) {
+          tagVal = temp[2];
+          timeVal = temp[1];
+        } else {
+          tagVal = temp[1];
+          timeVal = temp[2];
+        }
       }
-      if (val.indexOf('*') === 0) {
-        val = val.substr(1, val.length);
-        type = 'time';
-      }
+
+      titleVal = titleVal.toLowerCase();
+      timeVal = timeVal.toLowerCase();
+      tagVal = tagVal.toLowerCase();
+
+      console.log('title:' + titleVal + ' --tag:' + tagVal + ' --time:' + timeVal);
 
       var children = this.$results.children();
       var count = 0;
@@ -211,27 +240,47 @@
         var matchTitle = false;
         var matchTime = false;
         var matchTags = false;
+        var matchTitleTime = false;
+        var matchTitleTag = false;
+        var matchTimeTag = false;
+        var matchTitleTimeTag = false;
         var itemTitle = $(this).find('#search-post-title').text().toLowerCase();
         var itemTime = $(this).find('.search-time').text().trim().toLowerCase();
         var itemTags = $(this).find('#search-post-tags').text().trim().toLowerCase();
-
-        if (type === 'title' && itemTitle.indexOf(val) > -1) {
+        
+        if (type === 'title' && itemTitle.indexOf(titleVal) > -1) {
           matchTitle = true;
           count++;
-        } else if (type === 'time' && itemTime.indexOf(val) > -1) {
+        } else if (type === 'time' && itemTime.indexOf(timeVal) > -1) {
           matchTime = true;
           count++;
-        } else if (type === 'tag' && itemTags.indexOf(val) > -1) {
+        } else if (type === 'tag' && itemTags.indexOf(tagVal) > -1) {
           matchTags = true;
+          count++;
+        } else if (type === 'titleTime' && itemTitle.indexOf(titleVal) > -1 &&
+          itemTime.indexOf(timeVal) > -1) {
+          matchTitleTime = true;
+          count++;
+        } else if (type === 'titleTag' && itemTitle.indexOf(titleVal) > -1 &&
+          itemTags.indexOf(tagVal) > -1) {
+          matchTitleTag = true;
+          count++;
+        } else if (type === 'timeTag' && itemTime.indexOf(timeVal) > -1 &&
+          itemTags.indexOf(tagVal) > -1) {
+          matchTitleTimeTag = true;
+          count++;
+        } else if (type === 'titleTimeTag' && itemTitle.indexOf(titleVal) > -1 &&
+          itemTime.indexOf(timeVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+          matchTitleTimeTag = true;
           count++;
         }
         if (count > 0) {
           if (self.$resultsCount.hasClass('hide')) {
             self.$resultsCount.removeClass('hide');
           }
-          self.$resultsCount.text('result: ' + count + 'items');
+          self.$resultsCount.text('result: ' + count + 'items found.');
         } else if (count === 0) {
-          self.$resultsCount.text('result: no items found');
+          self.$resultsCount.text('result: no items found.');
         }
 
         if (matchTitle || matchTime || matchTags) {
