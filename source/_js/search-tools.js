@@ -305,7 +305,8 @@
           self.$resultsCount.text('result: no items found.');
         }
 
-        if (matchTitle || matchTime || matchTags) {
+        if (matchTitle || matchTime || matchTags || matchTitleTime ||
+          matchTitleTag || matchTimeTag || matchTitleTimeTag) {
           $(this).show();
         } else {
           $(this).hide();
