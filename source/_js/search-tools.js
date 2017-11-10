@@ -1,4 +1,4 @@
-/* eslint-disable brace-style,guard-for-in,no-unused-vars,require-jsdoc */
+/* eslint-disable brace-style,guard-for-in,no-unused-vars,require-jsdoc,max-len */
 (function($) {
   'use strict';
 
@@ -208,10 +208,18 @@
         timeVal = '';
       } else if (timeIndex === -1) {
         tagVal = temp[1];
-        type = 'titleTag';
+        if (titleVal === '') {
+          type = 'tag';
+        } else {
+          type = 'titleTag';
+        }
       } else if (tagIndex === -1) {
         timeVal = temp[1];
-        type = 'titleTime';
+        if (titleVal === '') {
+          type = 'time';
+        } else {
+          type = 'titleTime';
+        }
       } else {
         if (titleVal === '') {
           type = 'timeTag';
@@ -229,11 +237,12 @@
 
       titleVal = titleVal.toLowerCase();
       timeVal = timeVal.toLowerCase();
-      tagVal = tagVal.toLowerCase();
+      tagVal = '#' + tagVal.toLowerCase();
 
       console.log('title:' + titleVal + ' --tag:' + tagVal + ' --time:' + timeVal);
 
       var children = this.$results.children();
+      console.log('legth: ' + children.length + 'type:' + type);
       var count = 0;
 
       children.each(function() {
@@ -268,13 +277,13 @@
             }
             break;
           case 'titleTime':
-            if (itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1) {
+            if (titleVal !== '' && itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1) {
               matchTitleTime = true;
               count++;
             }
             break;
           case 'titleTag':
-            if (itemTitle.indexOf(titleVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+            if (titleVal !== '' && itemTitle.indexOf(titleVal) > -1 && itemTags.indexOf(tagVal) > -1) {
               matchTitleTags = true;
               count++;
             }
@@ -305,6 +314,10 @@
           self.$resultsCount.text('result: no items found.');
         }
 
+        console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
+        console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
+        console.log('titleTimeTags:' + matchTitleTimeTags);
+        console.log('\n');
         if (matchTitle || matchTime || matchTags || matchTitleTime ||
           matchTitleTags || matchTimeTags || matchTitleTimeTags) {
           $(this).show();
