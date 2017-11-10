@@ -241,9 +241,9 @@
         var matchTime = false;
         var matchTags = false;
         var matchTitleTime = false;
-        var matchTitleTag = false;
-        var matchTimeTag = false;
-        var matchTitleTimeTag = false;
+        var matchTitleTags = false;
+        var matchTimeTags = false;
+        var matchTitleTimeTags = false;
         var itemTitle = $(this).find('#search-post-title').text().toLowerCase();
         var itemTime = $(this).find('.search-time').text().trim().toLowerCase();
         var itemTags = $(this).find('#search-post-tags').text().trim().toLowerCase();
@@ -275,20 +275,20 @@
             break;
           case 'titleTag':
             if (itemTitle.indexOf(titleVal) > -1 && itemTags.indexOf(tagVal) > -1) {
-              matchTitleTag = true;
+              matchTitleTags = true;
               count++;
             }
             break;
           case 'timeTag':
             if (itemTime.indexOf(timeVal) > -1 && itemTags.indexOf(tagVal) > -1) {
-              matchTimeTag = true;
+              matchTimeTags = true;
               count++;
             }
             break;
           case 'titleTimeTag':
             if (itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1 &&
               itemTags.indexOf(tagVal) > -1) {
-              matchTitleTimeTag = true;
+              matchTitleTimeTags = true;
               count++;
             }
             break;
@@ -306,7 +306,7 @@
         }
 
         if (matchTitle || matchTime || matchTags || matchTitleTime ||
-          matchTitleTag || matchTimeTag || matchTitleTimeTag) {
+          matchTitleTags || matchTimeTags || matchTitleTimeTags) {
           $(this).show();
         } else {
           $(this).hide();
