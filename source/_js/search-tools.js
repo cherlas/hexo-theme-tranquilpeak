@@ -247,33 +247,55 @@
         var itemTitle = $(this).find('#search-post-title').text().toLowerCase();
         var itemTime = $(this).find('.search-time').text().trim().toLowerCase();
         var itemTags = $(this).find('#search-post-tags').text().trim().toLowerCase();
-        
-        if (type === 'title' && itemTitle.indexOf(titleVal) > -1) {
-          matchTitle = true;
-          count++;
-        } else if (type === 'time' && itemTime.indexOf(timeVal) > -1) {
-          matchTime = true;
-          count++;
-        } else if (type === 'tag' && itemTags.indexOf(tagVal) > -1) {
-          matchTags = true;
-          count++;
-        } else if (type === 'titleTime' && itemTitle.indexOf(titleVal) > -1 &&
-          itemTime.indexOf(timeVal) > -1) {
-          matchTitleTime = true;
-          count++;
-        } else if (type === 'titleTag' && itemTitle.indexOf(titleVal) > -1 &&
-          itemTags.indexOf(tagVal) > -1) {
-          matchTitleTag = true;
-          count++;
-        } else if (type === 'timeTag' && itemTime.indexOf(timeVal) > -1 &&
-          itemTags.indexOf(tagVal) > -1) {
-          matchTitleTimeTag = true;
-          count++;
-        } else if (type === 'titleTimeTag' && itemTitle.indexOf(titleVal) > -1 &&
-          itemTime.indexOf(timeVal) > -1 && itemTags.indexOf(tagVal) > -1) {
-          matchTitleTimeTag = true;
-          count++;
+
+        switch (type) {
+          case 'title':
+            if (itemTitle.indexOf(titleVal) > -1) {
+              matchTitle = true;
+              count++;
+            }
+            break;
+          case 'time':
+            if (itemTime.indexOf(timeVal) > -1) {
+              matchTime = true;
+              count++;
+            }
+            break;
+          case 'tag':
+            if (itemTags.indexOf(tagVal) > -1) {
+              matchTags = true;
+              count++;
+            }
+            break;
+          case 'titleTime':
+            if (itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1) {
+              matchTitleTime = true;
+              count++;
+            }
+            break;
+          case 'titleTag':
+            if (itemTitle.indexOf(titleVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+              matchTitleTag = true;
+              count++;
+            }
+            break;
+          case 'timeTag':
+            if (itemTime.indexOf(timeVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+              matchTimeTag = true;
+              count++;
+            }
+            break;
+          case 'titleTimeTag':
+            if (itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1 &&
+              itemTags.indexOf(tagVal) > -1) {
+              matchTitleTimeTag = true;
+              count++;
+            }
+            break;
+          default:
+            break;
         }
+
         if (count > 0) {
           if (self.$resultsCount.hasClass('hide')) {
             self.$resultsCount.removeClass('hide');
