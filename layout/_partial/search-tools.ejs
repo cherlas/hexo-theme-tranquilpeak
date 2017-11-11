@@ -18,7 +18,7 @@
             </div>
             <p class="results-count hide"></p>
             <ul class="search-result-ul">
-                <% site.posts.each(function(post) { %>
+                <% site.posts.sort('date').limit(config.per_page * 2).forEach(function(post) { %>
                     <%- partial('_partial/search-result-list', {post: post}) %>
                 <% }) %>
             </ul>
