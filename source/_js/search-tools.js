@@ -607,16 +607,6 @@
     },
 
     /**
-     * Show overlay
-     * @returns {void}
-     */
-    showOverlay: function() {
-      ('body').append('<div class="overlay"></div>');
-      $('.overlay').fadeIn();
-      $('body').css('overflow', 'hidden');
-    },
-
-    /**
      * Hide overlay
      * @returns {void}
      */
