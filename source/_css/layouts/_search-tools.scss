@@ -86,14 +86,13 @@
       font-size: 14px;
       margin-bottom: 0px;
     }
-    .search-result-ul {
+    .search-result {
       padding-left: 0px;
       color: rgba(77, 77, 77, 0.75);
       -webkit-overflow-scrolling: touch;
       overflow-scrolling: touch;
       overflow-y: auto;
-      .search-li {
-        list-style: none;
+      .media {
         padding: 10px 10px 0 12px;
         border-bottom: 1px dotted #dcdcdc;
         &:hover {
