@@ -239,10 +239,10 @@
       timeVal = timeVal.toLowerCase();
       tagVal = '#' + tagVal.toLowerCase();
 
-      console.log('title:' + titleVal + ' --tag:' + tagVal + ' --time:' + timeVal);
+      // console.log('title:' + titleVal + ' --tag:' + tagVal + ' --time:' + timeVal);
 
       var children = this.$results.children();
-      console.log('legth: ' + children.length + 'type:' + type);
+      // console.log('legth: ' + children.length + 'type:' + type);
       var count = 0;
 
       children.each(function() {
@@ -314,10 +314,10 @@
           self.$resultsCount.text('result: no items found.');
         }
 
-        console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
-        console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
-        console.log('titleTimeTags:' + matchTitleTimeTags);
-        console.log('\n');
+        // console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
+        // console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
+        // console.log('titleTimeTags:' + matchTitleTimeTags);
+        // console.log('\n');
         if (matchTitle || matchTime || matchTags || matchTitleTime ||
           matchTitleTags || matchTimeTags || matchTitleTimeTags) {
           $(this).show();
