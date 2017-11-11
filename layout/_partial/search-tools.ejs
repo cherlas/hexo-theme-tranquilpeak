@@ -17,11 +17,11 @@
                 </ul>
             </div>
             <p class="results-count hide"></p>
-            <ul class="search-result-ul">
+            <div class="search-result">
                 <% site.posts.sort('date').limit(config.per_page * 2).forEach(function(post) { %>
                     <%- partial('_partial/search-result-list', {post: post}) %>
                 <% }) %>
-            </ul>
+            </div>
         </section>
     </div>
 </div>
