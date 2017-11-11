@@ -243,7 +243,7 @@
       // console.log('legth: ' + children.length + 'type:' + type);
       var count = 0;
 
-      $.getJSON("/assets/js/content1.json", function(result) {
+      $.getJSON("", function(result) {
         $.each(result, function(index, field) {
           var matchTitle = false;
           var matchTime = false;
@@ -314,11 +314,6 @@
             self.$resultsCount.text('result: no post found.');
           }
 
-
-          // console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
-          // console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
-          // console.log('titleTimeTags:' + matchTitleTimeTags);
-          // console.log('\n');
           if (matchTitle || matchTime || matchTags || matchTitleTime ||
             matchTitleTags || matchTimeTags || matchTitleTimeTags) {
             html = self.contractHtml(html, itemTitle, itemTime, itemTags, itemPath);
