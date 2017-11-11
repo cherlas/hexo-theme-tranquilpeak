@@ -174,7 +174,8 @@
       var self = this;
       self.$searchInput.on('input propertychange', function() {
         var val = $(this).val();
-        self.searchWithDom(val);
+        self.searchWithJsonContent(val);
+        // self.searchWithDom(val);
       });
     },
 
@@ -184,12 +185,166 @@
      * @returns {void}
      */
     searchWithJsonContent: function(val) {
-      $.getJSON("/assets/js/content.json", function(result) {
+      if (val === '') {
+        return;
+      }
+      var self = this;
+      var html = '';
+      var temp = val.split(/[*#]/);
 
+      var tagIndex = val.indexOf('#');
+      var timeIndex = val.indexOf('*');
+
+      var titleVal = temp[0];
+      var tagVal = '';
+      var timeVal = '';
+
+      var type = 'title';
+
+      if (tagIndex === -1 && timeIndex === -1) {
+        tagVal = '';
+        timeVal = '';
+      } else if (timeIndex === -1) {
+        tagVal = temp[1];
+        if (titleVal === '') {
+          type = 'tag';
+        } else {
+          type = 'titleTag';
+        }
+      } else if (tagIndex === -1) {
+        timeVal = temp[1];
+        if (titleVal === '') {
+          type = 'time';
+        } else {
+          type = 'titleTime';
+        }
+      } else {
+        if (titleVal === '') {
+          type = 'timeTag';
+        } else {
+          type = 'titleTimeTag';
+        }
+        if (tagIndex > timeIndex) {
+          tagVal = temp[2];
+          timeVal = temp[1];
+        } else {
+          tagVal = temp[1];
+          timeVal = temp[2];
+        }
+      }
+
+      titleVal = titleVal.toLowerCase();
+      timeVal = timeVal.toLowerCase();
+      tagVal = '#' + tagVal.toLowerCase();
+
+      // console.log('title:' + titleVal + ' --tag:' + tagVal + ' --time:' + timeVal);
+
+      // console.log('legth: ' + children.length + 'type:' + type);
+      var count = 0;
+
+      $.getJSON("/assets/js/content.json", function(result) {
+        $.each(result, function(index, field) {
+          var matchTitle = false;
+          var matchTime = false;
+          var matchTags = false;
+          var matchTitleTime = false;
+          var matchTitleTags = false;
+          var matchTimeTags = false;
+          var matchTitleTimeTags = false;
+          var itemTitle = field.title.toLowerCase();
+          var itemTime = field.date.toLowerCase();
+          var itemTags = '';
+          $(field.tags).each(function(i, tag) {
+            itemTags += '#' + tag.name;
+          });
+          console.log(itemTitle + "-----" + itemTime + "----" + itemTags);
+          switch (type) {
+            case 'title':
+              if (itemTitle.indexOf(titleVal) > -1) {
+                matchTitle = true;
+                count++;
+              }
+              break;
+            case 'time':
+              if (itemTime.indexOf(timeVal) > -1) {
+                matchTime = true;
+                count++;
+              }
+              break;
+            case 'tag':
+              if (itemTags.indexOf(tagVal) > -1) {
+                matchTags = true;
+                count++;
+              }
+              break;
+            case 'titleTime':
+              if (titleVal !== '' && itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1) {
+                matchTitleTime = true;
+                count++;
+              }
+              break;
+            case 'titleTag':
+              if (titleVal !== '' && itemTitle.indexOf(titleVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+                matchTitleTags = true;
+                count++;
+              }
+              break;
+            case 'timeTag':
+              if (itemTime.indexOf(timeVal) > -1 && itemTags.indexOf(tagVal) > -1) {
+                matchTimeTags = true;
+                count++;
+              }
+              break;
+            case 'titleTimeTag':
+              if (itemTitle.indexOf(titleVal) > -1 && itemTime.indexOf(timeVal) > -1 &&
+                itemTags.indexOf(tagVal) > -1) {
+                matchTitleTimeTags = true;
+                count++;
+              }
+              break;
+            default:
+              break;
+          }
+
+          if (count > 0) {
+            if (self.$resultsCount.hasClass('hide')) {
+              self.$resultsCount.removeClass('hide');
+            }
+            self.$resultsCount.text('result: ' + count + 'items found.');
+          } else if (count === 0) {
+            self.$resultsCount.text('result: no items found.');
+          }
+
+          // console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
+          // console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
+          // console.log('titleTimeTags:' + matchTitleTimeTags);
+          // console.log('\n');
+          if (matchTitle || matchTime || matchTags || matchTitleTime ||
+            matchTitleTags || matchTimeTags || matchTitleTimeTags) {
+            self.showResult(html);
+          }
+        });
       });
     },
 
+    /**
+     * show result
+     * @param {String} html
+     * @returns {void}
+     */
+    showResult: function(html) {
+
+    },
+
+    /**
+     * search with show dom or not
+     * @param {String} val
+     * @returns {void}
+     */
     searchWithDom: function(val) {
+      if (val === '') {
+        return;
+      }
       var self = this;
 
       var temp = val.split(/[*#]/);
