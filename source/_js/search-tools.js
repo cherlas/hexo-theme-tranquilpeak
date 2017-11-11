@@ -185,9 +185,6 @@
      * @returns {void}
      */
     searchWithJsonContent: function(val) {
-      if (val === '') {
-        return;
-      }
       var self = this;
       var html = '';
       var temp = val.split(/[*#]/);
@@ -253,6 +250,7 @@
           var matchTitleTimeTags = false;
           var itemTitle = field.title.toLowerCase();
           var itemTime = field.date.toLowerCase();
+          var itemPath = field.path;
           var itemTags = '';
           $(field.tags).each(function(i, tag) {
             itemTags += '#' + tag.name;
@@ -321,19 +319,48 @@
           // console.log('\n');
           if (matchTitle || matchTime || matchTags || matchTitleTime ||
             matchTitleTags || matchTimeTags || matchTitleTimeTags) {
-            self.showResult(html);
+            html += self.contractHtml(html, itemTitle, itemTime, itemTags, itemPath);
+            console.log('htmlsssss: ' + html);
           }
         });
       });
+      self.$results.html(html);
     },
 
     /**
-     * show result
      * @param {String} html
-     * @returns {void}
+     * @param {String} itemTitle
+     * @param {String} itemTime
+     * @param {String} itemTags
+     * @param {String} itemPath
+     * @returns {String}
      */
-    showResult: function(html) {
+    contractHtml: function(html, itemTitle, itemTime, itemTags, itemPath) {
+      html += '<li class="search-li">';
+      html += '<a class="search-title" href=' + itemPath + '>';
+      html += '<i class="icon-quo-left icon"></i>';
+      html += '<span id="search-post-title">' + itemTitle + '</span>';
+      html += '</a>';
+      html += '<p class="search-time">';
+      html += '<i class="icon-calendar icon"></i>';
+      html += '<span>' + itemTime.substr(0, 10) + '</span>';
+      html += '</p>';
+      html += '<p class="search-tag">';
+      html += '<i class="icon-price-tags icon"></i>';
 
+      var tags = itemTags.split('#');
+      for (var i = 0; i < tags.length; i++) {
+        html += '<span id="search-post-tags">';
+        html += '#' + tags[i];
+        html += '</span>';
+      }
+
+      html += '</p>';
+      html += '<div class="clearfix"></div>';
+      html += '</li>';
+
+      console.log('html: ' + html);
+      return html;
     },
 
     /**
