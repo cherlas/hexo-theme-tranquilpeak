@@ -17,7 +17,7 @@
     this.topWhitespace = $('.sidebar-top-whitespace');
     this.bottomWhitespace = $('.sidebar-bottom-whitespace');
     this.$searchInput = $('.search-ipt');
-    this.$results = this.$searchToolsCol.find('.search-result-ul');
+    this.$results = this.$searchToolsCol.find('.search-result');
     this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
     this.$postHeaderCover = $('.post-header-cover');
@@ -187,6 +187,10 @@
     searchWithJsonContent: function(val) {
       var self = this;
       var html = '';
+      if (self.$resultsCount.hasClass('hide')) {
+        self.$resultsCount.removeClass('hide');
+      }
+      self.$results.html('');
       var temp = val.split(/[*#]/);
 
       var tagIndex = val.indexOf('#');
@@ -239,7 +243,7 @@
       // console.log('legth: ' + children.length + 'type:' + type);
       var count = 0;
 
-      $.getJSON("/assets/js/content.json", function(result) {
+      $.getJSON("/assets/js/content1.json", function(result) {
         $.each(result, function(index, field) {
           var matchTitle = false;
           var matchTime = false;
@@ -255,7 +259,7 @@
           $(field.tags).each(function(i, tag) {
             itemTags += '#' + tag.name;
           });
-          console.log(itemTitle + "-----" + itemTime + "----" + itemTags);
+          // console.log(itemTitle + "-----" + itemTime + "----" + itemTags);
           switch (type) {
             case 'title':
               if (itemTitle.indexOf(titleVal) > -1) {
@@ -305,13 +309,11 @@
           }
 
           if (count > 0) {
-            if (self.$resultsCount.hasClass('hide')) {
-              self.$resultsCount.removeClass('hide');
-            }
-            self.$resultsCount.text('result: ' + count + 'items found.');
+            self.$resultsCount.text('result: ' + count + 'posts found.');
           } else if (count === 0) {
-            self.$resultsCount.text('result: no items found.');
+            self.$resultsCount.text('result: no post found.');
           }
+
 
           // console.log('title:' + matchTitle + "  time:" + matchTime + '  tag:' + matchTags);
           // console.log('titleTime:' + matchTitleTime + "  titleTag:" + matchTitleTags + '  timeTag:' + matchTimeTags);
@@ -319,12 +321,12 @@
           // console.log('\n');
           if (matchTitle || matchTime || matchTags || matchTitleTime ||
             matchTitleTags || matchTimeTags || matchTitleTimeTags) {
-            html += self.contractHtml(html, itemTitle, itemTime, itemTags, itemPath);
-            console.log('htmlsssss: ' + html);
+            html = self.contractHtml(html, itemTitle, itemTime, itemTags, itemPath);
+            // console.log('htmlsssss: ' + html);
+            self.$results.html(html);
           }
         });
       });
-      self.$results.html(html);
     },
 
     /**
@@ -336,7 +338,7 @@
      * @returns {String}
      */
     contractHtml: function(html, itemTitle, itemTime, itemTags, itemPath) {
-      html += '<li class="search-li">';
+      html += '<div class="media">';
       html += '<a class="search-title" href=' + itemPath + '>';
       html += '<i class="icon-quo-left icon"></i>';
       html += '<span id="search-post-title">' + itemTitle + '</span>';
@@ -349,7 +351,7 @@
       html += '<i class="icon-price-tags icon"></i>';
 
       var tags = itemTags.split('#');
-      for (var i = 0; i < tags.length; i++) {
+      for (var i = 1; i < tags.length; i++) {
         html += '<span id="search-post-tags">';
         html += '#' + tags[i];
         html += '</span>';
@@ -357,9 +359,8 @@
 
       html += '</p>';
       html += '<div class="clearfix"></div>';
-      html += '</li>';
+      html += '</div>';
 
-      console.log('html: ' + html);
       return html;
     },
 
