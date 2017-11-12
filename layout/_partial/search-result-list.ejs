@@ -2,7 +2,7 @@
     <a class="search-title" href="<%- url_for(post.path)%>" ><i class="icon-quo-left icon"></i><span id="search-post-title"><%= post.title %></span></a>
     <p class="search-time">
         <i class="icon-calendar icon"></i>
-        <span><%- full_date(post.date, 'YYYY-MM-DD') %></span>
+        <span id="search-post-tags"><%- full_date(post.date, 'YYYY-MM-DD') %></span>
     </p>
     <% if ((post.tags) && (post.tags.length > 0)) { %>
     <p class="search-tag">
