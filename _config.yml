@@ -102,11 +102,6 @@ style:
   # 右滑板块背景
   slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
 
-# slider的设置
-slider:
-  # 是否默认展开tags板块
-  showTags: true
-
 # Header configuration
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
