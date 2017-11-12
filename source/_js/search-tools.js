@@ -96,7 +96,7 @@
       var self = this;
       self.$articleTagListItem.each(function() {
         $(this).click(function() {
-          var tagName = '#' + $(this).text().trim();
+          var tagName = $(this).text().trim();
           self.$searchInput.val(tagName);
           self.searchWithAloglia(tagName);
         });
@@ -123,7 +123,7 @@
       var self = this;
       self.$results.find('span#search-post-date').each(function() {
         $(this).click(function() {
-          var time = "*" + $(this).text().trim();
+          var time = $(this).text().trim();
           self.$searchInput.val(time);
           self.$searchInput.focus();
           self.searchWithAloglia(time);
@@ -208,7 +208,7 @@
         html += '<i class="icon-price-tags icon"></i>';
         post.tags.forEach(function(tag) {
           html += '<span id="search-post-tags">';
-          html += '#' + tag;
+          html += tag;
           html += '</span>';
         });
 
