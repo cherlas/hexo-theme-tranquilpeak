@@ -26,7 +26,7 @@
     this.$body = $('body');
     this.$articleTagListItem = $('.article-tag-list-item');
     this.$searchPostTags = $('span#search-post-tags');
-    this.$searchTime = $('.search-time').find('span');
+    this.$searchTime = $('span#search-post-date');
     this.algolia = algoliaIndex;
   };
 
@@ -89,7 +89,7 @@
 
       self.setArticleTagListItemClick();
       self.setSearchPostTags();
-      self.setSearchTime();
+      self.setSearchDate();
     },
 
     /**
@@ -123,9 +123,9 @@
       });
     },
 
-    setSearchTime: function() {
+    setSearchDate: function() {
       var self = this;
-      self.$searchTime.each(function() {
+      self.$results.find('span#search-post-date').each(function() {
         $(this).click(function() {
           var time = "*" + $(this).text().trim();
           self.$searchInput.val(time);
@@ -208,7 +208,7 @@
         html += '</a>';
         html += '<p class="search-time">';
         html += '<i class="icon-calendar icon"></i>';
-        html += '<span>' + post.date.substr(0, 10) + '</span>';
+        html += '<span id="search-post-date">' + post.date.substr(0, 10) + '</span>';
         html += '</p>';
         html += '<p class="search-tag">';
         html += '<i class="icon-price-tags icon"></i>';
@@ -224,7 +224,7 @@
       });
       this.$results.html(html);
       this.setSearchPostTags();
-      this.setSearchTime();
+      this.setSearchDate();
     },
 
     /**
