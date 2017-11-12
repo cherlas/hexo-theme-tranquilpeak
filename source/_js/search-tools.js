@@ -18,6 +18,7 @@
     this.bottomWhitespace = $('.sidebar-bottom-whitespace');
     this.$searchInput = $('.search-ipt');
     this.$results = this.$searchToolsCol.find('.search-result');
+    this.$noResults = this.$searchToolsCol.find('.no-result');
     this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
     this.$postHeaderCover = $('.post-header-cover');
@@ -26,6 +27,7 @@
     this.$articleTagListItem = $('.article-tag-list-item');
     this.$searchPostTags = $('span#search-post-tags');
     this.$searchTime = $('.search-time').find('span');
+    this.algolia = algoliaIndex;
   };
 
   SearchToolsColModal.prototype = {
@@ -37,7 +39,6 @@
       var self = this;
 
       self.searchWithDom(self.$searchInput.val());
-      self.$resultsCount.addClass('hide');
 
       self.handleSearch();
 
@@ -176,9 +177,79 @@
       var self = this;
       self.$searchInput.on('input propertychange', function() {
         var val = $(this).val();
-        self.searchWithJsonContent(val);
+        // self.searchWithJsonContent(val);
         // self.searchWithDom(val);
+        self.searchWithAloglia(val);
       });
+    },
+
+    searchWithAloglia: function(val) {
+      var self = this;
+      this.algolia.search(val, function(err, content) {
+        if (!err) {
+          self.showResults(content.hits);
+          self.showResultsCount(content.nbHits);
+        }
+      });
+    },
+
+    /**
+     * Display results
+     * @param {Array} posts
+     * @returns {void}
+     */
+    showResults: function(posts) {
+      var html = '';
+      posts.forEach(function(post) {
+        html += '<div class="media">';
+        html += '<a class="search-title" href="' + post.path + '">';
+        html += '<i class="icon-quo-left icon"></i>';
+        html += '<span id="search-post-title">' + post.title + '</span>';
+        html += '</a>';
+        html += '<p class="search-time">';
+        html += '<i class="icon-calendar icon"></i>';
+        html += '<span>' + post.date.substr(0, 10) + '</span>';
+        html += '</p>';
+        html += '<p class="search-tag">';
+        html += '<i class="icon-price-tags icon"></i>';
+        console.log('tag:' + post.tags);
+        post.tags.forEach(function(tag) {
+          html += '<span id="search-post-tags">';
+          html += '#' + tag;
+          html += '</span>';
+        });
+
+        html += '</p>';
+        html += '<div class="clearfix"></div>';
+        html += '</div>';
+      });
+      console.log('html: ' + html);
+      this.$results.html(html);
+      this.setArticleTagListItemClick();
+      this.setSearchPostTags();
+      this.setSearchTime();
+    },
+
+    /**
+     * Display messages and counts of results
+     * @param {Number} count
+     * @returns {void}
+     */
+    showResultsCount: function(count) {
+      var string = '';
+      if (count < 1) {
+        string = this.$resultsCount.data('message-zero');
+        this.$noResults.show();
+      }
+      else if (count === 1) {
+        string = this.$resultsCount.data('message-one');
+        this.$noResults.hide();
+      }
+      else if (count > 1) {
+        string = this.$resultsCount.data('message-other').replace(/\{n\}/, count);
+        this.$noResults.hide();
+      }
+      this.$resultsCount.html(string);
     },
 
     /**
