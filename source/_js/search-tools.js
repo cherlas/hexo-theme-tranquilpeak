@@ -102,7 +102,7 @@
         $(this).click(function() {
           var tagName = '#' + $(this).text().trim();
           self.$searchInput.val(tagName);
-          self.searchWithDom(tagName);
+          self.searchWithAloglia(tagName);
         });
       });
     },
