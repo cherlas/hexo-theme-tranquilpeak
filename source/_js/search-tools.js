@@ -153,6 +153,7 @@
     open: function() {
       this.showSearchToolsCol();
       this.ani();
+      this.hideOverFlow();
     },
 
     /**
@@ -164,6 +165,7 @@
       this.recoverMainCol();
       this.recoverHeader();
       this.recoverPostHeaderCover();
+      this.showOverflow();
     },
 
     /**
@@ -582,7 +584,7 @@
       }
       setTimeout(function() {
         self.$main.removeClass('recover');
-      }, 1000);
+      }, 250);
     },
 
     /**
@@ -607,14 +609,19 @@
     },
 
     /**
-     * Hide overlay
+     * show over flow
      * @returns {void}
      */
-    hideOverlay: function() {
-      $('.overlay').fadeOut(function() {
-        $(this).remove();
-        $('body').css('overflow', 'auto');
-      });
+    hideOverFlow: function() {
+      $('body').css('overflow', 'hidden');
+    },
+
+    /**
+     * show over flow
+     * @returns {void}
+     */
+    showOverflow: function() {
+      $('body').css('overflow', 'auto');
     },
 
     /**
