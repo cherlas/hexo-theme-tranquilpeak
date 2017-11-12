@@ -16,9 +16,14 @@
                     <div class="clearfix"></div>
                 </ul>
             </div>
-            <p class="results-count hide"></p>
+            <p class="results-count"
+               data-message-zero="<%= __('global.posts_found.zero') %>"
+               data-message-one="<%= __('global.posts_found.one') %>"
+               data-message-other="<%= __('global.posts_found.other') %>">
+                <%= (_p('global.posts_found', site.posts.length)).replace(/\{n\}/, site.posts.length) %>
+            </p>
             <div class="search-result">
-                <% site.posts.sort('date').limit(config.per_page * 2).forEach(function(post) { %>
+                <% site.posts.sort('date').limit(Math.round(config.per_page * 1.5)).forEach(function(post) { %>
                     <%- partial('_partial/search-result-list', {post: post}) %>
                 <% }) %>
             </div>
