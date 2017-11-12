@@ -113,12 +113,12 @@
      */
     setSearchPostTags: function() {
       var self = this;
-      self.$searchPostTags.each(function() {
+      self.$results.find('span#search-post-tags').each(function() {
         $(this).click(function() {
           var tagName = $(this).text().trim();
           self.$searchInput.val(tagName);
           self.$searchInput.focus();
-          self.searchWithDom(tagName);
+          self.searchWithAloglia(tagName);
         });
       });
     },
@@ -223,7 +223,6 @@
         html += '</div>';
       });
       this.$results.html(html);
-      this.setArticleTagListItemClick();
       this.setSearchPostTags();
       this.setSearchTime();
     },
