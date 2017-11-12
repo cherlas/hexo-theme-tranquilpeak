@@ -212,7 +212,6 @@
         html += '</p>';
         html += '<p class="search-tag">';
         html += '<i class="icon-price-tags icon"></i>';
-        console.log('tag:' + post.tags);
         post.tags.forEach(function(tag) {
           html += '<span id="search-post-tags">';
           html += '#' + tag;
@@ -223,7 +222,6 @@
         html += '<div class="clearfix"></div>';
         html += '</div>';
       });
-      console.log('html: ' + html);
       this.$results.html(html);
       this.setArticleTagListItemClick();
       this.setSearchPostTags();
