@@ -115,3 +115,13 @@
     transform: translate3d(395px, 0, 0);
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
