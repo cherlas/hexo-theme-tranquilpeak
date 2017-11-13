@@ -193,7 +193,7 @@
     }
 }
 
-@media #{$medium-only} {
+@media #{$medium-and-up} {
     #cover .first-page-desc {
         font-size: 1.8rem;
     }
