@@ -48,13 +48,6 @@
             -moz-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
         }
-        .info {
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
-            -o-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-        }
         .info .info-back {
             opacity: 1;
             border-radius: 50%;
@@ -63,8 +56,12 @@
             /*background: #333333;*/
         }
         .info {
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
             p, h2 {
-                //text-shadow: 0 0 1px white, 0 1px 1px rgba(0, 0, 0, 0.2);
                 font-weight: bold;
                 //letter-spacing: normal;
                 font-family: $font-family-base;
@@ -82,7 +79,6 @@
                 margin: 0 auto;
                 padding-top: 30px;
                 height: 24px;
-                /*text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);*/
             }
         }
     }
