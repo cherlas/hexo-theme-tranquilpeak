@@ -37,6 +37,10 @@
     }
 
     /*头像效果*/
+    .fade-in {
+        animation-name: fadeIn;
+        animation-duration: 3s;
+    }
     .ih-item.circle.effect {
         margin: 0 auto;
         -webkit-perspective: 900px;
