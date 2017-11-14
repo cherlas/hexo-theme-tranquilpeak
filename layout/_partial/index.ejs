@@ -1,5 +1,5 @@
 <section class="postShorten-group main-content-wrap">
-    <% page.posts.each(function(post) { %>
+    <% page.posts.each(function(post,index) { %>
     <%
         var tableOfContents = null;
         var thumbnailImageUrl = post.thumbnailImageUrl;
@@ -28,7 +28,8 @@
             postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
         }
     %>
-    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %> fadeInUp" itemscope itemType="http://schema.org/BlogPosting"
+             style="animation-delay: <%= (index % 10) * 0.1 %>s">
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
                 <a href="<%- url_for(post.path) %>">
