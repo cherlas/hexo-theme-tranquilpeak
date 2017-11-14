@@ -140,7 +140,10 @@
         &[data-behavior="4"] {
             @include header-pushed-xlg;
             &.show.pushed {
-                animation-name: rightOutLarge;
+                animation-name: rightOutXLarge;
+            }
+            &.pushed.recover {
+                animation-name: bounceXLarge;
             }
         }
         &[data-behavior="2"],
@@ -148,6 +151,9 @@
             @include header-pushed-lg;
             &.show.pushed {
                 animation-name: rightOutLarge;
+            }
+            &.pushed.recover {
+                animation-name: bounceLarge;
             }
         }
     }

@@ -244,6 +244,17 @@
         &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
+            & div.info {
+                display: none;
+            }
+            .ih-item.circle.effect a:hover .sidebar-profile-picture {
+                -webkit-transform: rotate3d(0, 1, 0, 0deg);
+                -moz-transform: rotate3d(0, 1, 0, 0deg);
+                -ms-transform: rotate3d(0, 1, 0, 0deg);
+                -o-transform: rotate3d(0, 1, 0, 0deg);
+                transform: rotate3d(0, 1, 0, 0deg);
+                // TODO prefix
+            }
         }
     }
 }
@@ -262,6 +273,7 @@
             -ms-transform: rotate3d(0, 1, 0, 0deg);
             -o-transform: rotate3d(0, 1, 0, 0deg);
             transform: rotate3d(0, 1, 0, 0deg);
+            // TODO prefix
         }
 
         &[data-behavior="1"],
@@ -298,6 +310,9 @@
         }
         &[data-behavior="3"] {
             @include sidebar-md;
+            & div.info {
+                display: none;
+            }
         }
         &[data-behavior="4"],
         &[data-behavior="5"] {
@@ -307,6 +322,17 @@
         &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
+            & div.info {
+                display: none;
+            }
+            .ih-item.circle.effect a:hover .sidebar-profile-picture {
+                -webkit-transform: rotate3d(0, 1, 0, 0deg);
+                -moz-transform: rotate3d(0, 1, 0, 0deg);
+                -ms-transform: rotate3d(0, 1, 0, 0deg);
+                -o-transform: rotate3d(0, 1, 0, 0deg);
+                transform: rotate3d(0, 1, 0, 0deg);
+                // TODO prefix
+            }
         }
     }
 }
@@ -321,6 +347,9 @@
         }
         &[data-behavior="3"] {
             @include sidebar-md;
+            & div.info {
+                display: none;
+            }
         }
         &[data-behavior="4"] {
             left: -#{map-get($sidebar, xlg-screen-width)};
@@ -333,6 +362,17 @@
         &[data-behavior="6"] {
             left: -#{map-get($sidebar, md-screen-width)};
             @include sidebar-md;
+            & div.info {
+                display: none;
+            }
+            .ih-item.circle.effect a:hover .sidebar-profile-picture {
+                -webkit-transform: rotate3d(0, 1, 0, 0deg);
+                -moz-transform: rotate3d(0, 1, 0, 0deg);
+                -ms-transform: rotate3d(0, 1, 0, 0deg);
+                -o-transform: rotate3d(0, 1, 0, 0deg);
+                transform: rotate3d(0, 1, 0, 0deg);
+                // TODO prefix
+            }
         }
         // hide bio in sidebar when small sidebar is enabled
         &[data-behavior="2"],

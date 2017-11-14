@@ -84,7 +84,9 @@
     &[data-behavior="2"] {
       margin-left: #{map-get($sidebar, lg-screen-width)};
     }
-    &[data-behavior="3"],
+    &[data-behavior="3"] {
+      margin-left: #{map-get($sidebar, md-screen-width)};
+    }
     &[data-behavior="4"] {
       margin-left: 0;
       &.pushed {

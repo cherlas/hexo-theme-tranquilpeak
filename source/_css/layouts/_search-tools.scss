@@ -287,7 +287,14 @@
         left: -50px;
       }
     }
-    &[data-behavior="3"],
+    &[data-behavior="3"] {
+      &.show {
+        left: -225px;
+        &.pushed {
+          left: 200px;
+        }
+      }
+    }
     &[data-behavior="4"] {
       &.show {
         left: -300px;

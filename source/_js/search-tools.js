@@ -286,7 +286,14 @@
      * @returns {void}
      */
     recoverPostHeaderCover: function() {
-      this.$postHeaderCover.removeClass('show');
+      var self = this;
+      if (this.$postHeaderCover.hasClass('show')) {
+        this.$postHeaderCover.removeClass('show');
+        this.$postHeaderCover.addClass('recover');
+      }
+      setTimeout(function() {
+        self.$postHeaderCover.removeClass('recover');
+      }, 1000);
     },
 
     /**
