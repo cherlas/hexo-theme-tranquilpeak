@@ -126,6 +126,11 @@
   }
 }
 
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -135,4 +140,43 @@
   50% {
     opacity: 1;
   }
+}
+
+.zoom-in {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+@keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.fadeInRight {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: fadeInRight;
 }
