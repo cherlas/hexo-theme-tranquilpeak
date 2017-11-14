@@ -23,7 +23,7 @@
                 <div id="main" data-behavior="<%= sidebarBehavior %>"
                      class="<%= (page.coverImage ? 'hasCover' : '') %>
                         <%= (page.coverMeta === 'out' ? 'hasCoverMetaOut' : 'hasCoverMetaIn') %>
-                        <%= (page.coverCaption ? 'hasCoverCaption' : '') %> hidden fadeInRight">
+                        <%= (page.coverCaption ? 'hasCoverCaption' : '') %> hidden fade-in">
                     <%- body %>
                     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
                 </div>
