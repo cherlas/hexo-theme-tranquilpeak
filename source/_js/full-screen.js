@@ -48,14 +48,10 @@
       if (window.location.hash === "") {
         self.removeFullScreen();
       }
-      // self.removeFullScreen();
-      // console.log("common");
-      // console.log(window.location.hash);
     },
 
     removeFullScreen: function() {
       this.changeZIndex();
-        // this.moveHeadPortrait();
       this.removeHiddenClass();
     },
 
@@ -90,14 +86,18 @@
       this.setWhiteSpace();
     },
 
-      /**
-       *  change cover's z-index from 1050 to -1
-       *  @return {void}
-       */
-    changeZIndex: function() {
-      this.$cover.css('z-index', '-1');
+    addHideClass: function() {
       this.$firstPageDesc.addClass('hide');
       this.$headProfile.addClass('hide');
+    },
+
+    /**
+     *  change cover's z-index from 1050 to -1
+     *  @return {void}
+     */
+    changeZIndex: function() {
+      this.$cover.css('z-index', '-1');
+      this.addHideClass();
     }
   };
 
