@@ -31,15 +31,13 @@
     opacity: 0.9;
     animation-duration: .8s;
     animation-fill-mode: both;
-    animation-name: rightOutMain;
+    animation-name: rightOut;
   }
 
-  &.recover {
-    transition: transform .4s ease-in-out;
-    transition: -webkit-transform .4s ease-in-out;
-    -o-transition: -o-transform .4s ease-in-out;
-    -moz-transition: -moz-transform .4s ease-in-out;
-    -ms-transition: -ms-transform .4s ease-in-out;
+  &.recover{
+    animation-name: bounce;
+    animation-duration: 1s;
+    transform-origin: center bottom;
   }
 }
 
@@ -56,14 +54,10 @@
     &[data-behavior="5"] {
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Push `main` div from the size of the medium sidebar
@@ -71,14 +65,10 @@
     &[data-behavior="6"] {
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
   }
@@ -92,14 +82,10 @@
     &[data-behavior="3"] {
       @include main-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -108,14 +94,10 @@
       @include main-lg;
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
@@ -123,14 +105,10 @@
       @include main-lg;
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
   }
@@ -143,28 +121,20 @@
     &[data-behavior="2"] {
       @include main-sm;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
     // Display `main` div in large size and push it from the size of the large sidebar
@@ -173,14 +143,10 @@
       @include main-lg;
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
@@ -188,14 +154,10 @@
       @include main-lg;
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
   }
@@ -207,35 +169,27 @@
     &[data-behavior="1"] {
       @include main-xs;
       &.show.pushed {
-        animation-name: rightOutMainPushedXLarge;
+        animation-name: rightOutXLarge;
       }
     }
     // Display `main` div in small size
     &[data-behavior="2"] {
       @include main-sm;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
@@ -243,14 +197,10 @@
       @include main-lg;
       @include main-pushed-xlg;
       &.show.pushed {
-        animation-name: rightOutMainPushedXLarge;
+        animation-name: rightOutXLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedXLarge;
+        animation-name: bounceXLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
@@ -258,14 +208,10 @@
       @include main-lg;
       @include main-pushed-lg;
       &.show.pushed {
-        animation-name: rightOutMainPushedLarge;
+        animation-name: rightOutLarge;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedLarge;
+        animation-name: bounceLarge;
       }
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
@@ -273,14 +219,10 @@
       @include main-lg;
       @include main-pushed-md;
       &.show.pushed {
-        animation-name: rightOutMainPushedMedium;
+        animation-name: rightOutMedium;
       }
       &.recover.pushed {
-        opacity: 1;
-        display: block;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightInMainPushedMedium;
+        animation-name: bounceMedium;
       }
     }
   }
