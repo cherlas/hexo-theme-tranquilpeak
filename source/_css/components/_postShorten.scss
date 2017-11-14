@@ -32,6 +32,7 @@
     // postShorten meta contains post's date, post's categories and tags
     .postShorten-meta {
         line-height: 1.5em;
+        padding-top: 8px;
 
         a {
             color: map-get($colors, light);
