@@ -26,13 +26,10 @@
         display: table;
     }
 
-   .zoom-in {
-       animation-name: zoomIn;
-       animation-duration: 1s;
-       animation-delay: 2s;
-       -webkit-animation-delay: 2s;
-       animation-fill-mode: both;
-   }
+    .zoom-in {
+        animation-delay: 0.8s;
+    }
+
     .first-page-desc {
         font-family: Georgia, Consolas, Menlo, monospace;
         font-style: italic;
@@ -44,10 +41,6 @@
     }
 
     /*头像效果*/
-    .fade-in {
-        animation-name: fadeIn;
-        animation-duration: 2s;
-    }
     .ih-item.circle.effect {
         margin: 0 auto;
         -webkit-perspective: 900px;
