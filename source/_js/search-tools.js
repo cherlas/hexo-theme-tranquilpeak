@@ -320,7 +320,7 @@
       }
       setTimeout(function() {
         self.$main.removeClass('recover');
-      }, 250);
+      }, 1000);
     },
 
     /**
@@ -357,7 +357,9 @@
      * @returns {void}
      */
     showOverflow: function() {
-      $('body').css('overflow', 'auto');
+      setTimeout(function() {
+        $('body').css('overflow', 'auto');
+      }, 1000);
     },
 
     /**
