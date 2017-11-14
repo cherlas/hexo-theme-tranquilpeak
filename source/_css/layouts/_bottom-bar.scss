@@ -11,6 +11,20 @@
     z-index:            map-get($z-indexes, c-post-bottom-bar);
     transition:         transform .25s ease-in-out;
     -webkit-transition: -webkit-transform .25s ease-in-out;
+
+    &.show {
+        background: none;
+        opacity: 0.9;
+        animation-duration: .8s;
+        animation-fill-mode: both;
+        animation-name: rightOut;
+    }
+
+    &.recover{
+        animation-name: bounce;
+        animation-duration: 1s;
+        transform-origin: center bottom;
+    }
 }
 
 @media #{$small-and-down} {
@@ -24,11 +38,23 @@
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Push the bottom bar from the size of the medium sidebar
         &[data-behavior="3"],
         &[data-behavior="6"] {
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
     }
 }
@@ -41,17 +67,35 @@
         &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
         // Display bottom bar in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
     }
 }
@@ -63,22 +107,46 @@
         &[data-behavior="2"] {
             @include bottom-bar-sm;
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Display bottom bar in medium size and push it from the size of the medium sidebar
         &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
         // Display bottom bar in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
     }
 }
@@ -89,31 +157,64 @@
         &[data-behavior="1"] {
             @include bottom-bar-xs;
             @include bottom-bar-pushed-xlg;
+            &.show.pushed {
+                animation-name: rightOutXLarge;
+            }
         }
         // Display bottom bar in small size and push it from the size of the large sidebar
         &[data-behavior="2"] {
             @include bottom-bar-sm;
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Display bottom bar in medium size and push it from the size of the medium sidebar
         &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
         // Display bottom bar in large size and push it from the size of the extra large sidebar
         &[data-behavior="4"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-xlg;
+            &.show.pushed {
+                animation-name: rightOutXLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceXLarge;
+            }
         }
         // Display bottom bar in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
+            &.show.pushed {
+                animation-name: rightOutLarge;
+            }
+            &.recover.pushed {
+                animation-name: bounceLarge;
+            }
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
+            &.show.pushed {
+                animation-name: rightOutMedium;
+            }
+            &.recover.pushed {
+                animation-name: bounceMedium;
+            }
         }
     }
 }

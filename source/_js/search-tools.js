@@ -22,6 +22,7 @@
     this.$resultsCount = this.$searchToolsCol.find('.results-count');
     this.$sidebarContainer = $('.sidebar-container');
     this.$postHeaderCover = $('.post-header-cover');
+    this.$postBottomBar = $('.post-bottom-bar');
     this.$sidebar = $('#sidebar');
     this.$body = $('body');
     this.$articleTagListItem = $('.article-tag-list-item');
@@ -162,6 +163,7 @@
       this.recoverMainCol();
       this.recoverHeader();
       this.recoverPostHeaderCover();
+      this.recoverPostBottomBar();
       this.showOverflow();
     },
 
@@ -260,6 +262,15 @@
       this.thinMainCol();
       this.thinHeader();
       this.thinPostHeaderCover();
+      this.thinBottomBar();
+    },
+
+    /**
+     * thin post bottom bar
+     * @returns {void}
+     */
+    thinBottomBar: function() {
+      this.$postBottomBar.addClass('show');
     },
 
     /**
@@ -341,6 +352,21 @@
         this.$header.addClass('recover');
         setTimeout(function() {
           self.$header.removeClass('recover');
+        }, 1000);
+      }
+    },
+
+    /**
+     * recover header for search
+     * @returns {void}
+     */
+    recoverPostBottomBar: function() {
+      if (this.$postBottomBar.hasClass('show')) {
+        var self = this;
+        this.$postBottomBar.removeClass('show');
+        this.$postBottomBar.addClass('recover');
+        setTimeout(function() {
+          self.$postBottomBar.removeClass('recover');
         }, 1000);
       }
     },
