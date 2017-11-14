@@ -252,9 +252,6 @@
         this.$searchToolsCol.removeClass('hide');
         this.$searchToolsCol.addClass('show');
       }
-      if (this.$main.hasClass('recover')) {
-        this.$main.removeClass('recover');
-      }
       if (this.$canvas.hasClass('hidden')) {
         this.$canvas.removeClass('hidden');
       }
@@ -339,8 +336,12 @@
      */
     recoverHeader: function() {
       if (this.$header.hasClass('show')) {
+        var self = this;
         this.$header.removeClass('show');
         this.$header.addClass('recover');
+        setTimeout(function() {
+          self.$header.removeClass('recover');
+        }, 1000);
       }
     },
 

@@ -89,6 +89,12 @@
         border: none ;
     }
 
+    &.recover{
+        animation-name: bounce;
+        animation-duration: 1s;
+        transform-origin: center bottom;
+    }
+
     // Push the header from the size of the large sidebar
     &[data-behavior="1"],
     &[data-behavior="2"],
@@ -98,6 +104,9 @@
         &.show.pushed {
             animation-name: rightOutLarge;
         }
+        &.pushed.recover {
+            animation-name: bounceLarge;
+        }
     }
 
     // Push the header from the size of the medium sidebar
@@ -105,7 +114,10 @@
     &[data-behavior="6"] {
         @include header-pushed-md;
         &.show.pushed {
-            animation-name: rightOutLarge;
+            animation-name: rightOutMedium;
+        }
+        &.pushed.recover {
+            animation-name: bounceMedium;
         }
     }
 }
