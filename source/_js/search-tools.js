@@ -391,8 +391,13 @@
      * @returns {void}
      */
     showOverflow: function() {
+      var self = this;
       setTimeout(function() {
-        $('body').css('overflow', 'auto');
+        if (self.$sidebar.hasClass('pushed')) {
+          $('body').css({'overflow-x': 'hidden', 'overflow-y': 'auto'});
+        } else {
+          $('body').css('overflow', 'auto');
+        }
       }, 1000);
     },
 
