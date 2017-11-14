@@ -53,6 +53,20 @@
     removeFullScreen: function() {
       this.changeZIndex();
       this.removeHiddenClass();
+      this.removeFadeInClass();
+    },
+
+    /**
+     * remove fadeIn for main
+     * @returns {void}
+     */
+    removeFadeInClass: function() {
+      var self = this;
+      if (this.$main.hasClass('fade-in')) {
+        setTimeout(function() {
+          self.$main.removeClass('fade-in');
+        });
+      }
     },
 
     /**
