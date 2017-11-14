@@ -11,13 +11,4 @@
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
-    <% if ((post.tags) && (post.tags.length > 0)) { %>
-        <img class="tag" src="/assets/images/tag-icon.svg" />
-        <% post.tags.forEach(function(tag, index){ %>
-            <a href="/tags/<%-tag.name%>/"><%-tag.name%></a>
-            <%if (index !== post.tags.length - 1) {%>
-             <span> </span>
-            <%}%>
-        <% }) %>
-    <% } %>
 </div>
