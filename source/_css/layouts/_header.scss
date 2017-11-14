@@ -84,7 +84,7 @@
         opacity: 1;
         animation-duration: .8s;
         animation-fill-mode: both;
-        animation-name: rightOutMain;
+        animation-name: rightOut;
         background: transparent ;
         border: none ;
     }
@@ -96,7 +96,7 @@
     &[data-behavior="5"] {
         @include header-pushed-lg;
         &.show.pushed {
-            animation-name: rightOutMainPushedLarge;
+            animation-name: rightOutLarge;
         }
     }
 
@@ -105,7 +105,7 @@
     &[data-behavior="6"] {
         @include header-pushed-md;
         &.show.pushed {
-            animation-name: rightOutMainPushedLarge;
+            animation-name: rightOutLarge;
         }
     }
 }
@@ -128,14 +128,14 @@
         &[data-behavior="4"] {
             @include header-pushed-xlg;
             &.show.pushed {
-                animation-name: rightOutMainPushedLarge;
+                animation-name: rightOutLarge;
             }
         }
         &[data-behavior="2"],
         &[data-behavior="5"] {
             @include header-pushed-lg;
             &.show.pushed {
-                animation-name: rightOutMainPushedLarge;
+                animation-name: rightOutLarge;
             }
         }
     }
