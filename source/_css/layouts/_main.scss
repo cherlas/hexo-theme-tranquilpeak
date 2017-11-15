@@ -140,8 +140,8 @@
     // Display `main` div in extra small size
     &[data-behavior="1"] {
       @include main-xs;
-      @include right-out-xl;
-      @include bounce-xl;
+      @include right-out-xlg;
+      @include bounce-xlg;
     }
     // Display `main` div in small size
     &[data-behavior="2"] {
@@ -159,8 +159,8 @@
     &[data-behavior="4"] {
       @include main-lg;
       @include main-pushed-xlg;
-      @include right-out-xl;
-      @include bounce-xl;
+      @include right-out-xlg;
+      @include bounce-xlg;
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
     &[data-behavior="5"] {
