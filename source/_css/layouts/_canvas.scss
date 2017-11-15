@@ -6,21 +6,16 @@
 /*----media----*/
 @media #{$small-and-down} {
   #anm-canvas {
+    @include margin-left-zero;
     &[data-behavior="1"],
     &[data-behavior="2"],
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, lg-screen-width)};
-      }
+      @include margin-left-pushed-lg;
     }
     &[data-behavior="3"],
     &[data-behavior="6"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, md-screen-width)};
-      }
+      @include margin-left-pushed-md;
     }
   }
 }
@@ -30,23 +25,17 @@
     &[data-behavior="1"],
     &[data-behavior="2"],
     &[data-behavior="3"] {
-      margin-left: #{map-get($sidebar, md-screen-width)};
-      &.pushed {
-        margin-left: #{map-get($sidebar, lg-screen-width)};
-      }
+      @include margin-left-md;
+      @include margin-left-pushed-lg;
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, lg-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-lg;
     }
     &[data-behavior="6"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, md-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-md;
     }
   }
 }
@@ -55,23 +44,19 @@
   #anm-canvas {
     &[data-behavior="1"],
     &[data-behavior="2"] {
-      margin-left: #{map-get($sidebar, lg-screen-width)};
+      @include margin-left-lg;
     }
     &[data-behavior="3"] {
-      margin-left: #{map-get($sidebar, md-screen-width)};
+      @include margin-left-md;
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, lg-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-lg;
     }
     &[data-behavior="6"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, md-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-md;
     }
   }
 }
@@ -79,31 +64,25 @@
 @media #{$xlarge-and-up} {
   #anm-canvas {
     &[data-behavior="1"] {
-      margin-left: #{map-get($sidebar, xlg-screen-width)};
+      @include margin-left-xlg;
     }
     &[data-behavior="2"] {
-      margin-left: #{map-get($sidebar, lg-screen-width)};
+      @include margin-left-lg;
     }
     &[data-behavior="3"] {
-      margin-left: #{map-get($sidebar, md-screen-width)};
+      @include margin-left-md;
     }
     &[data-behavior="4"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, xlg-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-xlg;
     }
     &[data-behavior="5"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, lg-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-lg;
     }
     &[data-behavior="6"] {
-      margin-left: 0;
-      &.pushed {
-        margin-left: #{map-get($sidebar, md-screen-width)};
-      }
+      @include margin-left-zero;
+      @include margin-left-pushed-md;
     }
   }
 }
