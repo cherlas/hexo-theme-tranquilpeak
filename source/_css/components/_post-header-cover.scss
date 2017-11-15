@@ -213,25 +213,17 @@
         &[data-behavior="2"],
         &[data-behavior="4"],
         &[data-behavior="5"] {
-            @include post-header-cover-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
             top: calc(#{map-get($header, 'height')});
+            @include post-header-cover-pushed-lg;
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Push post header cover div from the size of the medium sidebar
         &[data-behavior="3"],
         &[data-behavior="6"] {
             @include post-header-cover-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
+            @include right-out-md;
+            @include bounce-md;
         }
         &[data-behavior="6"] {
             top: calc(#{map-get($header, 'height')});
@@ -253,40 +245,25 @@
         &[data-behavior="2"],
         &[data-behavior="3"] {
             @include post-header-cover-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
-        }
-        &[data-behavior="4"] {
-            top: calc(#{map-get($header, 'height')});
+            @include right-out-md;
+            @include bounce-md;
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
+            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
-            top: calc(#{map-get($header, 'height')});
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
+            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
-            top: calc(#{map-get($header, 'height')});
+            @include right-out-md;
+            @include bounce-md;
         }
     }
 }
@@ -304,50 +281,31 @@
         &[data-behavior="1"],
         &[data-behavior="2"] {
             @include post-header-cover-sm;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Display post header cover div in medium size
         &[data-behavior="3"] {
             @include post-header-cover-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
-        }
-        &[data-behavior="4"] {
-            top: calc(#{map-get($header, 'height')});
+            @include right-out-md;
+            @include bounce-md;
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
             top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
+            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
-            top: calc(#{map-get($header, 'height')});
+            @include right-out-md;
+            @include bounce-md;
         }
     }
 }
@@ -364,67 +322,43 @@
         // Display post header cover div in extra small size
         &[data-behavior="1"] {
             @include post-header-cover-xs;
-            &.show.pushed {
-                animation-name: rightOutXLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceXLarge;
-            }
+            @include right-out-xlg;
+            @include bounce-xlg;
         }
         // Display post header cover div in small size
         &[data-behavior="2"] {
             @include post-header-cover-sm;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Display post header cover div in medium size
         &[data-behavior="3"] {
             @include post-header-cover-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceXLarge;
-            }
+            @include right-out-md;
+            @include bounce-md;
         }
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-xlg;
-            &.show.pushed {
-                animation-name: rightOutXLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceXLarge;
-            }
+            @include right-out-xlg;
+            @include bounce-xlg;
             top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
             top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
+            @include right-out-md;
+            @include bounce-md;
             top: calc(#{map-get($header, 'height')});
         }
     }
