@@ -1,5 +1,5 @@
 .search-tools-col {
-  width: 300px;
+  width: #{map-get($search-tool, tool-width)};
   height: 100%;
   position: fixed;
   top: 0;
@@ -191,21 +191,13 @@
     &[data-behavior="2"],
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left:-50px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-lg;
     }
     &[data-behavior="3"],
     &[data-behavior="6"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -225px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-md;
     }
   }
 }
@@ -215,29 +207,17 @@
     &[data-behavior="1"],
     &[data-behavior="2"],
     &[data-behavior="3"] {
-      &.show {
-        left: -225px;
-        &.pushed {
-          left: -50px;
-        }
-      }
+      @include left-md;
+      @include left-pushed-lg;
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -50px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-lg;
     }
     &[data-behavior="6"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -225px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-md;
     }
   }
 }
@@ -246,31 +226,19 @@
   .search-tools-col {
     &[data-behavior="1"],
     &[data-behavior="2"] {
-      &.show {
-        left: -50px;
-      }
+      @include left-lg;
     }
     &[data-behavior="3"] {
-      &.show {
-        left: -225px;
-      }
+      @include left-md;
     }
     &[data-behavior="4"],
     &[data-behavior="5"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -50px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-lg;
     }
     &[data-behavior="6"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -225px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-md;
     }
   }
 }
@@ -278,46 +246,26 @@
 @media #{$xlarge-and-up} {
   .search-tools-col {
     &[data-behavior="1"] {
-      &.show {
-        left: 200px;
-      }
+      @include left-xlg;
     }
     &[data-behavior="2"] {
-      &.show {
-        left: -50px;
-      }
+      @include left-lg;
     }
     &[data-behavior="3"] {
-      &.show {
-        left: -225px;
-        &.pushed {
-          left: 200px;
-        }
-      }
+      @include left-md;
+      @include left-pushed-xlg;
     }
     &[data-behavior="4"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: 200px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-xlg;
     }
     &[data-behavior="5"]{
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -50px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-lg;
     }
     &[data-behavior="6"] {
-      &.show {
-        left: -300px;
-        &.pushed {
-          left: -225px;
-        }
-      }
+      @include left-sm;
+      @include left-pushed-md;
     }
   }
 }
