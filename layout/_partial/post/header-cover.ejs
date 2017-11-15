@@ -10,7 +10,7 @@
             coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
         }
 %>
-        <div class="post-header-cover
+        <div class="post-header-cover fade-in
                     <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
                     <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
              style="background-image:url('<%= coverImageUrl %>');"
