@@ -13,9 +13,4 @@
     <% if (post.meta === undefined || post.meta) { %>
         <%- partial('meta',{classes: ['post-meta']}) %>
     <% } %>
-    <div class="post-tags">
-        <% post.tags.forEach(function(tag){ %>
-            <a href="/tags/<%-tag.name%>/"><%-tag.name%></a>
-        <% }) %>
-    </div>
 </div>

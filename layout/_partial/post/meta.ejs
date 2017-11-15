@@ -11,4 +11,9 @@
         <span><%= __('post.categorized_in')  %> </span>
         <%- partial('category', {categories: post.categories})%>
     <% } %>
+    <div class="post-tags">
+        <% post.tags.forEach(function(tag){ %>
+        <a href="/tags/<%-tag.name%>/"><%-tag.name%></a>
+        <% }) %>
+    </div>
 </div>
