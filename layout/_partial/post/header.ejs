@@ -1,4 +1,4 @@
-<div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>">
+<div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %> fadeInDown">
     <% if (post.link) { %>
         <h1 itemprop="headline">
             <a class="link" href="<%- url_for(post.link) %>" target="_blank" rel="noopener" itemprop="url">
@@ -13,4 +13,9 @@
     <% if (post.meta === undefined || post.meta) { %>
         <%- partial('meta',{classes: ['post-meta']}) %>
     <% } %>
+    <div class="post-tags">
+        <% post.tags.forEach(function(tag){ %>
+            <a href="/tags/<%-tag.name%>/"><%-tag.name%></a>
+        <% }) %>
+    </div>
 </div>
