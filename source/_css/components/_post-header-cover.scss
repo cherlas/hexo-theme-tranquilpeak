@@ -34,6 +34,10 @@
     -webkit-backface-visibility: hidden;
     -webkit-perspective:         1000;
 
+    &.post-header-cover-background {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
     .post-header {
         display:        table-cell;
         vertical-align: middle;
@@ -79,19 +83,19 @@
         .post-tags {
             border-bottom: none;
             margin: 0;
-            padding: 5px 0 15px;
 
             a {
-                font-size: 13px;
+                font-size: 12px;
                 font-weight: 600;
                 display: inline-block;
                 margin: 4px 8px 0 0;
                 padding: 0 15px;
-                -webkit-transition-duration: .4s;
-                transition-duration: .4s;
+                //-webkit-transition-duration: .4s;
+                //transition-duration: .4s;
                 letter-spacing: 0;
                 text-decoration: none;
                 outline: 0;
+                text-shadow:none;
                 -webkit-font-smoothing: antialiased;
                 font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;

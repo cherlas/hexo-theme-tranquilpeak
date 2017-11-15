@@ -11,9 +11,13 @@
         }
 %>
         <div class="post-header-cover fade-in
-                    <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
                     <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
-             style="background-image:url('<%= coverImageUrl %>');"
+             style="background-image:url('<%= coverImageUrl %>'); filter: blur(4px)"
+             data-behavior="<%= sidebarBehavior %>">
+        </div>
+        <div class="post-header-cover fade-in post-header-cover-background
+                            <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
+                            <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
              data-behavior="<%= sidebarBehavior %>">
             <% if (typeof post.coverMeta === "undefined" || post.coverMeta === 'in') { %>
                 <%- partial('header') %>
