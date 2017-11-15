@@ -10,14 +10,11 @@
   }
 }
 
-@mixin right-out-xl {
+@mixin right-out-xlg {
   &.show.pushed {
     animation-name: rightOutXLarge;
   }
 }
-
-
-
 
 @mixin bounce-md {
   &.recover.pushed {
@@ -31,7 +28,7 @@
   }
 }
 
-@mixin bounce-xl {
+@mixin bounce-xlg {
   &.recover.pushed {
     animation-name: bounceXLarge;
   }
