@@ -101,24 +101,16 @@
     &[data-behavior="4"],
     &[data-behavior="5"] {
         @include header-pushed-lg;
-        &.show.pushed {
-            animation-name: rightOutLarge;
-        }
-        &.pushed.recover {
-            animation-name: bounceLarge;
-        }
+        @include right-out-lg;
+        @include bounce-lg;
     }
 
     // Push the header from the size of the medium sidebar
     &[data-behavior="3"],
     &[data-behavior="6"] {
         @include header-pushed-md;
-        &.show.pushed {
-            animation-name: rightOutMedium;
-        }
-        &.pushed.recover {
-            animation-name: bounceMedium;
-        }
+        @include right-out-md;
+        @include bounce-md;
     }
 }
 
@@ -139,22 +131,14 @@
         &[data-behavior="1"],
         &[data-behavior="4"] {
             @include header-pushed-xlg;
-            &.show.pushed {
-                animation-name: rightOutXLarge;
-            }
-            &.pushed.recover {
-                animation-name: bounceXLarge;
-            }
+            @include right-out-xlg;
+            @include bounce-xlg;
         }
         &[data-behavior="2"],
         &[data-behavior="5"] {
             @include header-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.pushed.recover {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
         }
     }
 }
