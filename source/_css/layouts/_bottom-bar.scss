@@ -157,64 +157,42 @@
         &[data-behavior="1"] {
             @include bottom-bar-xs;
             @include bottom-bar-pushed-xlg;
-            &.show.pushed {
-                animation-name: rightOutXLarge;
-            }
+            @include right-out-xlg;
         }
         // Display bottom bar in small size and push it from the size of the large sidebar
         &[data-behavior="2"] {
             @include bottom-bar-sm;
             @include bottom-bar-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Display bottom bar in medium size and push it from the size of the medium sidebar
         &[data-behavior="3"] {
             @include bottom-bar-md;
             @include bottom-bar-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
+            @include right-out-md;
+            @include bounce-md;
         }
         // Display bottom bar in large size and push it from the size of the extra large sidebar
         &[data-behavior="4"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-xlg;
-            &.show.pushed {
-                animation-name: rightOutXLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceXLarge;
-            }
+            @include right-out-xlg;
+            @include bounce-xlg;
         }
         // Display bottom bar in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-lg;
-            &.show.pushed {
-                animation-name: rightOutLarge;
-            }
-            &.recover.pushed {
-                animation-name: bounceLarge;
-            }
+            @include right-out-lg;
+            @include bounce-lg;
         }
         // Display bottom bar in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
             @include bottom-bar-lg;
             @include bottom-bar-pushed-md;
-            &.show.pushed {
-                animation-name: rightOutMedium;
-            }
-            &.recover.pushed {
-                animation-name: bounceMedium;
-            }
+            @include right-out-md;
+            @include bounce-md;
         }
     }
 }
