@@ -76,6 +76,79 @@
                 margin-top: 2px;
             }
         }
+        .post-tags {
+            border-bottom: none;
+            margin: 0;
+            padding: 5px 0 15px;
+
+            a {
+                font-size: 13px;
+                font-weight: 600;
+                display: inline-block;
+                margin: 4px 8px 0 0;
+                padding: 0 15px;
+                -webkit-transition-duration: .4s;
+                transition-duration: .4s;
+                letter-spacing: 0;
+                text-decoration: none;
+                outline: 0;
+                -webkit-font-smoothing: antialiased;
+                font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+
+                &:nth-child(1n) {
+                    color: #fff;
+                    border: 1px solid #6fa3ef;
+                    border-radius: 15px;
+                    background: #6fa3ef
+                }
+
+                &:nth-child(2n) {
+                    color: #fff;
+                    border: 1px solid #ff9800;
+                    border-radius: 15px;
+                    background: #ff9800
+                }
+
+                &:nth-child(3n) {
+                    color: #fff;
+                    border: 1px solid #46c47c;
+                    border-radius: 15px;
+                    background: #46c47c
+                }
+
+                &:nth-child(4n) {
+                    color: #fff;
+                    border: 1px solid #f9bb3c;
+                    border-radius: 15px;
+                    background: #f9bb3c
+                }
+
+                &:nth-child(5n) {
+                    color: #fff;
+                    border: 1px solid #bc99c4;
+                    border-radius: 15px;
+                    background: #bc99c4
+                }
+
+                &:nth-child(6n) {
+                    color: #fff;
+                    border: 1px solid #e8583d;
+                    border-radius: 15px;
+                    background: #e8583d
+                }
+
+                &::before {
+                    content: '# '
+                }
+            }
+            a:hover {
+                color: #5f5f5f;
+                border: 1px solid #f7f7f7;
+                outline-style: none;
+                background: #f7f7f7
+            }
+        }
     }
 
     &.show {
