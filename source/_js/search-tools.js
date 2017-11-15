@@ -245,11 +245,7 @@
       this.$resultsCount.html(string);
     },
 
-    /**
-     * Show search modal
-     * @returns {void}
-     */
-    showSearchToolsCol: function() {
+    removeHideClass: function() {
       if (this.$searchToolsCol.hasClass('hide')) {
         this.$searchToolsCol.removeClass('hide');
         this.$searchToolsCol.addClass('show');
@@ -257,12 +253,20 @@
       if (this.$canvas.hasClass('hidden')) {
         this.$canvas.removeClass('hidden');
       }
-      this.$body.css('overflow-x', 'hidden');
+    },
+    
+    /**
+     * Show search modal
+     * @returns {void}
+     */
+    showSearchToolsCol: function() {
+      this.removeHideClass();
       // TODO optimize
       this.thinMainCol();
       this.thinHeader();
       this.thinPostHeaderCover();
       this.thinBottomBar();
+      this.$body.css('overflow-x', 'hidden');
     },
 
     /**
@@ -279,6 +283,7 @@
      */
     thinPostHeaderCover: function() {
       this.$postHeaderCover.addClass('show');
+      this.$postHeaderCover.removeClass('fade-in');
     },
 
     /**
@@ -345,6 +350,7 @@
     thinHeader: function() {
       if (!this.$header.hasClass('show')) {
         this.$header.addClass('show');
+        this.$header.removeClass('fade-in');
       }
     },
 
