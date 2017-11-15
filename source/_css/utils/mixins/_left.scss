@@ -1,0 +1,87 @@
+@mixin margin-left-zero {
+  margin-left: 0;
+}
+
+@mixin margin-left-md {
+  margin-left: #{map-get($sidebar, md-screen-width)};
+}
+
+@mixin margin-left-lg {
+  margin-left: #{map-get($sidebar, lg-screen-width)};
+}
+
+@mixin margin-left-xlg {
+  margin-left: #{map-get($sidebar, xlg-screen-width)};
+}
+
+@mixin margin-left-pushed-zero {
+  &.pushed {
+    margin-left: 0;
+  }
+}
+
+@mixin margin-left-pushed-md {
+  &.pushed {
+    margin-left: #{map-get($sidebar, md-screen-width)};
+  }
+}
+
+@mixin margin-left-pushed-lg {
+  &.pushed {
+    margin-left: #{map-get($sidebar, lg-screen-width)};
+  }
+}
+
+@mixin margin-left-pushed-xlg {
+  &.pushed {
+    margin-left: #{map-get($sidebar, xlg-screen-width)};
+  }
+}
+
+@mixin left-sm {
+  &.show {
+    left: 0px - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-md {
+  &.show {
+    left: #{map-get($sidebar, md-screen-width)} - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-lg {
+  &.show {
+    left: #{map-get($sidebar, lg-screen-width)} - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-xlg {
+  &.show {
+    left: calc(#{map-get($sidebar, xlg-screen-width)} - #{map_get($search-tool, tool-width)});
+  }
+}
+
+@mixin left-pushed-sm {
+  &.show.pushed {
+    left: 0px - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-pushed-md {
+  &.show.pushed {
+    left: #{map-get($sidebar, md-screen-width)} - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-pushed-lg {
+  &.show.pushed {
+    left: #{map-get($sidebar, lg-screen-width)} - #{map_get($search-tool, tool-width)};
+  }
+}
+
+@mixin left-pushed-xlg {
+  &.show.pushed {
+    left: #{map-get($sidebar, xlg-screen-width)} - #{map_get($search-tool, tool-width)};
+  }
+}
