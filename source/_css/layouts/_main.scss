@@ -81,35 +81,23 @@
     &[data-behavior="2"],
     &[data-behavior="3"] {
       @include main-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
     // Display `main` div in large size and push it from the size of the large sidebar
     &[data-behavior="4"],
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
-      &.show.pushed {
-        animation-name: rightOutLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceLarge;
-      }
+      @include right-out-lg;
+      @include bounce-lg;
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
   }
 }
@@ -120,45 +108,29 @@
     &[data-behavior="1"],
     &[data-behavior="2"] {
       @include main-sm;
-      &.show.pushed {
-        animation-name: rightOutLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceLarge;
-      }
+      @include right-out-lg;
+      @include bounce-lg;
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
     // Display `main` div in large size and push it from the size of the large sidebar
     &[data-behavior="4"],
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
-      &.show.pushed {
-        animation-name: rightOutLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceLarge;
-      }
+      @include right-out-lg;
+      @include bounce-lg;
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
   }
 }
@@ -168,62 +140,41 @@
     // Display `main` div in extra small size
     &[data-behavior="1"] {
       @include main-xs;
-      &.show.pushed {
-        animation-name: rightOutXLarge;
-      }
+      @include right-out-xl;
+      @include bounce-xl;
     }
     // Display `main` div in small size
     &[data-behavior="2"] {
       @include main-sm;
-      &.show.pushed {
-        animation-name: rightOutLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceLarge;
-      }
+      @include right-out-lg;
+      @include bounce-lg;
     }
     // Display `main` div in medium size
     &[data-behavior="3"] {
       @include main-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
     &[data-behavior="4"] {
       @include main-lg;
       @include main-pushed-xlg;
-      &.show.pushed {
-        animation-name: rightOutXLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceXLarge;
-      }
+      @include right-out-xl;
+      @include bounce-xl;
     }
     // Display `main` div in large size and push it from the size of the extra large sidebar
     &[data-behavior="5"] {
       @include main-lg;
       @include main-pushed-lg;
-      &.show.pushed {
-        animation-name: rightOutLarge;
-      }
-      &.recover.pushed {
-        animation-name: bounceLarge;
-      }
+      @include right-out-lg;
+      @include bounce-lg;
     }
     // Display `main` div in large size and push it from the size of the medium sidebar
     &[data-behavior="6"] {
       @include main-lg;
       @include main-pushed-md;
-      &.show.pushed {
-        animation-name: rightOutMedium;
-      }
-      &.recover.pushed {
-        animation-name: bounceMedium;
-      }
+      @include right-out-md;
+      @include bounce-md;
     }
   }
 }

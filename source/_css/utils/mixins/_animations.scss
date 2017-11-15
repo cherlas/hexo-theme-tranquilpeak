@@ -1,0 +1,38 @@
+@mixin right-out-md {
+  &.show.pushed {
+    animation-name: rightOutMedium;
+  }
+}
+
+@mixin right-out-lg {
+  &.show.pushed {
+    animation-name: rightOutLarge;
+  }
+}
+
+@mixin right-out-xl {
+  &.show.pushed {
+    animation-name: rightOutXLarge;
+  }
+}
+
+
+
+
+@mixin bounce-md {
+  &.recover.pushed {
+    animation-name: bounceMedium;
+  }
+}
+
+@mixin bounce-lg {
+  &.recover.pushed {
+    animation-name: bounceLarge;
+  }
+}
+
+@mixin bounce-xl {
+  &.recover.pushed {
+    animation-name: bounceXLarge;
+  }
+}
