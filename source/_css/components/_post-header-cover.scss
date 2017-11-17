@@ -86,19 +86,16 @@
 
             a {
                 font-size: 12px;
-                font-weight: 600;
+                font-weight: 500;
                 display: inline-block;
                 margin: 4px 8px 0 0;
-                padding: 0 15px;
-                //-webkit-transition-duration: .4s;
-                //transition-duration: .4s;
-                letter-spacing: 0;
+                padding: 0 10px;
+                font-family: Georgia, Menlo, monospace, 'Open Sans', sans-serif;
+                letter-spacing: 0px;
                 text-decoration: none;
                 outline: 0;
                 text-shadow:none;
-                -webkit-font-smoothing: antialiased;
-                font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
+                line-height: 2;
 
                 &:nth-child(1n) {
                     color: #fff;
