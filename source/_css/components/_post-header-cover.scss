@@ -85,17 +85,17 @@
             margin: 0;
 
             a {
-                font-size: 12px;
+                font-size: #{map_get($font-size,'medium')};
                 font-weight: 500;
                 display: inline-block;
                 margin: 4px 8px 0 0;
                 padding: 0 10px;
                 font-family: Georgia, Menlo, monospace, 'Open Sans', sans-serif;
-                letter-spacing: 0px;
+                letter-spacing: 0;
                 text-decoration: none;
                 outline: 0;
                 text-shadow:none;
-                line-height: 2;
+                line-height: 1.9;
 
                 &:nth-child(1n) {
                     color: #fff;
