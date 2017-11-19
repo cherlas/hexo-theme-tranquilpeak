@@ -155,6 +155,12 @@
     animation-name: leftInSearch;
   }
 
+  &.recover {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: bounce;
+  }
+
   i.fa {
     font-size: 1.2rem;
     color: #fffdd8;
