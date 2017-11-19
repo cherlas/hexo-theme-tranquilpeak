@@ -24,3 +24,55 @@
         }
     }
 }
+
+#page-nav {
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+}
+
+#page-nav .page-number {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    color: #515151;
+    line-height: 20px;
+    font-size: 16px;
+    margin: 0 3px 0 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+#page-nav .page-number:hover {
+    background: #222;
+    color: #fff;
+}
+
+#page-nav .current, #page-nav .current:hover {
+    background: #4094c7;
+    color: $font-color-base;
+}
+
+#page-nav .current {
+    cursor: default
+}
+
+#page-nav .extend {
+    color: #515151;
+    margin: 0 15px;
+    //opacity: 0
+    text-decoration: none;
+
+}
+
+#page-nav .extend:hover {
+    color: #0c78ce;
+}
+
+#page-nav:hover .extend {
+    opacity: 1
+}
