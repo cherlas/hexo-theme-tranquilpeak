@@ -306,9 +306,14 @@
      * @returns {void}
      */
     hideSearchToolsCol: function() {
+      var self = this;
       if (this.$searchToolsCol.hasClass('show')) {
         this.$searchToolsCol.removeClass('show');
-        this.$searchToolsCol.addClass('hide');
+        this.$searchToolsCol.addClass('recover');
+        setTimeout(function() {
+          self.$searchToolsCol.removeClass('recover');
+          self.$searchToolsCol.addClass('hide');
+        }, 500);
       }
       if (!this.$canvas.hasClass('hidden')) {
         this.$canvas.addClass('hidden');
