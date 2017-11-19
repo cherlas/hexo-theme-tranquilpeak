@@ -98,7 +98,7 @@
     </article>
     <% }) %>
     <% if (page.total > 1){ %>
-    <nav id="page-nav">
+    <nav id="page-nav" class="fadeInUp" style="animation-delay: <%= config.per_page * 0.1 %>s">
         <%- paginator({
             prev_text: ' ',
             next_text: ' '
