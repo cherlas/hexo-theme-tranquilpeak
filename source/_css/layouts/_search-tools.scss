@@ -155,26 +155,13 @@
     animation-name: leftInSearch;
   }
 
-  .icon {
-    font-family: iconfont !important;
-    speak: none;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
+  i.fa {
+    font-size: 1.2rem;
+    color: #fffdd8;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    &.icon-quo-left:before {
-      content: "\E7F5";
-    }
-    &.icon-calendar:before {
-      content: "\E667";
-    }
-    &.icon-price-tags:before {
-      content: "\E6F9";
-    }
+    font-style: normal;
+    margin-right: 8px;
+
   }
 }
 
