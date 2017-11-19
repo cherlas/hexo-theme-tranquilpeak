@@ -96,9 +96,11 @@
      * @return {void}
      */
     closeSidebar: function() {
-      this.swipeSidebarToLeft();
-      this.swipeBlogToLeft();
-      this.removeCanvasPushed();
+      if (this.$searchToolsCol.hasClass('hide')) {
+        this.swipeSidebarToLeft();
+        this.swipeBlogToLeft();
+        this.removeCanvasPushed();
+      }
     },
 
     /**
