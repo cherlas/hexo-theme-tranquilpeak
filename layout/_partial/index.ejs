@@ -97,5 +97,12 @@
         <% } %>
     </article>
     <% }) %>
-    <%- partial('pagination', {type: 'page'}) %>
+    <% if (page.total > 1){ %>
+    <nav id="page-nav">
+        <%- paginator({
+            prev_text: ' ',
+            next_text: ' '
+        }) %>
+    </nav>
+    <% } %>
 </section>
