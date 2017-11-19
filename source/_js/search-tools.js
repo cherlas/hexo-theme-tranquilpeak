@@ -199,7 +199,7 @@
       posts.forEach(function(post) {
         html += '<div class="media">';
         html += '<a class="search-title" href="' + post.path + '">';
-        html += '<i class="icon-quo-left icon"></i>';
+        html += '<i class="fa fa-quote-left"></i>';
         html += '<span id="search-post-title">' + post.title + '</span>';
         html += '</a>';
         html += '<p class="search-time">';
@@ -210,7 +210,7 @@
         html += '<i class="icon-price-tags icon"></i>';
         post.tags.forEach(function(tag) {
           html += '<span id="search-post-tags">';
-          html += tag;
+          html += '#' + tag + ' ';
           html += '</span>';
         });
 
