@@ -290,3 +290,27 @@
   -o-animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
 }
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-name: pulse;
+}
