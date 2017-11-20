@@ -16,7 +16,7 @@
             <div class="sidebar-profile">
                 <!-- 头像效果-start -->
                 <div class="ih-item circle effect right_to_left">
-                    <a href="<%- url_for('/#blog') %>">
+                    <a href="<%- url_for(' ') %>">
                         <img class="sidebar-profile-picture"
                              src="<%= authorPicture %>" alt="<%= __('global.author_picture') %>"/>
                         <div class="info">
@@ -53,7 +53,6 @@
                     <% } else { %>
                         <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
                             <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
-                            <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
                             <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
                         >
                     <% } %>
