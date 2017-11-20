@@ -33,19 +33,23 @@
     .postShorten-meta {
         line-height: 1.5em;
         padding-top: 8px;
-
         a {
             color: map-get($colors, light);
             font-size: map-get($font-size, small);
         }
-
         & img.calendar {
             width: 18px;
             float: left;
         }
-
         & time {
             padding-left: 5px;
+        }
+        & .post-tags {
+            display: inline-block;
+        }
+        & .tag-img {
+            padding-left: 5px;
+            vertical-align: text-bottom;
         }
     }
     .postShorten-meta,
