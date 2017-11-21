@@ -1,5 +1,5 @@
 <section class="postShorten-group main-content-wrap">
-    <% page.posts.each(function(post,index) { %>
+    <% page.posts.each(function(post, index) { %>
     <%
         var tableOfContents = null;
         var thumbnailImageUrl = post.thumbnailImageUrl;
@@ -9,11 +9,19 @@
         /* Define thumbnail image */
 
         // Define position of the thumbnail image
-        if (!post.excerpt && !post.link) {
-            thumbnailImagePosition = "bottom";
-        } else if (thumbnailImageUrl !== null) {
-            if (post.thumbnailImagePosition && post.thumbnailImagePosition.length)  {
-                thumbnailImagePosition = post.thumbnailImagePosition;
+        if (theme.auto_thumbnail_image_position){
+          if (index % config.per_page == 0) {
+              thumbnailImagePosition = "bottom";
+          } else {
+              thumbnailImagePosition = "left";
+          }
+        } else {
+            if (!post.excerpt && !post.link) {
+                thumbnailImagePosition = "bottom";
+            } else if (thumbnailImageUrl !== null) {
+                if (post.thumbnailImagePosition && post.thumbnailImagePosition.length)  {
+                    thumbnailImagePosition = post.thumbnailImagePosition;
+                }
             }
         }
 
