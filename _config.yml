@@ -13,7 +13,7 @@
 # use grunt task `build` to synchronize assets
 
 # full screen description
-full_screen_desc: Every day that has never worked hard is the disappointment of life.
+full_screen_desc:
 
 # Image directory (default: images)
 image_dir: assets/images
@@ -37,7 +37,7 @@ sidebar:
     menu:
         home:
             title: global.home
-            url: /#blog
+            url: /
             icon: home
         categories:
             title: global.categories
@@ -137,9 +137,9 @@ author:
     # E.g : `+Tranquilpeak` or `123812884128439`
     google_plus_business:
     # major
-    major: Android开发
+    major:
     # hobby
-    hobby: Python
+    hobby:
 
 
 # Customization
