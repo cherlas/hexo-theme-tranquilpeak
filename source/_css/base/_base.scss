@@ -147,7 +147,7 @@ code {
     font-family:      map-get($font-families, 'code');
     font-weight:      400;
     background-color: map-get($highlight, 'background');
-    padding:          6px 5px;
+    padding:          7px 5px 2px 5px;
     border-radius:    6px;
 }
 
