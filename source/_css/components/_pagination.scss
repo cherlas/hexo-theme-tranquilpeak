@@ -1,78 +1,73 @@
 .pagination-bar {
-    height: auto;
-    width:  100%;
+  height: auto;
+  width: 100%;
+  height: $pagination-height;
+
+  .pagination {
+    position: relative;
     height: $pagination-height;
+    line-height: $pagination-height;
+    display: block;
+    list-style: none;
+    padding: 0 10px;
+    width: auto;
 
-    .pagination {
-        position:    relative;
-        height:      $pagination-height;
-        line-height: $pagination-height;
-        display:     block;
-        list-style:  none;
-        padding:     0 10px;
-        width:       auto;
-
-        .pagination-prev,
-        .pagination-next {
-            float:        left;
-            margin-right: 10px;
-        }
-        .pagination-number {
-            float:     right;
-            font-size: map-get($font-size, small);
-            color:     map-get($colors, light);
-        }
+    .pagination-prev,
+    .pagination-next {
+      float: left;
+      margin-right: 10px;
     }
+    .pagination-number {
+      float: right;
+      font-size: map-get($font-size, small);
+      color: map-get($colors, light);
+    }
+  }
 }
 
 #page-nav {
-    margin: 10px auto;
-    width: 100%;
-    text-align: center;
-}
-
-#page-nav .page-number {
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+  span.space {
+    padding: 0 5px;
+  }
+  .page-number {
     width: 20px;
     height: 20px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     display: inline-block;
-    color: #515151;
+    color: $font-color-base;
     line-height: 20px;
     font-size: 16px;
     margin: 0 3px 0 0;
     text-align: center;
     text-decoration: none;
-}
+    &:hover {
+      background: #222;
+      color: #fff;
+    }
+  }
 
-#page-nav .page-number:hover {
-    background: #222;
-    color: #fff;
-}
-
-#page-nav .current, #page-nav .current:hover {
+  span.page-number.current {
+    cursor: default;
     background: #4094c7;
     color: $font-color-base;
-}
+    &:hover {
+      background: #4094c7;
+      color: $font-color-base;
+    }
+  }
 
-#page-nav .current {
-    cursor: default
-}
-
-#page-nav .extend {
-    color: #515151;
+  .extend {
+    color: $font-color-base;
     margin: 0 15px;
-    //opacity: 0
     text-decoration: none;
-
-}
-
-#page-nav .extend:hover {
-    color: #0c78ce;
-}
-
-#page-nav:hover .extend {
-    opacity: 1
+    &:hover {
+      color: #0c78ce;
+    }
+  }
 }
