@@ -2,10 +2,10 @@
 // --------------------------------------------
 
 // Font families
-$open-sans:            -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+$open-sans:            -apple-system, SF UI Text, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
 $open-sans-sans-serif: -apple-system, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
-$merriweather-serif:   -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
-$monospace:             Consolas, Monaco, SF UI Text, Andale Mono, Ubuntu Mono, SF UI Text, Arial, PingFang SC, monospace;
+$merriweather-serif:   -apple-system, SF UI Text, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+$monospace:             Consolas, Monaco, SF UI Text, Andale Mono, Ubuntu Mono, Arial, PingFang SC, monospace;
 
 $font-family-base: $open-sans-sans-serif;
 
@@ -175,7 +175,7 @@ $main: (
 
 // Highlight code
 $highlight: (
-    'background':  #f7f8f8,
+    'background':  #e8f2fb,
     'font-size':   1.4rem,
     'border':      1px solid,
     'line-height': 1.3em,
