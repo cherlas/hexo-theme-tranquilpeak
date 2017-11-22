@@ -45,7 +45,6 @@
       this.$closeBtn.click(function() {
         if (self.$sidebar.hasClass('pushed')) {
           self.closeSidebar();
-          self.resetSearchToolsCol();
         }
       });
       // Detect resize of the windows
@@ -100,6 +99,7 @@
         this.swipeSidebarToLeft();
         this.swipeBlogToLeft();
         this.removeCanvasPushed();
+        this.resetSearchToolsCol();
       }
     },
 
