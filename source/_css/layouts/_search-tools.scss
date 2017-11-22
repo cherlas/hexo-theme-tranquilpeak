@@ -87,7 +87,7 @@
       margin-bottom: 0px;
     }
     .search-result {
-      padding-left: 0px;
+      padding-left: 0;
       color: rgba(77, 77, 77, 0.75);
       -webkit-overflow-scrolling: touch;
       overflow-scrolling: touch;
@@ -102,7 +102,7 @@
       .search-title {
         overflow: hidden;
         white-space: nowrap;
-        font-weight: 100;
+        font-weight: 400;
         text-overflow: ellipsis;
         display: block;
         color: rgba(255, 255, 248, 1);
