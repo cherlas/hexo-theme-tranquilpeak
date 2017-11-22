@@ -149,6 +149,11 @@
         }
     }
 
+    &.header-image-cover {
+        filter: blur(10px);
+        top: 0;
+    }
+
     &.show {
         background: none;
         opacity: 0.9;
@@ -207,7 +212,6 @@
         &[data-behavior="2"],
         &[data-behavior="4"],
         &[data-behavior="5"] {
-            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-pushed-lg;
             @include right-out-lg;
             @include bounce-lg;
@@ -245,7 +249,6 @@
         // Display post header cover div in large size and push it from the size of the large sidebar
         &[data-behavior="4"],
         &[data-behavior="5"] {
-            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-lg;
             @include right-out-lg;
@@ -253,7 +256,6 @@
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
-            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
             @include right-out-md;
@@ -291,11 +293,9 @@
             @include post-header-cover-pushed-lg;
             @include right-out-lg;
             @include bounce-lg;
-            top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
-            top: calc(#{map-get($header, 'height')});
             @include post-header-cover-lg;
             @include post-header-cover-pushed-md;
             @include right-out-md;
@@ -337,7 +337,6 @@
             @include post-header-cover-pushed-xlg;
             @include right-out-xlg;
             @include bounce-xlg;
-            top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the extra large sidebar
         &[data-behavior="5"] {
@@ -345,7 +344,6 @@
             @include post-header-cover-pushed-lg;
             @include right-out-lg;
             @include bounce-lg;
-            top: calc(#{map-get($header, 'height')});
         }
         // Display post header cover div in large size and push it from the size of the medium sidebar
         &[data-behavior="6"] {
@@ -353,7 +351,6 @@
             @include post-header-cover-pushed-md;
             @include right-out-md;
             @include bounce-md;
-            top: calc(#{map-get($header, 'height')});
         }
     }
 }
