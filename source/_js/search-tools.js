@@ -261,7 +261,6 @@
      */
     showSearchToolsCol: function() {
       this.removeHideClass();
-      // TODO optimize
       this.thinMainCol();
       this.thinHeader();
       this.thinPostHeaderCover();
