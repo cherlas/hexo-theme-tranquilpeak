@@ -63,6 +63,10 @@
         }
     }
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     /*头像效果*/
     .ih-item.circle.effect {
         margin: 0 auto;
