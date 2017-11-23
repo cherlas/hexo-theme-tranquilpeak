@@ -19,10 +19,11 @@
      */
     run: function() {
       var self = this;
-      // resize all codeblocks
-      // self.resize();
+      setTimeout(function() {
+        self.resize();
+      }, 500);
       // resize codeblocks when window is resized
-      $(window).smartresize(function() {
+      $(window).resize(function() {
         self.resize();
       });
     },
@@ -34,15 +35,20 @@
     resize: function() {
       var self = this;
       self.$codeBlocks.each(function() {
-        var $gutter = $(this).find('.gutter');
-        var $code = $(this).find('.code');
+        var windowWidth = $(window).width();
+        var gutterWidth = $(this).find('.gutter').outerWidth(); // always 15px;
+
+        var code = $(this).find('td.code');
         // get padding of code div
-        var codePaddings = $code.width() - $code.innerWidth();
-        // code block div width with padding - gutter div with padding + code div padding
-        var width = $(this).outerWidth() - $gutter.outerWidth() + codePaddings;
-        // apply new width
-        $code.css('width', width);
-        $code.children('pre').css('width', width);
+        var paddingLeft = parseInt(code.css('padding-left').substr(0, 2), 10);
+        var paddingRight = parseInt(code.css('padding-right').substr(0, 2), 10);
+
+        var width = $(this).width() - paddingLeft - paddingRight;
+        if (windowWidth >= 768) {
+          width -= gutterWidth;
+        }
+
+        code.find('pre').css('width', width);
       });
     }
   };
