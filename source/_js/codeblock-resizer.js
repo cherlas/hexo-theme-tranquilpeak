@@ -21,7 +21,7 @@
       var self = this;
       setTimeout(function() {
         self.resize();
-      }, 500);
+      }, 100);
       // resize codeblocks when window is resized
       $(window).resize(function() {
         self.resize();
