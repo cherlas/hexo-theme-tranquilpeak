@@ -13,6 +13,7 @@
     -webkit-transition: -webkit-transform .25s ease-in-out;
     // Improve smoothing of the font by adding subpixel in Safari
     @include prefix(font-smoothing, antialiased, 'webkit');
+    @include prefix(font-smoothing, grayscale, 'moz-osx');
 
     .sidebar-container {
         overflow: auto;
