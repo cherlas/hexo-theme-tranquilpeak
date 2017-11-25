@@ -253,12 +253,7 @@
                 display: none;
             }
             .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                -webkit-transform: rotate3d(0, 1, 0, 0deg);
-                -moz-transform: rotate3d(0, 1, 0, 0deg);
-                -ms-transform: rotate3d(0, 1, 0, 0deg);
-                -o-transform: rotate3d(0, 1, 0, 0deg);
-                transform: rotate3d(0, 1, 0, 0deg);
-                // TODO prefix
+                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
             }
         }
     }
@@ -273,12 +268,8 @@
         }
 
         .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
-            -webkit-transform: rotate3d(0, 1, 0, 0deg);
-            -moz-transform: rotate3d(0, 1, 0, 0deg);
-            -ms-transform: rotate3d(0, 1, 0, 0deg);
-            -o-transform: rotate3d(0, 1, 0, 0deg);
-            transform: rotate3d(0, 1, 0, 0deg);
-            // TODO prefix
+
+            @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
         }
 
         &[data-behavior="1"],
@@ -331,12 +322,7 @@
                 display: none;
             }
             .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                -webkit-transform: rotate3d(0, 1, 0, 0deg);
-                -moz-transform: rotate3d(0, 1, 0, 0deg);
-                -ms-transform: rotate3d(0, 1, 0, 0deg);
-                -o-transform: rotate3d(0, 1, 0, 0deg);
-                transform: rotate3d(0, 1, 0, 0deg);
-                // TODO prefix
+                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
             }
         }
     }
@@ -371,12 +357,8 @@
                 display: none;
             }
             .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                -webkit-transform: rotate3d(0, 1, 0, 0deg);
-                -moz-transform: rotate3d(0, 1, 0, 0deg);
-                -ms-transform: rotate3d(0, 1, 0, 0deg);
-                -o-transform: rotate3d(0, 1, 0, 0deg);
-                transform: rotate3d(0, 1, 0, 0deg);
-                // TODO prefix
+
+                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
             }
         }
         // hide bio in sidebar when small sidebar is enabled
