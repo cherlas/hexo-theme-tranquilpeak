@@ -7,6 +7,28 @@ html {
     // Overrides the highlight color shown when the user taps
     //a link or a JavaScript clickable element in Safari on iPhone
     @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
+
+    //::-webkit-scrollbar-track
+    //{
+    //    border-radius: 10px;
+    //    background-color: #dcdcdc;
+    //}
+
+    ::-webkit-scrollbar
+    {
+        width: 8px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 8px;
+        background-color: gray;
+        &:hover {
+            background-color: #6a6a6a;
+        }
+    }
+
 }
 
 body {
@@ -20,7 +42,8 @@ body {
     line-height:    $line-height-base;
     letter-spacing: $letter-spacing-base;
     // Improve smoothing of the font by adding subpixel in Safari
-    @include prefix(font-smoothing, antialiased, 'webkit' 'moz-osx');
+    @include prefix(font-smoothing, antialiased, 'webkit');
+    @include prefix(font-smoothing, grayscale, 'moz-osx');
 
     // Hide overflow-x when the sidebar is swiped
     &.pushed {
