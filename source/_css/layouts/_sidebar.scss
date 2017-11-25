@@ -68,29 +68,22 @@
         display: none;
     }
 
-    /*头像效果*/
     .ih-item.circle.effect {
         margin: 0 auto;
         -webkit-perspective: 900px;
         -moz-perspective: 900px;
         perspective: 900px;
         .info {
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
-            -o-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+            @include prefix(transform-style, preserve-3d, 'webkit' 'moz' 'ms' 'o');
+
             .info-back {
                 opacity: 1;
                 border-radius: 50%;
                 width: 100%;
                 height: 100%;
-                /*background: #333333;*/
             }
             p, h2 {
-                //text-shadow: 0 0 1px white, 0 1px 1px rgba(0, 0, 0, 0.2);
                 font-weight: bold;
-                //letter-spacing: normal;
                 font-family: Consolas, 'Open Sans',monospace;
             }
             h2 {
@@ -100,77 +93,41 @@
                 margin: 0 auto;
                 padding-top: 30px;
                 height: 24px;
-                /*text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);*/
             }
             p {
                 color: #e6e6e6;
                 padding: 0 0 0 0;
-                //font-style: italic;
                 font-size: 16px;
             }
         }
         .sidebar-profile-picture {
             z-index: 11;
-            -webkit-transition: all 0.5s ease-in-out;
-            -moz-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+            @include prefix(transition, all 0.5s ease-in-out, 'webkit' 'moz');
         }
     }
     .ih-item.circle.effect.bottom_to_top .sidebar-profile-picture {
-        -webkit-transform-origin: 50% 0;
-        -moz-transform-origin: 50% 0;
-        -ms-transform-origin: 50% 0;
-        -o-transform-origin: 50% 0;
-        transform-origin: 50% 0;
+        @include prefix(transform-origin, 50% 0, 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.bottom_to_top a:hover .sidebar-profile-picture {
-        -webkit-transform: rotate3d(1, 0, 0, 180deg);
-        -moz-transform: rotate3d(1, 0, 0, 180deg);
-        -ms-transform: rotate3d(1, 0, 0, 180deg);
-        -o-transform: rotate3d(1, 0, 0, 180deg);
-        transform: rotate3d(1, 0, 0, 180deg);
+        @include prefix(transform, rotate3d(1, 0, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.top_to_bottom .sidebar-profile-picture {
-        -webkit-transform-origin: 50% 100%;
-        -moz-transform-origin: 50% 100%;
-        -ms-transform-origin: 50% 100%;
-        -o-transform-origin: 50% 100%;
-        transform-origin: 50% 100%;
+        @include prefix(transform-origin, 50% 100%, 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.top_to_bottom a:hover .sidebar-profile-picture {
-        -webkit-transform: rotate3d(1, 0, 0, -180deg);
-        -moz-transform: rotate3d(1, 0, 0, -180deg);
-        -ms-transform: rotate3d(1, 0, 0, -180deg);
-        -o-transform: rotate3d(1, 0, 0, -180deg);
-        transform: rotate3d(1, 0, 0, -180deg);
+        @include prefix(transform, rotate3d(1, 0, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.left_to_right .sidebar-profile-picture {
-        -webkit-transform-origin: 100% 50%;
-        -moz-transform-origin: 100% 50%;
-        -ms-transform-origin: 100% 50%;
-        -o-transform-origin: 100% 50%;
-        transform-origin: 100% 50%;
+        @include prefix(transform-origin, 100% 50%, 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.left_to_right a:hover .sidebar-profile-picture {
-        -webkit-transform: rotate3d(0, 1, 0, 180deg);
-        -moz-transform: rotate3d(0, 1, 0, 180deg);
-        -ms-transform: rotate3d(0, 1, 0, 180deg);
-        -o-transform: rotate3d(0, 1, 0, 180deg);
-        transform: rotate3d(0, 1, 0, 180deg);
+        @include prefix(transform, rotate3d(0, 1, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.right_to_left .sidebar-profile-picture {
-        -webkit-transform-origin: 0% 50%;
-        -moz-transform-origin: 0% 50%;
-        -ms-transform-origin: 0% 50%;
-        -o-transform-origin: 0% 50%;
-        transform-origin: 0% 50%;
+        @include prefix(transform-origin, 0 50%, 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
-        -webkit-transform: rotate3d(0, 1, 0, -180deg);
-        -moz-transform: rotate3d(0, 1, 0, -180deg);
-        -ms-transform: rotate3d(0, 1, 0, -180deg);
-        -o-transform: rotate3d(0, 1, 0, -180deg);
-        transform: rotate3d(0, 1, 0, -180deg);
+        @include prefix(transform, rotate3d(0, 1, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
     }
     .ih-item a {
         color: #333;
@@ -197,9 +154,7 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
-                -webkit-transition: all 0.35s ease-in-out;
-                -moz-transition: all 0.35s ease-in-out;
-                transition: all 0.35s ease-in-out;
+                @include prefix(transition, all 0.35s ease-in-out, 'webkit' 'moz');
             }
             img {
                 border-radius: 50%;
@@ -268,7 +223,6 @@
         }
 
         .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
-
             @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
         }
 
@@ -294,10 +248,10 @@
     #sidebar {
         // used to hide portrait text
         .info {
-            -webkit-animation-name: fadeIn; /*动画名称*/
-            -webkit-animation-duration: 2s; /*动画持续时间*/
-            -webkit-animation-iteration-count: 1; /*动画次数*/
-            -webkit-animation-delay: 0s; /*延迟时间*/
+            -webkit-animation-name: fadeIn;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-delay: 0s;
         }
 
         &[data-behavior="1"],
@@ -357,7 +311,6 @@
                 display: none;
             }
             .ih-item.circle.effect a:hover .sidebar-profile-picture {
-
                 @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
             }
         }
@@ -389,13 +342,13 @@
 
 @-webkit-keyframes fadeIn {
     0% {
-        opacity: 0; /*初始状态 透明度为0*/
+        opacity: 0;
     }
     50% {
-        opacity: 0; /*中间状态 透明度为0*/
+        opacity: 0;
     }
     100% {
-        opacity: 1; /*结尾状态 透明度为1*/
+        opacity: 1;
     }
 }
 
