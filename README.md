@@ -14,6 +14,7 @@ Node v4+, Hexo 3.0.0+
 
 ### 安装
 
+在hexo跟目录下执行以下命令:
 
 ``` bash
 $ git clone https://github.com/cherlas/hexo-theme-tranquilpeak.git themes/tranquilpeak
