@@ -97,7 +97,6 @@ sidebar:
             url: /atom.xml
             icon: rss
 
-# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 右滑板块背景
   slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
@@ -127,7 +126,7 @@ author:
     # or in `source/assets/images/` (production)
     # or you can use an external url
     # Overwritten by your gravatar image if `gravatar_email` is filled
-    picture: avatar.jpg
+    picture: 
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
     # Your personal google plus profile id, not your blog or business page id.
