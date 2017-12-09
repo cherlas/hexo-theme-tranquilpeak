@@ -1,6 +1,6 @@
 # Tranquilpeak
 
-一个个性化的Tranquilpeak hexo主题，原主题https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak
+一个个性化的Tranquilpeak hexo主题，原主题 https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak
 
 [![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.10.jpg)](https://github.com/cherlas/hexo-theme-tranquilpeak)
 
