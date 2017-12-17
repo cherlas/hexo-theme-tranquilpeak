@@ -1,6 +1,6 @@
 (function($) {
   'use strict';
-  
+
   // Run fancybox feature
 
   $(document).ready(function() {
@@ -22,38 +22,23 @@
       }
 
       $('.fancybox').fancybox({
-        maxWidth: 900,
-        maxHeight: 800,
-        fitToView: true,
-        width: '50%',
-        height: '50%',
-        autoSize: true,
-        arrows: arrows,
-        closeClick: false,
-        openEffect: 'elastic',
-        closeEffect: 'elastic',
-        prevEffect: 'none',
-        nextEffect: 'none',
-        padding: '0',
-        helpers: {
-          thumbs: thumbs,
-          overlay: {
-            css: {
-              overflow: 'hidden',
-              background: 'rgba(0, 0, 0, 0.85)'
-            }
-          }
-        },
-        afterLoad: function() {
-          setTimeout(function() {
-            $('.fancybox-next > span, .fancybox-prev > span').css('visibility', 'visible');
-          }, 400);
+        buttons: [
+          'fullScreen',
+          'thumbs',
+          'share',
+          'download',
+          'zoom',
+          'close'
+        ],
+        thumbs: {
+          autoStart: true,
+          axis: 'x'
         }
       });
     }
 
     fancyFox();
-    
+
     $(window).smartresize(function() {
       fancyFox();
     });
