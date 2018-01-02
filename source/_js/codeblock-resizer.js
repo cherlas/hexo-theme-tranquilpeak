@@ -10,6 +10,8 @@
    */
   var CodeBlockResizer = function(elem) {
     this.$codeBlocks = $(elem);
+    this.$post = $('.postShorten-wrap');
+    this.$sidebar = $('#sidebar');
   };
 
   CodeBlockResizer.prototype = {
@@ -35,19 +37,17 @@
     resize: function() {
       var self = this;
       self.$codeBlocks.each(function() {
+        var code = $(this).find('td.code');
         var windowWidth = $(window).width();
         var gutterWidth = $(this).find('.gutter').outerWidth(); // always 15px;
-
-        var code = $(this).find('td.code');
-        // get padding of code div
+        var sidebarWidth = self.$sidebar.width();
         var paddingLeft = parseInt(code.css('padding-left').substr(0, 2), 10);
         var paddingRight = parseInt(code.css('padding-right').substr(0, 2), 10);
 
-        var width = $(this).width() - paddingLeft - paddingRight;
-        if (windowWidth >= 768) {
-          width -= gutterWidth;
+        if (windowWidth < 768) {
+          gutterWidth = 0;
         }
-
+        var width = (windowWidth - sidebarWidth) * 2 / 3 - gutterWidth - paddingRight - paddingLeft;
         code.find('pre').css('width', width);
       });
     }
