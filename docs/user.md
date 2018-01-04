@@ -2,7 +2,7 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.10.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.11.0.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
@@ -59,7 +59,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 ## General ##
 
 - **Author** : Louis Barranqueiro
-- **Version** : 1.10.0
+- **Version** : 1.11.0
 - **Compatibility** : Node v4 or later, Hexo v3.0.0 or later
 
 ## Features ##
@@ -97,6 +97,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 - Gravatar
 - Algolia
 - Facebook Insights
+- Gitment
 
 ## Requirements ##
 
@@ -105,7 +106,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.10.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.10.0/hexo-theme-tranquilpeak-built-for-production-1.10.0.zip)
+1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.11.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.11.0/hexo-theme-tranquilpeak-built-for-production-1.11.0.zip)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -350,7 +351,6 @@ The same page with `category_pagination: false`:
 ``` yaml
 # Integrated services
 disqus_shortname:
-duoshuo_shortname:
 gravatar_email: 
 google_analytics_id: 
 fb_admin_ids:
@@ -360,7 +360,6 @@ fb_app_id:
 |Variable|Description|
 |---|---|
 |disqus_shortname|Your Disqus shortname. The theme use its own value for disqus shortname to reduce dependency with Hexo in case of this variable is deleted in a new Hexo version.| 
-|duoshuo_shortname|Your Duoshuo shortname. You can't use Disqus and Duoshuo together, then fill the right shortname. If both are filled, Disqus will be chosen.|
 |gravatar_email|Your gravatar email. Overwrite `author.picture` everywhere in the blog|
 |google_analytics_id|Your Google analystics web property ID : UA-XXXXX-X|
 |fb_admin_ids|Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. E.g : `9830047,1003342`. Visit [Facebook docs](https://developers.facebook.com/docs/platforminsights/domains) for more information.|
