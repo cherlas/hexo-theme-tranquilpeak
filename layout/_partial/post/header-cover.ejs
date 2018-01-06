@@ -11,6 +11,7 @@
         }
 %>
         <div class="post-header-cover fade-in header-image-cover
+                    <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
                     <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
              style="background-image:url('<%= coverImageUrl %>');"
              data-behavior="<%= sidebarBehavior %>">
