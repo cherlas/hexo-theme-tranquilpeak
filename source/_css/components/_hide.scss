@@ -11,7 +11,7 @@
 }
 
 // Hide element on small screen only
-@media #{$small-only} {
+@media #{$medium-and-down} {
     .hide-sm {
         display: none;
     }
