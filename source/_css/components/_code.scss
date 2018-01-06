@@ -1,51 +1,51 @@
 // Highlight code block
 figure.highlight,
 .codeblock {
-  margin: 10px 0;
-  line-height: map-get($highlight, line-height);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  overflow: hidden;
+    margin:         10px 0;
+    line-height:    map-get($highlight, line-height);
+    padding-top:    15px;
+    padding-bottom: 15px;
+    overflow:       hidden;
 
-  table {
-    display: block;
-    width: 100%;
-  }
-
-  // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
-  pre,
-  .gutter,
-  .code,
-  .tag {
-    background-color: inherit;
-    font-family: #{map-get($font-families, 'highlight')};
-    border: none;
-    padding: 0;
-    margin: 0;
-    // To override cursor attribute of `.tag` components
-    cursor: text;
-  }
-  // To align line number and line of code regardless if there is a scroll bar or not
-  .gutter,
-  .code {
-    vertical-align: top;
-  }
-  // hide gutter when code is plain text
-  &.plain {
-    .gutter {
-      display: none;
+    table {
+        display: block;
+        width:   100%;
     }
-  }
-  // Meta bar which contains name of the file and his link
-  figcaption {
-    font-size: 1.3rem;
-    padding: 0 15px 20px;
-    margin: 0;
 
-    a {
-      float: right;
+    // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
+    pre,
+    .gutter,
+    .code,
+    .tag {
+        background-color: inherit;
+        font-family:      #{map-get($font-families, 'highlight')};
+        border:           none;
+        padding:          0;
+        margin:           0;
+        // To override cursor attribute of `.tag` components
+        cursor:           text;
     }
-  }
+    // To align line number and line of code regardless if there is a scroll bar or not
+    .gutter,
+    .code {
+        vertical-align: top;
+    }
+    // hide gutter when code is plain text
+    &.plain {
+        .gutter {
+            display: none;
+        }
+    }
+    // Meta bar which contains name of the file and his link
+    figcaption {
+        font-size: 1.3rem;
+        padding:   0 15px 20px;
+        margin:    0;
+
+        a {
+            float: right;
+        }
+    }
 
   // Gutter which contains line numbers
   .gutter {
@@ -59,13 +59,6 @@ figure.highlight,
     pre {
       overflow-x: auto;
       overflow-y: hidden;
-
-      //::-webkit-scrollbar-track
-      //{
-      //  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      //  border-radius: 10px;
-      //  background-color: #F5F5F5;
-      //}
 
     }
 
@@ -85,47 +78,47 @@ figure.highlight,
   {
     border-radius: 15px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.12);
-    background-color: gainsboro;
+    background-color: transparent;
     &:hover {
-      background-color: gray;
+      background-color: rgb(193, 193, 193);
     }
   }
 }
 
 // Tabbed code block
 .codeblock--tabbed {
-  figure.highlight,
-  pre > code {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-  figcaption {
-    a, span {
-      float: left !important;
+    figure.highlight,
+    pre > code {
+        margin-bottom:  0;
+        padding-bottom: 0;
     }
-    .tabs {
-      float: right;
-      .tab {
-        cursor: pointer;
-        display: inline-block;
-        margin: 0 5px;
-        padding: 0 7px;
-        &:last-child {
-          margin-right: 0;
+    figcaption {
+        a, span {
+            float: left !important;
         }
-      }
+        .tabs {
+            float: right;
+            .tab {
+                cursor:  pointer;
+                display: inline-block;
+                margin:  0 5px;
+                padding: 0 7px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
     }
-  }
 }
 
 // Gist
 .gist {
-  .line,
-  .line-number {
-    font-family: map-get($font-families, 'highlight');
-    font-size: 1em;
-    margin: 0 0 5px 0;
-  }
+    .line,
+    .line-number {
+        font-family: map-get($font-families, 'highlight');
+        font-size:   1em;
+        margin:      0 0 5px 0;
+    }
 }
 
 @media #{$small-and-down} {
