@@ -1,5 +1,6 @@
 <div class="media">
-    <a class="search-title" href="<%- url_for(post.path)%>" ><i class="fa fa-quote-left"></i><span id="search-post-title"><%= post.title %></span></a>
+    <a class="search-title" href="<%- url_for(post.path) %>"><i class="fa fa-quote-left"></i><span
+                id="search-post-title"><%= post.title %></span></a>
     <p class="search-time">
         <i class="icon-calendar icon"></i>
         <span id="search-post-tags"><%- full_date(post.date, 'YYYY-MM-DD') %></span>
