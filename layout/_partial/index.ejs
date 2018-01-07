@@ -9,17 +9,17 @@
         /* Define thumbnail image */
 
         // Define position of the thumbnail image
-        if (theme.auto_thumbnail_image_position){
-          if (index % config.per_page == 0) {
-              thumbnailImagePosition = "bottom";
-          } else {
-              thumbnailImagePosition = "left";
-          }
+        if (theme.auto_thumbnail_image_position) {
+            if (index % config.per_page == 0) {
+                thumbnailImagePosition = "bottom";
+            } else {
+                thumbnailImagePosition = "left";
+            }
         } else {
             if (!post.excerpt && !post.link) {
                 thumbnailImagePosition = "bottom";
             } else if (thumbnailImageUrl !== null) {
-                if (post.thumbnailImagePosition && post.thumbnailImagePosition.length)  {
+                if (post.thumbnailImagePosition && post.thumbnailImagePosition.length) {
                     thumbnailImagePosition = post.thumbnailImagePosition;
                 }
             }
@@ -29,14 +29,16 @@
         if (!post.excerpt && (/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
             if (__('post.toc_title')) {
                 tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
-            } else {
+            }
+            else {
                 tableOfContents = '<span id="table-of-contents"></span>';
             }
             tableOfContents += toc(postContent, {list_number: false})
             postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
         }
     %>
-    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %> fadeInUp" itemscope itemType="http://schema.org/BlogPosting"
+    <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %> fadeInUp" itemscope
+             itemType="http://schema.org/BlogPosting"
              style="animation-delay: <%= (index % 10) * 0.1 %>s">
         <div class="postShorten-wrap">
             <% if (thumbnailImageUrl !== null && thumbnailImagePosition === "top") { %>
