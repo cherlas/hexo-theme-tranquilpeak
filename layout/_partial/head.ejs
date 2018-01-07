@@ -112,7 +112,7 @@
 %>
 <head>
     <meta charset="UTF-8">
-    <meta name="baidu-site-verification" content="<%= config.baidu_site_verification %>" />
+    <meta name="baidu-site-verification" content="<%= config.baidu_site_verification %>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="<%= config.title %>">
     <title><%= title %></title>
@@ -146,11 +146,13 @@
     <% } %>
     <% if (page.thumbnailImage && page.thumbnailImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>" />
+        <meta class="swiftype" name="image" data-type="enum"
+              content="<%= resolve_asset_url(page.path, page.thumbnailImage) %>"/>
     <% } %>
     <% if (page.coverImage && page.coverImage.length) { %>
         <meta property="og:image" content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
-        <meta class="swiftype" name="image" data-type="enum" content="<%= resolve_asset_url(page.path, page.coverImage) %>" />
+        <meta class="swiftype" name="image" data-type="enum"
+              content="<%= resolve_asset_url(page.path, page.coverImage) %>"/>
     <% } %>
     <% if (photos && photos.length) { %>
         <% photos.forEach(function(photo) { %>
