@@ -56,7 +56,7 @@
 
       // Define third images (cover image and first photo) as thumbnail image
       if (theme.thumbnail_image && (post.autoThumbnailImage === true ||
-        (theme.auto_thumbnail_image === true && post.autoThumbnailImage !== false))) {
+          (theme.auto_thumbnail_image === true && post.autoThumbnailImage !== false))) {
         // use photos
         if (post.photos && post.photos.length) {
           if (isRemoteUrl(post.photos[0])) {
