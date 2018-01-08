@@ -49,16 +49,21 @@
                     <% if (!theme.sidebar[i][n].url) { %>
                     <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" rel="noopener">
                     <% } else if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener">
+                        <a class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %> <%= theme.sidebar[i][n].class %> <% } %>"
+                        href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank" rel="noopener">
                     <% } else { %>
-                        <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
-                            <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
-                            <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
+                        <a class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %> <%= theme.sidebar[i][n].class %> <% } %>"
+                                <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %>
+                           href="<%- url_for(' ') %>"
+                                <% } else { %>
+                           href="<%- url_for(theme.sidebar[i][n].url) %>"
+                                <% } %>
                         >
-                    <% } %>
-                        <i class="sidebar-button-icon fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc"><%= __(theme.sidebar[i][n].title) %></span>
-                    </a>
+                            <% } %>
+                            <i class="sidebar-button-icon fa fa-lg <%= 'fa-' + theme.sidebar[i][n].icon %>"
+                               aria-hidden="true"></i>
+                            <span class="sidebar-button-desc"><%= __(theme.sidebar[i][n].title) %></span>
+                        </a>
             </li>
             <% } %>
         </ul>
