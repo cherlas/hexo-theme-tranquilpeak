@@ -1,22 +1,22 @@
 <div class="<%= (classes ? classes.join(' ') : '') %>">
     <time itemprop="datePublished" datetime="<%= post.date.format() %>">
-        <img class="calendar" src="/assets/images/calendar.png" />
+        <img class="calendar" src="/assets/images/calendar.png"/>
         <% if (post.lang) { %>
-		    <%= post.date.locale(post.lang).format(__('date_format')) %>
-    	<% } else { %>
-		    <%= post.date.locale(page.lang).format(__('date_format')) %>
-    	<% } %>
+        <%= post.date.locale(post.lang).format(__('date_format')) %>
+        <% } else { %>
+        <%= post.date.locale(page.lang).format(__('date_format')) %>
+        <% } %>
     </time>
     <% if ((post.categories) && (post.categories.length > 0)) { %>
-        <span><%= __('post.categorized_in')  %> </span>
-        <%- partial('category', {categories: post.categories})%>
+    <span><%= __('post.categorized_in') %> </span>
+    <%- partial('category', {categories: post.categories}) %>
     <% } %>
-    <% if ((post.tags) && (post.tags.length > 0)) {%>
+    <% if ((post.tags) && (post.tags.length > 0)) { %>
     <div class="tag-img fa fa-tags"></div>
     <div class="post-tags">
         <% post.tags.forEach(function(tag){ %>
-        <a href="/tags/<%-tag.name%>/"><%-tag.name%></a>
+        <a href="/tags/<%- tag.name %>/"><%- tag.name %></a>
         <% }) %>
     </div>
-    <% }%>
+    <% } %>
 </div>
