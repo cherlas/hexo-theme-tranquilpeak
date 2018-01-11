@@ -1,151 +1,151 @@
 #header {
-    display:                     block;
-    width:                       100%;
-    height:                      map-get($header, height);
-    background:                  map-get($header, background);
-    position:                    fixed;
-    top:                         0;
-    border:                      map-get($header, border);
-    color:                       map-get($header, color);
-    // used to animate the header on small screen with javascript
-    //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
-    z-index:                     map-get($z-indexes, l-header);
-    // Sidebar animation
-    // Transition style (push)
-    transition:                  transform .25s ease-in-out;
-    -webkit-transition:          -webkit-transform .25s ease-in-out;
-    // Eliminate any flickering of elements while they are in a state of being animated
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective:         1000;
+  display: block;
+  width: 100%;
+  height: map-get($header, height);
+  background: map-get($header, background);
+  position: fixed;
+  top: 0;
+  border: map-get($header, border);
+  color: map-get($header, color);
+  // used to animate the header on small screen with javascript
+  //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
+  z-index: map-get($z-indexes, l-header);
+  // Sidebar animation
+  // Transition style (push)
+  transition: transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+  // Eliminate any flickering of elements while they are in a state of being animated
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 
-    #btn-open-sidebar {
-        position: absolute;
-        // vertical center
-        top:      20px;
-        left:     20px;
-        cursor:   pointer;
-    }
+  #btn-open-sidebar {
+    position: absolute;
+    // vertical center
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+  }
 
-    .btn-open-search {
-        color: #88909a;
-        position: absolute;
-        // vertical center
-        top:      20px;
-        left:     58.45px;
-        cursor:   pointer;
-    }
-    .header-right-picture {
-        position: absolute;
-        // vertical center
-        top:      12.5px;
-        right:    20px;
-        display:  block;
-        width:    30px;
-        height:   30px;
-        color:    map-get($header, color);
+  .btn-open-search {
+    color: #88909a;
+    position: absolute;
+    // vertical center
+    top: 20px;
+    left: 58.45px;
+    cursor: pointer;
+  }
+  .header-right-picture {
+    position: absolute;
+    // vertical center
+    top: 12.5px;
+    right: 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: map-get($header, color);
 
-        .header-picture {
-            display:       block;
-            width:         30px;
-            height:        30px;
-            border-radius: 15px;
-        }
+    .header-picture {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
     }
-    .header-right-icon {
-        position: absolute;
-        // vertical center
-        top:      12.5px;
-        right:    20px;
-        color:    map-get($header, color);
-    }
-    .header-title {
-        text-align:  center;
-        font-size:   $font-size-base;
-        line-height: 55px;
-        margin:      0;
+  }
+  .header-right-icon {
+    position: absolute;
+    // vertical center
+    top: 12.5px;
+    right: 20px;
+    color: map-get($header, color);
+  }
+  .header-title {
+    text-align: center;
+    font-size: $font-size-base;
+    line-height: 55px;
+    margin: 0;
 
-        .header-title-link {
-            color:       map-get($header, color);
-            font-weight: normal;
+    .header-title-link {
+      color: map-get($header, color);
+      font-weight: normal;
 
-            &:hover,
-            &:active {
-                color:           darken(map-get($header, color), 10);
-                text-decoration: none;
-            }
-        }
+      &:hover,
+      &:active {
+        color: darken(map-get($header, color), 10);
+        text-decoration: none;
+      }
     }
-    // Class used to swipe to the top the header on small screen when the user scroll down
-    &.header-up {
-        @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
-    }
+  }
+  // Class used to swipe to the top the header on small screen when the user scroll down
+  &.header-up {
+    @include prefix(transform, translate3d(0, -#{map-get($header, height)}, 0), 'webkit' 'moz');
+  }
 
-    &.show {
-        opacity: 1;
-        animation-duration: .8s;
-        animation-fill-mode: both;
-        animation-name: rightOut;
-        background: transparent ;
-        border: none ;
-    }
+  &.show {
+    opacity: 1;
+    animation-duration: .8s;
+    animation-fill-mode: both;
+    animation-name: rightOut;
+    background: transparent;
+    border: none;
+  }
 
-    &.recover{
-        animation-name: bounce;
-        animation-duration: 1s;
-        transform-origin: center bottom;
-    }
+  &.recover {
+    animation-name: bounce;
+    animation-duration: 1s;
+    transform-origin: center bottom;
+  }
 
-    // Push the header from the size of the large sidebar
-    &[data-behavior="1"],
-    &[data-behavior="2"],
-    &[data-behavior="4"],
-    &[data-behavior="5"] {
-        @include header-pushed-lg;
-        @include right-out-lg;
-        @include bounce-lg;
-    }
+  // Push the header from the size of the large sidebar
+  &[data-behavior="1"],
+  &[data-behavior="2"],
+  &[data-behavior="4"],
+  &[data-behavior="5"] {
+    @include header-pushed-lg;
+    @include right-out-lg;
+    @include bounce-lg;
+  }
 
-    // Push the header from the size of the medium sidebar
-    &[data-behavior="3"],
-    &[data-behavior="6"] {
-        @include header-pushed-md;
-        @include right-out-md;
-        @include bounce-md;
-    }
+  // Push the header from the size of the medium sidebar
+  &[data-behavior="3"],
+  &[data-behavior="6"] {
+    @include header-pushed-md;
+    @include right-out-md;
+    @include bounce-md;
+  }
 }
 
 @media #{$medium-and-up} {
-    #header {
-        // Hide header
-        &[data-behavior="1"],
-        &[data-behavior="2"],
-        &[data-behavior="3"] {
-            display: none;
-        }
+  #header {
+    // Hide header
+    &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="3"] {
+      display: none;
     }
+  }
 }
 
 // Push the header from the size of the extra large sidebar
 @media #{$xlarge-and-up} {
-    #header {
-        &[data-behavior="1"],
-        &[data-behavior="4"] {
-            @include header-pushed-xlg;
-            @include right-out-xlg;
-            @include bounce-xlg;
-        }
-        &[data-behavior="2"],
-        &[data-behavior="5"] {
-            @include header-pushed-lg;
-            @include right-out-lg;
-            @include bounce-lg;
-        }
+  #header {
+    &[data-behavior="1"],
+    &[data-behavior="4"] {
+      @include header-pushed-xlg;
+      @include right-out-xlg;
+      @include bounce-xlg;
     }
+    &[data-behavior="2"],
+    &[data-behavior="5"] {
+      @include header-pushed-lg;
+      @include right-out-lg;
+      @include bounce-lg;
+    }
+  }
 }
 
 // Hide header in print layout
 @media print {
-    #header {
-        display: none;
-    }
+  #header {
+    display: none;
+  }
 }
