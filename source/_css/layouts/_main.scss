@@ -1,6 +1,6 @@
 #main {
-  min-height: 100%;
   display: block;
+  min-height: 100%;
   background: map-get($main, 'background-color');
   transition: transform .25s ease-in-out;
   -webkit-transition: -webkit-transform .25s ease-in-out;
@@ -34,7 +34,7 @@
     animation-name: rightOut;
   }
 
-  &.recover{
+  &.recover {
     animation-name: bounce;
     animation-duration: 1s;
     transform-origin: center bottom;
