@@ -1,355 +1,355 @@
 // Global CSS rules for all screen size
 #sidebar {
-    font-family:        map-get($font-families, 'sidebar');
-    height:             100%;
-    position:           fixed;
-    top:                0;
-    background:         map-get($sidebar, background);
-    overflow:           auto;
-    z-index:            map-get($z-indexes, l-sidebar);
-    // Sidebar animation
-    // Transition style (push)
-    transition:         transform .25s ease-in-out;
-    -webkit-transition: -webkit-transform .25s ease-in-out;
-    // Improve smoothing of the font by adding subpixel in Safari
-    @include prefix(font-smoothing, antialiased, 'webkit');
-    @include prefix(font-smoothing, grayscale, 'moz-osx');
+  font-family: map-get($font-families, 'sidebar');
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: map-get($sidebar, background);
+  overflow: auto;
+  z-index: map-get($z-indexes, l-sidebar);
+  // Sidebar animation
+  // Transition style (push)
+  transition: transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+  // Improve smoothing of the font by adding subpixel in Safari
+  @include prefix(font-smoothing, antialiased, 'webkit');
+  @include prefix(font-smoothing, grayscale, 'moz-osx');
 
-    .sidebar-container {
-        overflow: auto;
-    }
-    // Author information
-    .sidebar-profile {
-        color:         map-get($sidebar, color);
-        text-align:    center;
-        padding-top:   18px;
-        margin-bottom: 15px;
+  .sidebar-container {
+    overflow: auto;
+  }
+  // Author information
+  .sidebar-profile {
+    color: map-get($sidebar, color);
+    text-align: center;
+    padding-top: 18px;
+    margin-bottom: 15px;
 
-        .sidebar-profile-picture {
-            display: block;
-            margin:  0 auto;
-            border-radius: 50%;
-        }
-        .sidebar-profile-name {
-            font-size: 1.1em;
-            color:     map-get($sidebar, color);
-        }
+    .sidebar-profile-picture {
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
     }
-    // Sidebar's buttons
-    ul.sidebar-buttons {
-        padding: 0;
-        margin:  0 0 20px 0;
+    .sidebar-profile-name {
+      font-size: 1.1em;
+      color: map-get($sidebar, color);
+    }
+  }
+  // Sidebar's buttons
+  ul.sidebar-buttons {
+    padding: 0;
+    margin: 0 0 20px 0;
 
-        li.sidebar-button {
-            display:     block;
-            width:       100%;
-            // Height of a link in the menu
-            height:      45px;
-            line-height: 45px;
+    li.sidebar-button {
+      display: block;
+      width: 100%;
+      // Height of a link in the menu
+      height: 45px;
+      line-height: 45px;
 
-            .sidebar-button-link {
-                color:   map-get($sidebar, color);
-                display: block;
-                height:  100%;
+      .sidebar-button-link {
+        color: map-get($sidebar, color);
+        display: block;
+        height: 100%;
 
-                &:hover,
-                &:active {
-                    text-decoration: none;
-                    color:           lighten(map-get($sidebar, color), 35);
-                }
-            }
+        &:hover,
+        &:active {
+          text-decoration: none;
+          color: lighten(map-get($sidebar, color), 35);
         }
-        &:first-child {
-            margin-top: 5px;
-        }
+      }
     }
+    &:first-child {
+      margin-top: 5px;
+    }
+  }
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-    .ih-item.circle.effect {
-        margin: 0 auto;
-        -webkit-perspective: 900px;
-        -moz-perspective: 900px;
-        perspective: 900px;
-        .info {
-            @include prefix(transform-style, preserve-3d, 'webkit' 'moz' 'ms' 'o');
+  .ih-item.circle.effect {
+    margin: 0 auto;
+    -webkit-perspective: 900px;
+    -moz-perspective: 900px;
+    perspective: 900px;
+    .info {
+      @include prefix(transform-style, preserve-3d, 'webkit' 'moz' 'ms' 'o');
 
-            .info-back {
-                opacity: 1;
-                border-radius: 50%;
-                width: 100%;
-                height: 100%;
-            }
-            p, h2 {
-                font-weight: bold;
-                font-family: Consolas, 'Open Sans',monospace;
-            }
-            h2 {
-                color: #fff;
-                position: relative;
-                font-size: 16px;
-                margin: 0 auto;
-                padding-top: 30px;
-                height: 24px;
-            }
-            p {
-                color: #e6e6e6;
-                padding: 0 0 0 0;
-                font-size: 16px;
-            }
-        }
-        .sidebar-profile-picture {
-            z-index: 11;
-            @include prefix(transition, all 0.5s ease-in-out, 'webkit' 'moz');
-        }
-    }
-    .ih-item.circle.effect.bottom_to_top .sidebar-profile-picture {
-        @include prefix(transform-origin, 50% 0, 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.bottom_to_top a:hover .sidebar-profile-picture {
-        @include prefix(transform, rotate3d(1, 0, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.top_to_bottom .sidebar-profile-picture {
-        @include prefix(transform-origin, 50% 100%, 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.top_to_bottom a:hover .sidebar-profile-picture {
-        @include prefix(transform, rotate3d(1, 0, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.left_to_right .sidebar-profile-picture {
-        @include prefix(transform-origin, 100% 50%, 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.left_to_right a:hover .sidebar-profile-picture {
-        @include prefix(transform, rotate3d(0, 1, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.right_to_left .sidebar-profile-picture {
-        @include prefix(transform-origin, 0 50%, 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
-        @include prefix(transform, rotate3d(0, 1, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
-    }
-    .ih-item a {
-        color: #333;
-        &:hover {
-            text-decoration: none;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-    .ih-item.circle {
-        position: relative;
+      .info-back {
+        opacity: 1;
         border-radius: 50%;
-        .sidebar-profile-picture {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            &:before {
-                position: absolute;
-                display: block;
-                content: '';
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                @include prefix(transition, all 0.35s ease-in-out, 'webkit' 'moz');
-            }
-            img {
-                border-radius: 50%;
-            }
-        }
-        .info {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            border-radius: 50%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
+        width: 100%;
+        height: 100%;
+      }
+      p, h2 {
+        font-weight: bold;
+        font-family: Consolas, 'Open Sans', monospace;
+      }
+      h2 {
+        color: #fff;
+        position: relative;
+        font-size: 16px;
+        margin: 0 auto;
+        padding-top: 30px;
+        height: 24px;
+      }
+      p {
+        color: #e6e6e6;
+        padding: 0 0 0 0;
+        font-size: 16px;
+      }
     }
+    .sidebar-profile-picture {
+      z-index: 11;
+      @include prefix(transition, all 0.5s ease-in-out, 'webkit' 'moz');
+    }
+  }
+  .ih-item.circle.effect.bottom_to_top .sidebar-profile-picture {
+    @include prefix(transform-origin, 50% 0, 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.bottom_to_top a:hover .sidebar-profile-picture {
+    @include prefix(transform, rotate3d(1, 0, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.top_to_bottom .sidebar-profile-picture {
+    @include prefix(transform-origin, 50% 100%, 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.top_to_bottom a:hover .sidebar-profile-picture {
+    @include prefix(transform, rotate3d(1, 0, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.left_to_right .sidebar-profile-picture {
+    @include prefix(transform-origin, 100% 50%, 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.left_to_right a:hover .sidebar-profile-picture {
+    @include prefix(transform, rotate3d(0, 1, 0, 180deg), 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.right_to_left .sidebar-profile-picture {
+    @include prefix(transform-origin, 0 50%, 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
+    @include prefix(transform, rotate3d(0, 1, 0, -180deg), 'webkit' 'ms' 'moz' 'o');
+  }
+  .ih-item a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .ih-item.circle {
+    position: relative;
+    border-radius: 50%;
+    .sidebar-profile-picture {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        @include prefix(transition, all 0.35s ease-in-out, 'webkit' 'moz');
+      }
+      img {
+        border-radius: 50%;
+      }
+    }
+    .info {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      border-radius: 50%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
 }
 
 .sidebar-top-whitespace, .sidebar-bottom-whitespace {
-    position: absolute;
-    width: 100%;
-    left: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 
 .sidebar-top-whitespace {
-    top: 0;
+  top: 0;
 }
 
 .sidebar-bottom-whitespace {
-    bottom: 0;
+  bottom: 0;
 }
 
 // Define sidebar behavior configured in `_config.yml` for small screen
 // On `$small-and-down` (small screen): It hide by default the sidebar
 // and with javascript located in `source/_js/_sidebar.js`, it will animate the swipe of the sidebar
 @media #{$small-and-down} {
-    #sidebar {
-        &[data-behavior="1"],
-        &[data-behavior="2"],
-        &[data-behavior="4"],
-        &[data-behavior="5"] {
-            left: -#{map-get($sidebar, lg-screen-width)};
-            @include sidebar-lg;
-        }
-        &[data-behavior="3"],
-        &[data-behavior="6"] {
-            left: -#{map-get($sidebar, md-screen-width)};
-            @include sidebar-md;
-            & div.info {
-                display: none;
-            }
-            .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
-            }
-        }
+  #sidebar {
+    &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      left: -#{map-get($sidebar, lg-screen-width)};
+      @include sidebar-lg;
     }
+    &[data-behavior="3"],
+    &[data-behavior="6"] {
+      left: -#{map-get($sidebar, md-screen-width)};
+      @include sidebar-md;
+      & div.info {
+        display: none;
+      }
+      .ih-item.circle.effect a:hover .sidebar-profile-picture {
+        @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
+      }
+    }
+  }
 }
 
 // Define sidebar behavior configured in `_config.yml` for medium screen
 @media #{$medium-only} {
-    #sidebar {
-        // used to hide portrait text
-        .info {
-            display: none;
-        }
-
-        .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
-            @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
-        }
-
-        &[data-behavior="1"],
-        &[data-behavior="2"],
-        &[data-behavior="3"] {
-            @include sidebar-md;
-        }
-        &[data-behavior="4"],
-        &[data-behavior="5"] {
-            left: -#{map-get($sidebar, lg-screen-width)};
-            @include sidebar-lg;
-        }
-        &[data-behavior="6"] {
-            left: -#{map-get($sidebar, md-screen-width)};
-            @include sidebar-md;
-        }
+  #sidebar {
+    // used to hide portrait text
+    .info {
+      display: none;
     }
+
+    .ih-item.circle.effect.right_to_left a:hover .sidebar-profile-picture {
+      @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
+    }
+
+    &[data-behavior="1"],
+    &[data-behavior="2"],
+    &[data-behavior="3"] {
+      @include sidebar-md;
+    }
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      left: -#{map-get($sidebar, lg-screen-width)};
+      @include sidebar-lg;
+    }
+    &[data-behavior="6"] {
+      left: -#{map-get($sidebar, md-screen-width)};
+      @include sidebar-md;
+    }
+  }
 }
 
 // Define sidebar behavior configured in `_config.yml` for large screen
 @media #{$large-only} {
-    #sidebar {
-        // used to hide portrait text
-        .info {
-            -webkit-animation-name: fadeIn;
-            -webkit-animation-duration: 2s;
-            -webkit-animation-iteration-count: 1;
-            -webkit-animation-delay: 0s;
-        }
-
-        &[data-behavior="1"],
-        &[data-behavior="2"] {
-            @include sidebar-lg;
-        }
-        &[data-behavior="3"] {
-            @include sidebar-md;
-            & div.info {
-                display: none;
-            }
-        }
-        &[data-behavior="4"],
-        &[data-behavior="5"] {
-            left: -#{map-get($sidebar, lg-screen-width)};
-            @include sidebar-lg;
-        }
-        &[data-behavior="6"] {
-            left: -#{map-get($sidebar, md-screen-width)};
-            @include sidebar-md;
-            & div.info {
-                display: none;
-            }
-            .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
-            }
-        }
+  #sidebar {
+    // used to hide portrait text
+    .info {
+      -webkit-animation-name: fadeIn;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-delay: 0s;
     }
+
+    &[data-behavior="1"],
+    &[data-behavior="2"] {
+      @include sidebar-lg;
+    }
+    &[data-behavior="3"] {
+      @include sidebar-md;
+      & div.info {
+        display: none;
+      }
+    }
+    &[data-behavior="4"],
+    &[data-behavior="5"] {
+      left: -#{map-get($sidebar, lg-screen-width)};
+      @include sidebar-lg;
+    }
+    &[data-behavior="6"] {
+      left: -#{map-get($sidebar, md-screen-width)};
+      @include sidebar-md;
+      & div.info {
+        display: none;
+      }
+      .ih-item.circle.effect a:hover .sidebar-profile-picture {
+        @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
+      }
+    }
+  }
 }
 
 @media #{$xlarge-and-up} {
-    #sidebar {
-        &[data-behavior="1"] {
-            @include sidebar-xlg;
-        }
-        &[data-behavior="2"] {
-            @include sidebar-lg;
-        }
-        &[data-behavior="3"] {
-            @include sidebar-md;
-            & div.info {
-                display: none;
-            }
-        }
-        &[data-behavior="4"] {
-            left: -#{map-get($sidebar, xlg-screen-width)};
-            @include sidebar-xlg;
-        }
-        &[data-behavior="5"] {
-            left: -#{map-get($sidebar, lg-screen-width)};
-            @include sidebar-lg;
-        }
-        &[data-behavior="6"] {
-            left: -#{map-get($sidebar, md-screen-width)};
-            @include sidebar-md;
-            & div.info {
-                display: none;
-            }
-            .ih-item.circle.effect a:hover .sidebar-profile-picture {
-                @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
-            }
-        }
-        // hide bio in sidebar when small sidebar is enabled
-        &[data-behavior="2"],
-        &[data-behavior="3"],
-        &[data-behavior="5"],
-        &[data-behavior="6"] {
-            .sidebar-profile-bio {
-                display: none;
-            }
-        }
+  #sidebar {
+    &[data-behavior="1"] {
+      @include sidebar-xlg;
     }
+    &[data-behavior="2"] {
+      @include sidebar-lg;
+    }
+    &[data-behavior="3"] {
+      @include sidebar-md;
+      & div.info {
+        display: none;
+      }
+    }
+    &[data-behavior="4"] {
+      left: -#{map-get($sidebar, xlg-screen-width)};
+      @include sidebar-xlg;
+    }
+    &[data-behavior="5"] {
+      left: -#{map-get($sidebar, lg-screen-width)};
+      @include sidebar-lg;
+    }
+    &[data-behavior="6"] {
+      left: -#{map-get($sidebar, md-screen-width)};
+      @include sidebar-md;
+      & div.info {
+        display: none;
+      }
+      .ih-item.circle.effect a:hover .sidebar-profile-picture {
+        @include prefix(transform, rotate3d(0, 1, 0, 0deg), 'webkit' 'moz' 'o');
+      }
+    }
+    // hide bio in sidebar when small sidebar is enabled
+    &[data-behavior="2"],
+    &[data-behavior="3"],
+    &[data-behavior="5"],
+    &[data-behavior="6"] {
+      .sidebar-profile-bio {
+        display: none;
+      }
+    }
+  }
 }
 
 // display author bio only on extra large screen
 @media #{$large-and-down} {
-    #sidebar .sidebar-profile-bio {
-        display: none;
-    }
+  #sidebar .sidebar-profile-bio {
+    display: none;
+  }
 }
 
 // Hide sidebar in print layout
 @media print {
-    #sidebar {
-        display: none;
-    }
+  #sidebar {
+    display: none;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .hidden {
