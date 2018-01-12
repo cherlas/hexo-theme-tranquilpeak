@@ -4,10 +4,10 @@
 /// @param {String} $font-size - Font-size CSS value
 /// @param {String} $line-height - Line-height CSS value
 @mixin input-size-variant($height, $padding, $font-size, $line-height) {
-    & {
-        height:      $height;
-        padding:     $padding;
-        font-size:   $font-size;
-        line-height: $line-height;
-    }
+  & {
+    height: $height;
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+  }
 }
