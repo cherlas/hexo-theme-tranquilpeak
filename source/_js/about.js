@@ -12,6 +12,8 @@
     this.$closeBtn = $('#about-btn-close');
     this.$blog = $('#blog');
     this.$about = $('#about');
+    this.$searchTool = $('.search-tools-col');
+    this.$canvas = $('.anm-canvas');
     this.$aboutCard = $('#about-card');
   };
 
@@ -42,6 +44,8 @@
     play: function() {
       var self = this;
       // Fade out the blog
+      self.$searchTool.fadeOut();
+      self.$canvas.fadeOut();
       self.$blog.fadeOut();
       // Fade in the about card
       self.$about.fadeIn();
@@ -62,6 +66,8 @@
       self.liftAboutCard();
       // Fade in the blog after that the about card lifted up
       setTimeout(function() {
+        self.$searchTool.fadeIn();
+        self.$canvas.fadeIn();
         self.$blog.fadeIn();
       }, 500);
       // Fade out the about card after that the about card lifted up
