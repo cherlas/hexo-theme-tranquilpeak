@@ -1,6 +1,7 @@
 .highlight-text {
   display: inline;
-  padding: 3px;
+  padding: 1px 5px;
+  border-radius: 6px;
 
   &.red {
     background-color: map-get($highlight-text-bg-colors, 'red');
