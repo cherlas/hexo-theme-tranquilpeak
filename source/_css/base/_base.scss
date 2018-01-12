@@ -162,8 +162,9 @@ code {
   font-family: map-get($font-families, 'code');
   font-weight: 400;
   background-color: map-get($highlight, 'background');
-  padding: 1px 5px 0 5px;
+  padding: 0 5px;
   border-radius: 6px;
+  line-height: 1.5;
 }
 
 acronym,
