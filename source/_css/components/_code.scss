@@ -3,9 +3,10 @@ figure.highlight,
 .codeblock {
   margin: 10px 0;
   line-height: map-get($highlight, line-height);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   overflow: hidden;
+  border-radius: 8px;
 
   table {
     display: block;
