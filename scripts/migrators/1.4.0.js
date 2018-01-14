@@ -7,7 +7,7 @@
   var prompt = require('prompt');
   var moment = require('moment');
   var mkdirp = require('mkdirp');
-  var marked = require('marked');
+  var marked = require('markdown-it');
   var frontMatter = require('hexo-front-matter');
 
   /**
