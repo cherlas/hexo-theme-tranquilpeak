@@ -12,7 +12,7 @@
     <%- partial('category', {categories: post.categories}) %>
     <% } %>
     <% if ((post.tags) && (post.tags.length > 0)) { %>
-    <div class="tag-img fa fa-tags"></div>
+    <img class="tag-img" src="/assets/images/tag-icon.svg"/>
     <div class="post-tags">
         <% post.tags.forEach(function(tag){ %>
         <a href="/tags/<%- tag.name %>/"><%- tag.name %></a>
