@@ -62,4 +62,11 @@
         var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
         var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
     </script>
+    <script>
+      window.onload = function() {
+        if (location.hash !== '#blog' && location.hash !== "") {
+          window.location.hash='';
+        }
+      };
+    </script>
 <% } %>
