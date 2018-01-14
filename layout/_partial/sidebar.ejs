@@ -54,7 +54,9 @@
                     <% } else { %>
                         <a class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %> <%= theme.sidebar[i][n].class %> <% } %>"
                                 <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %>
-                           href="<%- url_for(' ') %>"
+                           href="<%- url_for('/#blog') %>"
+                                <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %>
+                           href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
                                 <% } else { %>
                            href="<%- url_for(theme.sidebar[i][n].url) %>"
                                 <% } %>
