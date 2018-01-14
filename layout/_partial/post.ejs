@@ -3,14 +3,12 @@
     var postContent = post.content;
 
     // Generate and insert table of contents in post content
-    if ((/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
+    if ((/^@\[toc]\]/).test(postContent)) {
         if (__('post.toc')) {
             tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
         } else {
             tableOfContents = '<span id="table-of-contents"></span>';
         }
-        tableOfContents += toc(postContent, {list_number: false})
-        postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
     }
     // Replace `<!-- endcontent -->` by `</div>` and `<!-- content -->` by `</div class="main-content-wrap">`
     // it's an hack to insert html tag without
@@ -29,7 +27,8 @@
     <% } %>
     <div class="post-content markdown fadeInDown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <%- postContent %>
+            <%- tableOfContents %>
+            <%- postContent%>
             <%- partial('post/gallery') %>
         </div>
     </div>
