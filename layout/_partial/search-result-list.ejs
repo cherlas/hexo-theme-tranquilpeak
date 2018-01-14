@@ -2,12 +2,12 @@
     <a class="search-title" href="<%- url_for(post.path) %>"><i class="fa fa-quote-left"></i><span
                 id="search-post-title"><%= post.title %></span></a>
     <p class="search-time">
-        <i class="icon-calendar icon"></i>
+        <i class="fa fa-calendar icon"></i>
         <span id="search-post-tags"><%- full_date(post.date, 'YYYY-MM-DD') %></span>
     </p>
     <% if ((post.tags) && (post.tags.length > 0)) { %>
-    <p class="search-tag">
-    <i class="icon-price-tags icon"></i>
+    <p class="search-result-meta">
+    <i class="fa fa-tags icon"></i>
         <% post.tags.each(function(tag) { %>
             <span id="search-post-tags">#<%-tag.name%></span>
         <% }) %>
