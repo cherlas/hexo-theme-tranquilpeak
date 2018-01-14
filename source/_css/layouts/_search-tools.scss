@@ -119,13 +119,13 @@
           font-size: map-get($font-size, medium);
         }
       }
-      .search-time, .search-tag {
+      .search-time, .search-result-meta {
         font-size: 12px;
         color: #fffdd8;
         margin-right: 10px;
         margin-bottom: 0;
         .icon {
-          margin-right: 0px;
+          margin-right: 0;
         }
         span {
           cursor: pointer;
@@ -138,7 +138,7 @@
       .search-time {
         float: left;
       }
-      .search-tag {
+      .search-result-meta {
         span {
           margin-right: 4px;
         }
