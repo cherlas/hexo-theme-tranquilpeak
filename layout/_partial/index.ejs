@@ -26,7 +26,7 @@
         }
 
         // Generate and insert table of contents in post content
-        if (!post.excerpt && (/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
+        if (post.toc) {
             if (__('post.toc_title')) {
                 tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
             }
