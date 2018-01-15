@@ -1,5 +1,5 @@
 @import
-    'utils/fonts',
+    // 'utils/fonts',
     'utils/variables';
 
 @import
@@ -22,17 +22,17 @@
     'base/base';
 
 @import 'layouts/about',
-'layouts/blog',
-'layouts/bottom-bar',
-'layouts/cover',
-'layouts/footer',
-'layouts/header',
-'layouts/main',
-'layouts/sidebar',
-'layouts/search-tools',
-'layouts/animation',
-'layouts/canvas',
-'layouts/tags';
+    'layouts/blog',
+    'layouts/bottom-bar',
+    'layouts/cover',
+    'layouts/footer',
+    'layouts/header',
+    'layouts/main',
+    'layouts/sidebar',
+    'layouts/search-tools',
+    'layouts/animation',
+    'layouts/canvas',
+    'layouts/tags';
 
 @import
     'components/alert',
@@ -67,6 +67,6 @@
 
 @import
     //'themes/hljs-tranquilpeak';
-    //'themes/hljs-custom';
+    'themes/hljs-railscasts';
     //'themes/_hljs-solarized-light';
-    'themes/_hljs-atelier-dune-light';
+    //'themes/_hljs-atelier-dune-light';
