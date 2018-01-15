@@ -13,13 +13,20 @@ if (post.coverImage) {
 <div class="post-header-cover fade-in header-image-cover
                     <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
                     <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
-     style="background-image:url('<%= coverImageUrl %>');"
+     style="background-image:url('<%= coverImageUrl %>');
+     <% if (typeof post.blur !== "undefined") { %> filter: blur(<%= post.blur %>px); <% } %>
+     <% if (post.coverSize === 'partial' && post.coverHeight) { %> height: <%= post.coverHeight %>;<% } %>"
      data-behavior="<%= sidebarBehavior %>">
 </div>
 <div class="post-header-cover fade-in post-header-cover-background
                             <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %>
                             <%= (post.coverSize ? 'post-header-cover--' + post.coverSize : '') %>"
+     style="
+     <% if (post.coverSize === 'partial' && post.coverHeight) { %>
+             height: <%= post.coverHeight %>;
+     <% } %>"
      data-behavior="<%= sidebarBehavior %>">
+
     <% if (typeof post.coverMeta === "undefined" || post.coverMeta === 'in') { %>
     <%- partial('header') %>
     <% } %>
