@@ -104,6 +104,6 @@
 // Increase font-size on medium and large screen
 @media #{$medium-and-up} {
   .post-content {
-    font-size: 1.7rem;
+    font-size: map-get($font-size, 'large');
   }
 }
