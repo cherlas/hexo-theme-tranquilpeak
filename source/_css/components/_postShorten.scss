@@ -86,6 +86,9 @@
   }
   .postShorten-excerpt {
     margin-top: 15px;
+    ul.toc {
+      display: none;
+    }
   }
   .postShorten-content {
     margin-top: 25px;
