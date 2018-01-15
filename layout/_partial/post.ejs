@@ -1,21 +1,10 @@
 <%
-    var tableOfContents = null;
-    var postContent = post.content;
-
-    // Generate and insert table of contents in post content
-    if ((/^@\[toc]\]/).test(postContent)) {
-        if (__('post.toc')) {
-            tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
-        } else {
-            tableOfContents = '<span id="table-of-contents"></span>';
-        }
-    }
     // Replace `<!-- endcontent -->` by `</div>` and `<!-- content -->` by `</div class="main-content-wrap">`
     // it's an hack to insert html tag without
     // having auto delete or auto closed by the markdown render engine
     // Currently used to insert an image in full width, out of `main-content-wrap` div
     // which center the content and have a limited width (750px)
-    postContent = postContent.replace(/<!-- ?endcontent ?-->/g, '</div>')
+    var postContent = post.content.replace(/<!-- ?endcontent ?-->/g, '</div>')
                                .replace(/<!-- ?content ?-->/g, '<div class="main-content-wrap">');
 %>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
@@ -27,7 +16,6 @@
     <% } %>
     <div class="post-content markdown fadeInDown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <%- tableOfContents %>
             <%- postContent%>
             <%- partial('post/gallery') %>
         </div>
