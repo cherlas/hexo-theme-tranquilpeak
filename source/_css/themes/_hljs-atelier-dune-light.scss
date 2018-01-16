@@ -15,11 +15,6 @@ pre > code {
   color: map-get($highlight, 'code-color-atelier-dune');
 }
 
-// Default inline code
-code {
-  background-color: map-get($highlight, 'background');
-}
-
 // Tabbed code block tab
 // If your theme is dark then use a lighter background
 // to see clearly which tab is active
@@ -108,4 +103,5 @@ figure.highlight,
     font-weight: bold;
   }
 
+@import "scrollbar";
 }
