@@ -26,9 +26,9 @@ $font-families: (
 );
 
 // equal to 15px
-$font-size-base: 1.6rem;
+$font-size-base: 1.4rem;
 $font-color-base: #515151;
-$line-height-base: 1.9em;
+$line-height-base: 1.8em;
 $letter-spacing-base: 0.01em;
 
 // Reduction of font size base on small screen and down
@@ -36,12 +36,12 @@ $font-size-base-sm-screen-reduction-factor: 0.1rem;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
-        'xxlarge': 2rem,
-        'xlarge': 1.8rem,
-        'large': 1.7rem,
+        'xxlarge': 1.8rem,
+        'xlarge': 1.6rem,
+        'large': 1.5rem,
         'base': $font-size-base,
-        'medium': 1.5rem,
-        'small': 1.3rem,
+        'medium': 1.3rem,
+        'small': 1.2rem,
         'xsmall': 1rem
 );
 
@@ -181,6 +181,7 @@ $highlight: (
         'border': 1px solid,
         'line-height': 1.3em,
         'code-background': #232323,
+        'inline-code-background': #EFEFEF,
         'code-background-solarized': #f8f5ec,
         'code-background-atelier-dune': #fefbec,
         'code-color': #e6e1dc,
@@ -233,7 +234,7 @@ $image-gallery-photos-margin: 2px;
 
 // Main content
 $main-content: (
-        'max-width': 66.6667%,
+        'max-width': 900px,
         'padding-right-left': 20px,
 );
 
