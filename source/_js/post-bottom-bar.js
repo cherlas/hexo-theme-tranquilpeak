@@ -52,7 +52,7 @@
       // and `post-footer` div isn't visible
       if (this.lastScrollTop > scrollTop &&
         (postFooterOffsetTop + this.$postFooter.height() > scrollTop + $(window).height() ||
-        postFooterOffsetTop < scrollTop + this.$header.height())) {
+          postFooterOffsetTop < scrollTop + this.$header.height())) {
         this.$postBottomBar.slideDown();
       }
       else {
