@@ -2,9 +2,9 @@
   'use strict';
 
   /**
-  * Sidebar
-  * @constructor
-  */
+   * Sidebar
+   * @constructor
+   */
   var HeadProfile = function() {
     this.$sidebar = $('#sidebar');
     this.$main = $('#main');
@@ -19,9 +19,9 @@
 
   HeadProfile.prototype = {
     /**
-    * Run Sidebar feature
-    * @return {void}
-    */
+     * Run Sidebar feature
+     * @return {void}
+     */
     run: function() {
       var self = this;
 
@@ -82,9 +82,9 @@
     },
 
     /**
-    * remove hidden class for #main, #sidebar
-    * @return {void}
-    */
+     * remove hidden class for #main, #sidebar
+     * @return {void}
+     */
     removeHiddenClass: function() {
       // this.$main.css('display', 'block');
       if (!this.$firstPageDesc.hasClass('hidden')) {
