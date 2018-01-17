@@ -203,11 +203,11 @@
         html += '<span id="search-post-title">' + post.title + '</span>';
         html += '</a>';
         html += '<p class="search-time">';
-        html += '<i class="icon-calendar icon"></i>';
+        html += '<i class="fa fa-calendar"></i>';
         html += '<span id="search-post-date" style="padding-left: 4px">' + post.date.substr(0, 10) + '</span>';
         html += '</p>';
-        html += '<p class="search-tag">';
-        html += '<i class="icon-price-tags icon"></i>';
+        html += '<p class="search-result-meta">';
+        html += '<i class="fa fa-tags"></i>';
         post.tags.forEach(function(tag) {
           html += '<span id="search-post-tags">';
           html += '#' + tag + ' ';
@@ -243,6 +243,9 @@
         this.$noResults.hide();
       }
       this.$resultsCount.html(string);
+      if (this.$resultsCount.hasClass('hide')) {
+        this.$resultsCount.removeClass('hide');
+      }
     },
 
     removeHideClass: function() {
@@ -254,7 +257,7 @@
         this.$canvas.removeClass('hidden');
       }
     },
-    
+
     /**
      * Show search modal
      * @returns {void}
@@ -317,6 +320,7 @@
       if (!this.$canvas.hasClass('hidden')) {
         this.$canvas.addClass('hidden');
       }
+
     },
 
     /**
@@ -405,7 +409,8 @@
       setTimeout(function() {
         if (self.$sidebar.hasClass('pushed')) {
           $('body').css({'overflow-x': 'hidden', 'overflow-y': 'auto'});
-        } else {
+        }
+        else {
           $('body').css('overflow', 'auto');
         }
       }, 1000);
@@ -473,7 +478,8 @@
       function scrollCheck() {
         if (document.body.scrollTop > height) {
           animateHeader = false;
-        } else {
+        }
+        else {
           animateHeader = true;
         }
       }
