@@ -7,4 +7,3 @@ _bower_components
 /.idea
 scripts/.DS_Store
 package-lock.json
-_config.yml
