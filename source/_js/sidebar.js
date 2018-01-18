@@ -60,6 +60,7 @@
         self.resetSearchToolsCol();
       });
     },
+
     /**
      * Open the sidebar by swiping to the right the sidebar and the blog
      * @return {void}
