@@ -1,6 +1,6 @@
 # Tranquilpeak
-# Version : 2.0.0
-# Author : Louis Barranqueiro
+# Version : 1.11.0
+# Author : Fork from Louis Barranqueiro By Cherlas
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
@@ -22,6 +22,8 @@ post_asset_folder: true
 
 relative_link: false
 # Sidebar Configuration
+# ---------------------
+
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    E.g:
@@ -56,7 +58,7 @@ sidebar:
             # url is false only for search button
             url: false
             icon: search
-            # `open-algolia-search` classes are used to open algolia search modal
+            # `open-search-col` classes are used to open algolia search modal
             class: open-search-col
         about:
             title: global.about
@@ -97,11 +99,11 @@ sidebar:
             url: /atom.xml
             icon: rss
 
-style:
-  # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
 
+# --------------------
 # Header configuration
+# --------------------
+
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
@@ -117,7 +119,10 @@ header:
         class:
 
 
+# ------
 # Author
+# ------
+
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
     email:
@@ -126,7 +131,7 @@ author:
     # or in `source/assets/images/` (production)
     # or you can use an external url
     # Overwritten by your gravatar image if `gravatar_email` is filled
-    picture: 
+    picture:
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
     # Your personal google plus profile id, not your blog or business page id.
@@ -140,8 +145,10 @@ author:
     # hobby
     hobby:
 
-
+# -------------
 # Customization
+# -------------
+
 # Define the behavior of the sidebar
 # 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
 # medium sidebar on medium screen and header bar on small screen and
@@ -154,7 +161,7 @@ author:
 # large sidebar is swiped on all lower screens
 # 5: Display header bar on all screens and large sidebar is swiped on large screen
 # 6: Display header bar on all screens and medium sidebar is swiped
-sidebar_behavior: 1
+sidebar_behavior: 2
 # Hide sidebar on all article page to let article take full width to improve reading, and
 # enjoy wide images and cover images. (true: enable, false: disable)
 clear_reading: false
@@ -173,6 +180,8 @@ auto_thumbnail_image_position: true
 # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
 # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
 auto_thumbnail_image: true
+# Automatically set the first postShorten-thumbnailimg on the bottom in every index page, and the others left
+auto_thumbnail_image_position: true
 # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
 # There is many free CDN like Cloudinary or you can also use indirectly
 # by using services like Google Photos.
@@ -189,15 +198,33 @@ image_gallery: true
 archive_pagination: true
 category_pagination: true
 tag_pagination: true
+# add paragraph mesage to meta label
+paragraph_meta: false
 
+# ---------------
+# Comment systems
+# ---------------
 
-# Integrated services
-# You can't use Disqus and Duoshuo together
-# then fill the right shortname
 # Your Disqus shortname
-disqus_shortname:
-# Your Duoshuo shortname
-duoshuo_shortname:
+# disqus_shortname:
+# Your Gitment information
+# Read https://github.com/imsun/gitment#get-started to setup Gitment
+gitment: false
+    # Switch
+    # enable: false
+    # Your Github ID (Github username):
+    # github_id:
+    # The repo to store comments:
+    # repo:
+    # Your client ID:
+    # client_id:
+    # Your client secret:
+    # client_secret:
+
+# -------------------
+# Integrated services
+# -------------------
+
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
@@ -210,7 +237,10 @@ fb_admin_ids:
 fb_app_id:
 
 
+# ---------------
 # Sharing options
+# ---------------
+
 # Comment and uncomment to enable or disable sharing options
 # If you wanna add a sharing option, read user documentation :
 # Tranquilpeak configuration > Theme configuration > sharing-options
