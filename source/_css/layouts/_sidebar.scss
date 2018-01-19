@@ -64,10 +64,6 @@
     }
   }
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
   .ih-item.circle.effect {
     margin: 0 auto;
     -webkit-perspective: 900px;
@@ -172,6 +168,10 @@
       backface-visibility: hidden;
     }
   }
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar-top-whitespace, .sidebar-bottom-whitespace {
