@@ -320,7 +320,6 @@
       if (!this.$canvas.hasClass('hidden')) {
         this.$canvas.addClass('hidden');
       }
-
     },
 
     /**
@@ -409,8 +408,7 @@
       setTimeout(function() {
         if (self.$sidebar.hasClass('pushed')) {
           $('body').css({'overflow-x': 'hidden', 'overflow-y': 'auto'});
-        }
-        else {
+        } else {
           $('body').css('overflow', 'auto');
         }
       }, 1000);
