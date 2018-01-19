@@ -57,7 +57,7 @@
     .post-meta {
       max-width: map-get($main-content, 'max-width');
       font-family: map-get($font-families, 'post-meta');
-      font-size: $font-size-base;
+      font-size: map-get($font-size, 'xlarge');
       color: white !important;
       font-weight: 400;
       letter-spacing: 0.05em;
@@ -82,10 +82,10 @@
       margin: 0;
 
       a {
-        font-size: #{map_get($font-size,'medium')};
+        font-size: #{map_get($font-size,'large')};
         font-weight: 500;
         display: inline-block;
-        margin: 4px 5px 0 0;
+        margin: 8px 5px 0 0;
         padding: 0 10px;
         font-family: Georgia, Menlo, monospace, 'Open Sans', sans-serif;
         letter-spacing: 0;
