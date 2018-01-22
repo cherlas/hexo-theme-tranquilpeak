@@ -14,6 +14,12 @@
     <% if (!post.coverImage || post.coverMeta === 'out') { %>
         <%- partial('post/header')%>
     <% } %>
+    <% if (post.toc) { %>
+    <div class="tableTile"
+         data-message="<%= __('post.toc') %>">
+    </div>
+    <% } %>
+    <div class="tableContent"></div>
     <div class="post-content markdown fadeInDown" itemprop="articleBody">
         <div class="main-content-wrap">
             <%- postContent%>
