@@ -27,7 +27,7 @@ $font-families: (
 
 // equal to 15px
 $font-size-base: 1.4rem;
-$font-color-base: #515151;
+$font-color-base: #212121;
 $line-height-base: 1.8em;
 $letter-spacing-base: 0.01em;
 
@@ -54,7 +54,7 @@ $colors: (
         'base': $font-color-base,
         'warning': #f5aa0a,
         'light': #9eabb3,
-  // use for tag `a`
+        // use for tag `a`
         'link': #349ef3,
         'blockquote': rgba(3, 155, 229, .7)
 );
