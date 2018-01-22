@@ -77,6 +77,43 @@
   .clearfix {
     clear: both;
   }
+  .tableContent {
+    position: relative;
+    float: right;
+    z-index: map_get($z-indexes, 'c-post-bottom-bar');
+    ul.toc {
+      border-left: 4px solid #78c257;
+      list-style: none;
+      right: 100px;
+      padding: 0 20px 0 0;
+      margin: 0;
+      line-height: 1.6em;
+
+      li {
+        list-style: none;
+        margin-left: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 160px;
+        display: block;
+      }
+      ul {
+        padding: 0;
+      }
+      & a {
+        color: map-get($colors, base);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover {
+          text-decoration: none;
+          color: #039be5
+        }
+      }
+    }
+  }
 }
 
 // Increase the font size of the post's title on medium screen (only for single post view)
@@ -105,5 +142,14 @@
 @media #{$medium-and-up} {
   .post-content {
     font-size: map-get($font-size, 'large');
+  }
+}
+
+@media #{$medium-and-down} {
+  .post{
+    .tableContent {
+      position: static;
+      padding-left: 20px;
+    }
   }
 }
