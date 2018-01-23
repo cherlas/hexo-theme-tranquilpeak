@@ -95,8 +95,9 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width: 160px;
+        width: 100%;
         display: block;
+        max-width: 108px;
       }
       ul {
         padding: 0;
