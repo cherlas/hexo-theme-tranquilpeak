@@ -48,8 +48,10 @@ figure.highlight,
   .comment,
   .quote {
     color: #bc9458;
-    font-style: italic;
     font-size: map-get($font-size, 'medium');
+    font-weight: normal;
+    font-family: Consolas, "Microsoft YaHei", monospace;
+    line-height: map_get($highlight, 'line-height');
   }
 
   .keyword,
