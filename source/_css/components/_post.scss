@@ -49,9 +49,14 @@
     letter-spacing: -0.3px;
     font-family: map-get($font-families, 'post-content');
     color: map-get($colors, base);
-    margin-top: 20px;
     font-weight: 400;
     overflow: hidden;
+
+    display: block;
+    width: map_get($post-content, 'width');
+    position: relative;
+    margin: 0 auto;
+    max-width: map_get($main-content, max-width) + map_get($table-content, width) + 40px;
     @include prefix('hypens', 'auto', 'webkit' 'moz');
 
     img {
@@ -67,6 +72,9 @@
   }
   .post-footer {
     margin-top: 20px;
+    padding-right: map_get($table-content, 'width');
+    width: map_get($post-footer, 'width');
+    max-width: map_get($main-content, max-width);
     &-tags {
       padding-bottom: 10px;
       margin-bottom: 10px;
@@ -78,16 +86,23 @@
     clear: both;
   }
   .tableContent {
-    position: relative;
-    float: right;
     z-index: map_get($z-indexes, 'c-post-bottom-bar');
+    //padding-right: map_get($table-content, 'padding-right');
+    //padding-left: map_get($table-content, 'padding-left');
+    margin-top: 25px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: map_get($table-content, 'width');
+
     ul.toc {
       border-left: 4px solid #78c257;
       list-style: none;
-      right: 100px;
-      padding: 0 20px 0 0;
+      padding: 0 10px 0 0;
       margin: 0;
       line-height: 1.6em;
+      max-width: map_get($table-content, 'max-width');
 
       li {
         list-style: none;
@@ -97,7 +112,6 @@
         overflow: hidden;
         width: 100%;
         display: block;
-        max-width: 108px;
       }
       ul {
         padding: 0;
@@ -144,13 +158,30 @@
   .post-content {
     font-size: map-get($font-size, 'large');
   }
+  .tableContent {
+    float: right;
+
+  }
 }
 
-@media #{$medium-and-down} {
+@media #{$medium-and-down-with-table} {
   .post{
     .tableContent {
       position: static;
       padding-left: 20px;
+      float: none;
+    }
+  }
+}
+
+@media #{$medium-and-down-with-table} {
+  .post {
+    .post-content {
+      width: 100%;
+    }
+    .post-footer {
+      width: calc(100% - 40px);
+      padding-right: map_get($post-footer, padding-right);
     }
   }
 }
