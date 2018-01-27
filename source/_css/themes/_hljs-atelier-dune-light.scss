@@ -49,6 +49,10 @@ figure.highlight,
   .comment,
   .quote {
     color: #7d7a68;
+    font-size: map-get($font-size, 'medium');
+    font-weight: 500;
+    font-family: Consolas, "Microsoft YaHei", monospace;
+    line-height: map_get($highlight, 'line-height');
   }
 
   /* Atelier-Dune Red */
