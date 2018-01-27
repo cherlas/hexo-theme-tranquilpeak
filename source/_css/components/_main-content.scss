@@ -1,7 +1,17 @@
 .main-content-wrap {
   display: block;
-  max-width: map-get($main-content, max-width);
+  // max-width: map-get($main-content, max-width);
   margin: 0 auto;
   padding-right: map-get($main-content, padding-right-left);
   padding-left: map-get($main-content, padding-right-left);
+}
+
+.main-content-layout {
+  margin-right: map_get($table-content, width);
+}
+
+@media #{$medium-and-down-with-table} {
+  .main-content-layout {
+    margin-right: 0;
+  }
 }
