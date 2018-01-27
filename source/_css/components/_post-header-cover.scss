@@ -145,6 +145,12 @@
         background: #f7f7f7
       }
     }
+
+    .post-header-message {
+      width: calc(90% - 200px);
+      padding-right: map_get($table-content, width);
+      margin: 0 auto ;
+    }
   }
 
   &.header-image-cover {
@@ -223,6 +229,17 @@
     }
     &[data-behavior="6"] {
       top: calc(#{map-get($header, 'height')});
+    }
+  }
+}
+
+@media #{$medium-and-down-with-table} {
+  .post-header-cover {
+    .post-header {
+      .post-header-message {
+        width: 100%;
+        padding-right: 0;
+      }
     }
   }
 }
