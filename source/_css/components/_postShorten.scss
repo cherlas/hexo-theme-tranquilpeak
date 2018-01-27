@@ -1,6 +1,7 @@
 // Group of `.postShorten`
 // Add margin and border bottom when `.postShorten` are in `.postShorten-group`
 .postShorten-group {
+  width: 80%;
   .postShorten {
     // Space between 2 shorten post
     margin-top: 15px;
@@ -168,8 +169,11 @@
 
       img {
         width: 98%;
-        height: auto;
+        height: $post-thumbnail-image-min-height;
       }
     }
+  }
+  .postShorten-group {
+    width: 95%;
   }
 }
