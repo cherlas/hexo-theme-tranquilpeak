@@ -54,7 +54,7 @@ $colors: (
         'base': $font-color-base,
         'warning': #f5aa0a,
         'light': #9eabb3,
-        // use for tag `a`
+  // use for tag `a`
         'link': #349ef3,
         'blockquote': rgba(3, 155, 229, .7)
 );
@@ -94,6 +94,8 @@ $screen-min: (
 $screen-max: (
         'xs-max': map-get($screen-min, sm-min) - 1,
         'sm-max': map-get($screen-min, md-min) - 1,
+        // 768px + 160px, 160px is table content's width
+        'sm-max-with-table': 928px,
         'md-max': map-get($screen-min, lg-min) - 1,
         'lg-max': map-get($screen-min, xlg-min) - 1
 );
@@ -102,6 +104,7 @@ $screen: map-merge($screen-min, $screen-max);
 // add for don't display first-page-desc
 $mw-first-page-desc: "only screen and (max-width : #{map-get($screen, fpw-min)})" !default;
 $mh-first-page-desc: "only screen and (max-height : #{map-get($screen, fph-min)})" !default;
+$medium-and-down-with-table: "only screen and (max-width : #{map_get($screen, sm-max-with-table)})" !default;
 
 // Shortcuts for medias
 $xsmall-and-down: "only screen and (max-width : #{map-get($screen, xs-max)})" !default;
@@ -235,7 +238,27 @@ $image-gallery-photos-margin: 2px;
 // Main content
 $main-content: (
         'max-width': 900px,
+        // 'width': 71%,
         'padding-right-left': 20px,
+        //'padding-left': 2%,
+        //'padding-right': 1%,
+        //'margin-right': 1%,
+);
+
+$table-content: (
+        'max-width': 160px,
+        //'padding-right': 2%,
+        //'padding-left': 1%,
+        'width': 160px,
+);
+
+$post-content: (
+        'width': 90%,
+);
+
+$post-footer: (
+        'width': calc(90% - 200px),
+        'padding-right': 20px,
 );
 
 // Mardown
@@ -262,6 +285,7 @@ $pagination-height: 60px;
 // Post thumbnail image
 // Width and height of post's thumbnail image
 $post-thumbnail-image-width: 140px;
+$post-thumbnail-image-min-height: 250px;
 
 // Tooltip
 $tooltip: (
