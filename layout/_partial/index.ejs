@@ -2,6 +2,7 @@
     <% page.posts.each(function(post, index) { %>
     <%
         var thumbnailImageUrl = post.thumbnailImageUrl;
+        var thumbnailImageSuffix =''
         // Define default position for the thumbnail image
         var thumbnailImagePosition = theme.thumbnail_image_position;
         /* Define thumbnail image */
@@ -10,8 +11,10 @@
         if (theme.auto_thumbnail_image_position) {
             if (index % config.per_page == 0) {
                 thumbnailImagePosition = "bottom";
+                thumbnailImageSuffix = '?imageMogr2/thumbnail/900x/gravity/center/crop/x252'
             } else {
                 thumbnailImagePosition = "left";
+                thumbnailImageSuffix = '?imageMogr2/thumbnail/x140/gravity/center/crop/140x'
             }
         } else {
             if (!post.excerpt && !post.link) {
@@ -22,6 +25,7 @@
                 }
             }
         }
+        thumbnailImageUrl += thumbnailImageSuffix;
     %>
     <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %> fadeInUp" itemscope
              itemType="http://schema.org/BlogPosting"
