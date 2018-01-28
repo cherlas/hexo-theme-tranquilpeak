@@ -23,7 +23,7 @@
                 <%= (_p('global.posts_found', site.posts.length)).replace(/\{n\}/, site.posts.length) %>
             </p>
             <div class="search-result">
-                <% site.posts.sort('date').limit(Math.round(config.per_page * 1.5)).forEach(function(post) { %>
+                <% site.posts.limit(Math.round(config.per_page * 1.5)).forEach(function(post) { %>
                 <%- partial('_partial/search-result-list', {post: post}) %>
                 <% }) %>
             </div>
