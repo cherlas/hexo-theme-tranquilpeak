@@ -24,11 +24,11 @@
     run: function() {
       var self = this;
       setTimeout(function() {
-        self.resize();
+        // self.resize();
       }, 100);
       // resize postShorten--thumbnailimg when window is resized
       $(window).resize(function() {
-        self.resize();
+        // self.resize();
       });
     },
 
