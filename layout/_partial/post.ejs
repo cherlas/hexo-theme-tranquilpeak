@@ -19,12 +19,12 @@
          data-message="<%= __('post.toc') %>">
     </div>
     <% } %>
-    <div class="post-content markdown fadeInDown" itemprop="articleBody">
-        <div class="main-content-wrap main-content-layout">
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap main-content-layout fadeInDown">
             <%- post.content%>
             <%- partial('post/gallery') %>
         </div>
-        <div class="tableContent"></div>
+        <div class="tableContent fade-in"></div>
     </div>
 
     <div id="post-footer" class="post-footer main-content-wrap">
