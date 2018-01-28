@@ -9,7 +9,7 @@
    * @constructor
    */
   var TabbedCodeBlock = function(elems) {
-    this.$tabbedCodeBlocs = $(elems);
+    this.$jsFixedContent = $(elems);
   };
 
   TabbedCodeBlock.prototype = {
@@ -19,7 +19,7 @@
      */
     run: function() {
       var self = this;
-      self.$tabbedCodeBlocs.find('.tab').click(function() {
+      self.$jsFixedContent.find('.tab').click(function() {
         var $codeblock = $(this).parent().parent().parent();
         var $tabsContent = $codeblock.find('.tabs-content').children('pre, .highlight');
         // remove `active` css class on all tabs
