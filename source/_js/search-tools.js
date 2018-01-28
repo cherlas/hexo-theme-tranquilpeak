@@ -204,7 +204,7 @@
         html += '</a>';
         html += '<p class="search-time">';
         html += '<i class="fa fa-calendar"></i>';
-        html += '<span id="search-post-date" style="padding-left: 4px">' + post.date.substr(0, 10) + '</span>';
+        html += '<span id="search-post-date">' + post.date.substr(0, 10) + '</span>';
         html += '</p>';
         html += '<p class="search-result-meta">';
         html += '<i class="fa fa-tags"></i>';
