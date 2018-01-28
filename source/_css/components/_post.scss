@@ -86,15 +86,18 @@
     clear: both;
   }
   .tableContent {
-    z-index: map_get($z-indexes, 'c-post-bottom-bar');
+    z-index: map_get($z-indexes, 'c-post-table-content');
     //padding-right: map_get($table-content, 'padding-right');
     //padding-left: map_get($table-content, 'padding-left');
     margin-top: 25px;
-
     position: absolute;
     top: 0;
     right: 0;
     width: map_get($table-content, 'width');
+
+    &.fade-in {
+      animation-duration: 1.2s;
+    }
 
     ul.toc {
       border-left: 4px solid #78c257;
@@ -129,6 +132,7 @@
       }
     }
   }
+
 }
 
 // Increase the font size of the post's title on medium screen (only for single post view)
@@ -157,10 +161,6 @@
 @media #{$medium-and-up} {
   .post-content {
     font-size: map-get($font-size, 'large');
-  }
-  .tableContent {
-    float: right;
-
   }
 }
 
