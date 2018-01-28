@@ -72,6 +72,7 @@ $z-indexes: (
         'l-about': 30,
         'c-mask': 30,
         'c-post-bottom-bar': 40,
+        'c-post-table-content': 400,
         'c-share-options-bar': 50,
         'c-tooltip': 1000,
         'c-overlay': 1009,
@@ -285,7 +286,7 @@ $pagination-height: 60px;
 // Post thumbnail image
 // Width and height of post's thumbnail image
 $post-thumbnail-image-width: 140px;
-$post-thumbnail-image-min-height: 250px;
+$post-thumbnail-image-min-height: 236px;
 
 // Tooltip
 $tooltip: (
