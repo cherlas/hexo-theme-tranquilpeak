@@ -88,8 +88,8 @@
   }
   .postShorten-excerpt {
     margin-top: 15px;
-    ul.toc {
-      display: none;
+    p {
+      margin-bottom: 0;
     }
   }
   .postShorten-content {
@@ -115,7 +115,7 @@
   .postShorten.postShorten--thumbnailimg-right {
     .postShorten-thumbnailimg {
       float: right;
-      margin: 5px 0 30px 15px;
+      margin: 5px 0 20px 15px;
 
       img {
         display: block;
@@ -133,7 +133,7 @@
   .postShorten.postShorten--thumbnailimg-left {
     .postShorten-thumbnailimg {
       float: left;
-      margin: 5px 15px 30px 0;
+      margin: 5px 15px 20px 0;
 
       img {
         display: block;
