@@ -17,7 +17,7 @@
     this.contentOffset = 0;
     this.options = {
       marginTop: 65,
-      minWidth: 767
+      minWidth: 768 + 160
     };
   };
 
@@ -30,9 +30,6 @@
       var self = this;
 
       if (this.$jsFixedContent.length > 0) {
-        $(window).resize(function() {
-          self.setContentWidth();
-        });
         if ($(window).innerWidth() >= this.options.minWidth) {
           $(window).scroll(function() {
             self.fixedContent();
@@ -48,40 +45,28 @@
 
     setContentPosition: function() {
       var self = this;
-      var contentHeight = this.getContentHeight();
       if (self.contentOffset === 0) {
         self.contentOffset = self.getContentOffset();
       }
-      if ($(window).innerHeight() > (contentHeight + this.options.marginTop + self.contentOffset)) {
-        if ($(window).scrollTop() >= (self.contentOffset - this.options.marginTop)) {
-          this.$jsFixedContent.css({
-            position: 'fixed',
-            top: self.options.marginTop
-          });
-          if (this.lastScroll === 0) {
-            self.lastScroll = $(window).scrollTop();
-          }
-        } else if ($(window).scrollTop() <= self.lastScroll) {
-          this.$jsFixedContent.css({
-            position: 'static',
-            top: ''
-          });
-          self.lastScroll = 0;
+      if ($(window).scrollTop() >= (self.contentOffset - this.options.marginTop)) {
+        this.$jsFixedContent.css({
+          position: 'fixed',
+          top: self.options.marginTop
+        });
+        if (this.lastScroll === 0) {
+          self.lastScroll = $(window).scrollTop();
         }
+      } else if ($(window).scrollTop() <= self.lastScroll) {
+        this.$jsFixedContent.css({
+          position: 'static',
+          top: ''
+        });
+        self.lastScroll = 0;
       }
-    },
-
-    setContentWidth: function() {
-      var parentWidth = this.$jsFixedContent.parent().innerWidth();
-      this.$jsFixedContent.css('width', parentWidth);
     },
 
     getContentOffset: function() {
       return this.$jsFixedContent.offset().top;
-    },
-
-    getContentHeight: function() {
-      return this.$jsFixedContent.outerHeight();
     }
   };
 
