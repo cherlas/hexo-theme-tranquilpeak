@@ -11,6 +11,7 @@ figure.highlight,
   table {
     display: block;
     width: 100%;
+    overflow-x: auto;
   }
 
   // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
