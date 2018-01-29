@@ -147,9 +147,14 @@
     }
 
     .post-header-message {
-      width: calc(90% - 200px);
-      padding-right: map_get($table-content, width);
-      margin: 0 auto ;
+      width: map_get($post-content, 'width');
+      max-width: map_get($main-content, max-width);
+      margin: 0 auto;
+      &.content-with-table{
+        width: calc(90% - 200px);
+        padding-right: map_get($table-content, width);
+        margin: 0 auto ;
+      }
     }
   }
 
@@ -237,8 +242,10 @@
   .post-header-cover {
     .post-header {
       .post-header-message {
-        width: 100%;
-        padding-right: 0;
+        &.content-with-table {
+          width: 100%;
+          padding-right: map_get($main-content, padding-right-left);
+        }
       }
     }
   }
