@@ -6,12 +6,12 @@
   padding-left: map-get($main-content, padding-right-left);
 }
 
-.main-content-layout {
+.content-with-table {
   margin-right: map_get($table-content, width);
 }
 
 @media #{$medium-and-down-with-table} {
-  .main-content-layout {
+  .content-with-table {
     margin-right: 0;
   }
 }
