@@ -122,7 +122,7 @@
       .search-time, .search-result-meta {
         font-size: 12px;
         color: #fffdd8;
-        margin-right: 10px;
+        margin-right: 5px;
         margin-bottom: 0;
         .icon {
           margin-right: 0;
@@ -139,8 +139,18 @@
         float: left;
       }
       .search-result-meta {
-        span {
-          margin-right: 4px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        i.search-result-meta-tags {
+          display: inline;
+          overflow: hidden;
+          width: 155px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          #search-post-tags {
+            font-style: normal;
+          }
         }
       }
       div.clearfix {
@@ -167,7 +177,9 @@
     line-height: 1;
     font-style: normal;
     margin-right: 8px;
-
+    &.fa-tags, &.fa-calendar {
+      margin-right: 4px;
+    }
   }
 }
 
