@@ -15,6 +15,7 @@
     this.$jsFixedContent = $('.toc.js-fixedContent');
     this.lastScroll = 0;
     this.contentOffset = 0;
+    this.tocMessage = $('.tableContent').data('message');
     this.options = {
       marginTop: 65,
       minWidth: 768 + 160
@@ -28,8 +29,7 @@
      */
     run: function() {
       var self = this;
-
-      if (this.$jsFixedContent.length > 0) {
+      if (this.$jsFixedContent.length && this.tocMessage !== undefined) {
         if ($(window).innerWidth() >= this.options.minWidth) {
           $(window).scroll(function() {
             self.fixedContent();
