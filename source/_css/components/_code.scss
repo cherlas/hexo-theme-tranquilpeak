@@ -52,7 +52,6 @@ figure.highlight,
 
   // Gutter which contains line numbers
   .gutter {
-    border-right: map-get($highlight, border);
     padding: 0.3em 15px;
   }
   // Code container
@@ -96,6 +95,19 @@ figure.highlight,
         }
       }
     }
+  }
+}
+
+figure.highlight table {
+  tr:hover {
+    background-color: transparent;
+  }
+  tr:last-child td:last-child,
+  tr:last-child td:first-child {
+    border-bottom: none;
+  }
+  td.gutter {
+    border-right: map-get($highlight, border);
   }
 }
 
