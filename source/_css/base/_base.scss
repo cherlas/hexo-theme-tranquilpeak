@@ -108,18 +108,55 @@ table {
   border-spacing: 0;
   text-align: left;
 
+  thead {
+    border-bottom: 2px solid #ccc;
+  }
+  th, td {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    &:first-child {
+      border-left: none;
+    }
+  }
   th {
     padding: 5px 10px;
     font-weight: bold;
-    border-bottom: 2px solid #909ba2;
+    background-color: #dce9f9;
+    border-top:none;
+    // border-bottom: 2px solid #909ba2;
+    &:first-child {
+      border-radius: 6px 0 0 0;
+    }
+    &:last-child {
+      border-radius: 0 6px 0 0;
+    }
   }
   td {
     padding: 5px 10px;
   }
   tr {
+    &:hover {
+      background-color: #fbf8e9;
+      transition: all 0.1s ease-in-out;
+    }
+
     &:nth-child(2n) {
       background: #f7f8f8;
+      &:hover {
+        background-color: #fbf8e9;
+        transition: all 0.1s ease-in-out;
+      }
     }
+  }
+  tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+    border-bottom: 1px solid #ccc;
+  }
+  tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -160,11 +197,12 @@ code {
   font-size: map-get($font-size, medium);
   display: inline-block;
   font-family: map-get($font-families, 'code');
-  font-weight: 400;
+  font-weight: 600;
   background-color: map-get($highlight, 'inline-code-background');
   padding: 2px 5px 0 5px;
   border-radius: 6px;
   line-height: 1.5;
+  color: #060;
 }
 
 acronym,
