@@ -104,39 +104,6 @@
       animation-duration: 1.2s;
     }
 
-    ul.toc {
-      border-left: 4px solid #78c257;
-      list-style: none;
-      padding: 0 10px 0 0;
-      margin: 0;
-      line-height: 1.6em;
-      max-width: map_get($table-content, 'max-width');
-
-      li {
-        list-style: none;
-        margin-left: 12px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 100%;
-        display: block;
-      }
-      ul {
-        padding: 0;
-      }
-      & a {
-        color: map-get($colors, base);
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        &:hover {
-          text-decoration: none;
-          color: #039be5
-        }
-      }
-    }
-
     .toggle-button {
       height: 12px;
       width: 12px;
@@ -144,6 +111,40 @@
       position: absolute;
       right: 0;
       cursor: pointer;
+    }
+  }
+
+  ul.toc {
+    border-left: 4px solid #78c257;
+    list-style: none;
+    padding: 0 10px 0 0;
+    margin: 0;
+    line-height: 1.6em;
+    max-width: map_get($table-content, 'max-width');
+
+    li {
+      list-style: none;
+      margin-left: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+    }
+    ul {
+      padding: 0;
+      margin-bottom: 0;
+    }
+    & a {
+      color: map-get($colors, base);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &:hover {
+        text-decoration: none;
+        color: #039be5
+      }
     }
   }
 
