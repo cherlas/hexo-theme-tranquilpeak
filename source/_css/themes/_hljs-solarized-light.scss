@@ -16,10 +16,10 @@ pre > code {
 }
 
 // Default inline code
-code {
-  background-color: map-get($highlight, 'code-background-solarized');
-  color: #c7254e;
-}
+//code {
+//  background-color: map-get($highlight, 'code-background-solarized');
+//  color: #040;
+//}
 
 // Tabbed code block tab
 // If your theme is dark then use a lighter background
@@ -53,7 +53,7 @@ figure.highlight,
   // PUT YOUR THEME HERE
   .comment,
   .quote {
-    color: #93a1a1;
+    color: #bc9458;
     font-size: map-get($font-size, 'medium');
     font-weight: normal;
     font-family: Consolas, "Microsoft YaHei", monospace;
@@ -126,4 +126,13 @@ figure.highlight,
     font-weight: bold;
   }
 
+  .link {
+    text-decoration: underline;
+  }
+
+  @import "scrollbar";
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
