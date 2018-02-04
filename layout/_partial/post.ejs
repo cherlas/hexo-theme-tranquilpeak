@@ -14,18 +14,17 @@
     <% if (!post.coverImage || post.coverMeta === 'out') { %>
         <%- partial('post/header')%>
     <% } %>
-    <% if (post.toc) { %>
-        <div class="tableTile"
-             data-message="<%= __('post.toc') %>">
-        </div>
-    <% } %>
+    <div class="tableTile"
+         data-message="<%= __('post.toc') %>">
+    </div>
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap fadeInDown <%= post.toc? 'content-with-table' : ''%>">
             <%- post.content%>
             <%- partial('post/gallery') %>
         </div>
         <% if (post.toc) { %>
-            <div class="tableContent fade-in"></div>
+            <div class="tableContent fade-in"
+                 data-message="<%= post.toc %>"></div>
         <% } %>
     </div>
 
