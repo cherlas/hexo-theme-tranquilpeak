@@ -52,7 +52,7 @@ figure.highlight,
 
   // Gutter which contains line numbers
   .gutter {
-    padding: 0.3em 15px;
+    padding: 0.3em 10px;
   }
   // Code container
   .code {
@@ -107,7 +107,7 @@ figure.highlight table {
     border-bottom: none;
   }
   td.gutter {
-    border-right: map-get($highlight, border);
+    border-right: map_get($highlight, 'code-block-border')
   }
 }
 
