@@ -32,6 +32,7 @@ pre > code {
 // highlight code block
 figure.highlight {
   border-radius: 8px;
+  border: map_get($highlight, 'code-block-border');
 }
 
 figure.highlight,
