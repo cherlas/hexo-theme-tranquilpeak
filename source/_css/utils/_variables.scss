@@ -27,7 +27,7 @@ $font-families: (
 
 // equal to 15px
 $font-size-base: 1.4rem;
-$font-color-base: #212121;
+$font-color-base: #5d686f;
 $line-height-base: 1.8em;
 $letter-spacing-base: 0.01em;
 
@@ -183,6 +183,7 @@ $highlight: (
         'background': #f7f8f8,
         'font-size': 1.4rem,
         'border': 1px solid,
+        'code-block-border': 1px solid #dfe2e5,
         'line-height': 1.45,
         'code-background': #232323,
         'inline-code-background': #EFEFEF,
