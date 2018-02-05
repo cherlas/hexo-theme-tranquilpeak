@@ -58,7 +58,7 @@
     max-width: map_get($main-content, max-width) + map_get($table-content, width) + 40px;
     @include prefix('hypens', 'auto', 'webkit' 'moz');
 
-    h2 {
+    h1, h2 {
       border-bottom: 1px solid #ddd;
     }
 
