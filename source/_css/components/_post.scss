@@ -51,13 +51,16 @@
     color: map-get($colors, base);
     font-weight: 400;
     overflow: hidden;
-
     display: block;
     width: map_get($post-content, 'width');
     position: relative;
     margin: 0 auto;
     max-width: map_get($main-content, max-width) + map_get($table-content, width) + 40px;
     @include prefix('hypens', 'auto', 'webkit' 'moz');
+
+    h2 {
+      border-bottom: 1px solid #ddd;
+    }
 
     img {
       display: block;
@@ -73,12 +76,13 @@
   .post-footer {
     margin-top: 20px;
     width: map_get($post-footer, 'width');
-    max-width: map_get($main-content, max-width) + map_get($table-content, width) + 40px;
+    max-width: map_get($main-content, max-width);
     padding-left: map_get($post-footer, padding-left-right);
     padding-right: map_get($post-footer, padding-left-right);
     &.content-with-table {
-      padding-right: map_get($table-content, 'width') + map_get($main-content, 'padding-right-left') * 2;
+      padding-right: map_get($table-content, 'width');
       width: map_get($post-footer, 'width-with-table');
+      margin: 0 auto;
     }
     &-tags {
       padding-bottom: 10px;
@@ -103,24 +107,15 @@
     &.fade-in {
       animation-duration: 1.2s;
     }
-
-    .toggle-button {
-      height: 12px;
-      width: 12px;
-      color: black;
-      position: absolute;
-      right: 0;
-      cursor: pointer;
-    }
   }
-
   ul.toc {
-    border-left: 4px solid #78c257;
+    border-left: 3px solid #78c257;
     list-style: none;
     padding: 0 10px 0 0;
     margin: 0;
     line-height: 1.6em;
     max-width: map_get($table-content, 'max-width');
+    font-size: 1.3rem;
 
     li {
       list-style: none;
@@ -181,31 +176,27 @@
 
 @media #{$medium-and-down-with-table} {
   .post{
+    .post-content {
+      width: 100%;
+    }
     .tableContent {
       position: static ;
       padding-left: 30px;
       float: none;
       .toc {
         position: static !important;
+        font-size: map-get($font-size, 'small');
       }
-    }
-    .post-footer.content-with-table {
-      width: 90%;
-      padding-left: map_get($main-content, 'padding-right-left');
-      padding-right: map_get($main-content, 'padding-right-left');
-      margin: 0 auto;
-    }
-  }
-}
-
-@media #{$medium-and-down-with-table} {
-  .post {
-    .post-content {
-      width: 100%;
     }
     .post-footer {
       width: calc(100% - 40px);
       padding-right: map_get($post-footer, padding-right);
+      &.content-with-table {
+        width: 90%;
+        padding-left: map_get($main-content, 'padding-right-left');
+        padding-right: map_get($main-content, 'padding-right-left');
+        margin: 0 auto;
+      }
     }
   }
 }
