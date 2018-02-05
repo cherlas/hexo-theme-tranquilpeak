@@ -9,7 +9,7 @@ html {
   @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
     background-color: #F5F5F5;
   }
 
@@ -34,7 +34,7 @@ body {
   line-height: $line-height-base;
   letter-spacing: $letter-spacing-base;
   // Improve smoothing of the font by adding subpixel in Safari
-  @include prefix(font-smoothing, antialiased, 'webkit');
+  @include prefix(font-smoothing, subpixel-antialiased, 'webkit');
   @include prefix(font-smoothing, grayscale, 'moz-osx');
 
   // Hide overflow-x when the sidebar is swiped
@@ -197,7 +197,6 @@ code {
   font-size: map-get($font-size, medium);
   display: inline-block;
   font-family: map-get($font-families, 'code');
-  font-weight: 600;
   background-color: map-get($highlight, 'inline-code-background');
   padding: 2px 5px 0 5px;
   border-radius: 6px;
@@ -214,6 +213,7 @@ blockquote {
   border-left: 3px solid map-get($colors, 'blockquote');
   padding: 0 15px;
   margin: 1.5em 0 0;
+  word-break: break-all;
 
   cite {
     &:before {
