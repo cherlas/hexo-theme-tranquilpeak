@@ -119,16 +119,29 @@
 
     li {
       list-style: none;
-      margin-left: 12px;
+      padding-left: 20px;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       width: 100%;
       display: block;
+      i.fa {
+        position: relative;
+        left: -16px;
+      }
+
+      i~a {
+        position: relative;
+        left: -12px;
+      }
     }
     ul {
       padding: 0;
       margin-bottom: 0;
+
+      li {
+        padding-left: 12px;
+      }
     }
     & a {
       color: map-get($colors, base);
