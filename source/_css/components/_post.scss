@@ -123,16 +123,30 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      width: 100%;
+      width: 96%;
       display: block;
+      position: relative;
       i.fa {
-        position: relative;
-        left: -16px;
-      }
+        position: absolute;
+        font-size: 10px;
+        color: grey;
 
-      i~a {
-        position: relative;
-        left: -12px;
+        &.fa-chevron-right {
+          margin-top: 5px;
+          margin-left: -12px;
+          &:hover {
+            margin-left: -15px;
+            margin-top: 4px;
+            &::before {
+              content: "\f078";
+            }
+          }
+        }
+
+        &.fa-chevron-down {
+          margin-left: -15px;
+          margin-top: 4px;
+        }
       }
     }
     ul {
