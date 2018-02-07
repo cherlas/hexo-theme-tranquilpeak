@@ -194,7 +194,7 @@
   .post-header-cover {
     .post-header {
       .post-title {
-        font-size: map-get($headings-font-size, h1);
+        font-size: map-get($headings-font-size, h5);
       }
     }
   }
@@ -205,7 +205,7 @@
   .post-header-cover {
     .post-header {
       .post-title {
-        font-size: map-get($headings-font-size, h1) + 0.3rem;
+        font-size: map-get($headings-font-size, h5) + 0.3rem;
       }
     }
   }
@@ -256,7 +256,7 @@
   .post-header-cover {
     .post-header {
       .post-title {
-        font-size: map-get($headings-font-size, h1) + 0.6rem;
+        font-size: map-get($headings-font-size, h5) + 0.6rem;
         line-height: 1.2em;
       }
     }
