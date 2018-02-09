@@ -33,7 +33,7 @@
   // Eliminate any flickering of elements while they are in a state of being animated
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-
+  min-height: 108px;
   &.post-header-cover-background {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.05);
