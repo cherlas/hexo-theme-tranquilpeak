@@ -18,7 +18,7 @@
          data-message="<%= __('post.toc') %>">
     </div>
     <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap fadeInDown <%= post.toc? 'content-with-table' : ''%>">
+        <div class="main-content-wrap fadeInDown toc <%= post.toc? 'content-with-table' : ''%>">
             <%- post.content%>
             <%- partial('post/gallery') %>
         </div>
@@ -26,8 +26,8 @@
             <div class="tableContent fade-in"
                  data-message="<%= post.toc %>"></div>
         <% } %>
+        <%- partial('post/copyright')%>
     </div>
-
     <div id="post-footer" class="post-footer main-content-wrap <%= post.toc? 'content-with-table' : ''%>">
         <% if ((post.tags) && (post.tags.length > 0)) { %>
             <div class="post-footer-tags">
