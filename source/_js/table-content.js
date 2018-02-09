@@ -12,7 +12,7 @@
     this.$ulToc = this.$postContent.find('ul.toc');
     this.$tableTile = this.post.find('.tableTile');
     this.$tableContent = this.$postContent.find('.tableContent');
-    this.$contentWrap = this.$postContent.find('.main-content-wrap');
+    this.$contentWrap = this.$postContent.find('.toc.main-content-wrap');
     this.tocMessage = this.$tableTile.data('message');
   };
 
@@ -29,7 +29,6 @@
       this.$ulToc.find('ul').each(function() {
         var liBlock = $(this).parent('li');
         $(liBlock).prepend(icon);
-        console.log($(liBlock).css('padding-left'))
         if ($(liBlock).css('padding-left') !== '20px') {
           $(liBlock).css('padding-left', '20px');
         }
@@ -50,9 +49,9 @@
       this.$ulToc.prepend(title);
       if (this.$tableContent.length) {
         tocContent = this.$ulToc[0];
-        this.$ulToc.detach();
+        // this.$ulToc.detach();
         this.$tableContent.prepend(tocContent);
-        this.$tableContent.insertBefore(this.$contentWrap);
+        // this.$tableContent.insertBefore(this.$contentWrap);
         this.$tableTile.detach();
       } else {
         this.$ulToc.removeClass('js-fixedContent');
