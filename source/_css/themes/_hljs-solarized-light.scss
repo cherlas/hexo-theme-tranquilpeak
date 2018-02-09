@@ -37,14 +37,13 @@ figure.highlight {
 
 figure.highlight,
 .codeblock {
-  background: map-get($highlight, 'code-background-solarized-dark');
+  background: map-get($highlight, 'code-background-solarized');
   color: map-get($highlight, 'code-color-solarized');
 
   figcaption {
     color: map-get($highlight, 'code-color-solarized');
   }
   .gutter {
-    border-right-color: #999999;
     .line {
       color: map-get($highlight, 'code-color-solarized');
     }
@@ -63,7 +62,7 @@ figure.highlight,
   .keyword,
   .selector-tag,
   .addition {
-    color: #859900;
+    color: #c05b4a;
   }
 
   /* Solarized Cyan */
