@@ -17,7 +17,7 @@
     this.contentOffset = 0;
     this.tocMessage = $('.tableContent').data('message');
     this.options = {
-      marginTop: 65,
+      marginTop: 50,
       minWidth: 768 + 160
     };
   };
