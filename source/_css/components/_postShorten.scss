@@ -48,6 +48,9 @@
     }
     & .post-tags {
       display: inline-block;
+      & a {
+        padding-right: 0.16em;
+      }
     }
     & .tag-img {
       width: 14px;
@@ -120,7 +123,7 @@
       img {
         display: block;
         width: $post-thumbnail-image-width;
-        height: $post-thumbnail-image-width;
+        height: $post-thumbnail-image-height;
         object-fit: cover;
         overflow: hidden;
       }
@@ -138,7 +141,7 @@
       img {
         display: block;
         width: $post-thumbnail-image-width;
-        height: $post-thumbnail-image-width;
+        height: $post-thumbnail-image-height;
         object-fit: cover;
         overflow: hidden;
       }
@@ -164,15 +167,10 @@
     .postShorten-thumbnailimg {
 
       display: block;
-      width: 98%;
+      width: 100%;
       max-height: $post-thumbnail-image-min-height;
       overflow: hidden;
       margin: 15px 0;
-
-      img {
-        width: 98%;
-        //height: $post-thumbnail-image-min-height;
-      }
     }
   }
 }
