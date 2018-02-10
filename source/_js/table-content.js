@@ -26,6 +26,8 @@
       var title = '<li>' + this.tocMessage + '</li>';
       var icon = '<i class="fa fa-chevron-right">';
       var selfOut = this;
+      this.$tableTile.detach();
+      this.$ulToc.detach();
       this.$ulToc.find('ul').each(function() {
         var liBlock = $(this).parent('li');
         $(liBlock).prepend(icon);
@@ -46,17 +48,16 @@
           }
         });
       });
+
       this.$ulToc.prepend(title);
       if (this.$tableContent.length) {
         tocContent = this.$ulToc[0];
-        // this.$ulToc.detach();
+        this.$ulToc.detach();
         this.$tableContent.prepend(tocContent);
-        // this.$tableContent.insertBefore(this.$contentWrap);
-        this.$tableTile.detach();
+        this.$tableContent.insertBefore(this.$contentWrap);
       } else {
         this.$ulToc.removeClass('js-fixedContent');
         tocContent = this.$ulToc[0];
-        this.$ulToc.detach();
         this.$contentWrap.prepend(tocContent);
       }
     },
