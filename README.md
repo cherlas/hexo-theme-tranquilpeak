@@ -6,7 +6,23 @@
 
 [Demo](www.istarx.cc)
 
-# 版本要求
+修改的地方：
+
+1. 添加全屏首页；
+2. 重新设计了目录显示，可以随滚动悬停；
+3. 重新设计了搜索栏；
+4. 添加了自定义内容：
+   - 通过设置 post 的`coverHeight`值改变post head cover image 的高度；
+   - 通过设置 post 的`blur`值改变header cover image 的模糊程度；
+   - toc显示位置
+       - true：宽度小于982px时，显示在博客内容的上面，大于982px时在博客内容右侧，可以悬停；
+       - false：显示在博客内容的上面； 
+5. 添加版权模版；
+6. 添加加载动画；
+7. 可以设置是否自动排列image的位置：`_config.yml`中的`auto_thumbnail_image_position`；
+8. etc...
+
+## 版本要求
 
 Node: v4+
 Hexo: 3.0.0+
