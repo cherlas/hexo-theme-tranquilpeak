@@ -4,6 +4,9 @@
     @each $key, $value in $markdown-headings-font-size {
       #{$key} {
         font-size: $value;
+        & code {
+          font-size: $value - $markdown-headings-font-size-sm-screen-reduction-factor;
+        }
       }
     }
   }
@@ -15,6 +18,9 @@
     @each $key, $value in $markdown-headings-font-size {
       #{$key} {
         font-size: $value - $markdown-headings-font-size-sm-screen-reduction-factor;
+        & code {
+          font-size: $value - $markdown-headings-font-size-sm-screen-reduction-factor * 2;
+        }
       }
     }
   }
@@ -26,6 +32,9 @@
     @each $key, $value in $markdown-headings-font-size {
       #{$key} {
         font-size: $value - $markdown-headings-font-size-md-screen-reduction-factor;
+        & code {
+          font-size: $value - $markdown-headings-font-size-md-screen-reduction-factor * 2;
+        }
       }
     }
   }
