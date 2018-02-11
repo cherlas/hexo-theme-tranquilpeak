@@ -54,6 +54,9 @@ h6 {
   font-weight: 700;
   line-height: 1.35em;
   color: #4a4a4a;
+  & code {
+    letter-spacing: 0.02px;
+  }
 }
 
 h1,
