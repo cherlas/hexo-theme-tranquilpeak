@@ -1,14 +1,13 @@
+/* eslint-disable camelcase,quote-props */
 
 module.exports = function(grunt) {
   grunt.config.set('bower', {
     // Copy all needed files by types
     dev: {
-      /* eslint-disable camelcase */
       dest: 'source/assets/images',
       js_dest: 'source/assets/js',
       css_dest: 'source/assets/css',
       fonts_dest: 'source/assets/fonts',
-      /* eslint-enable camelcase */
       options: {
         expand: false,
         keepExpandedHierarchy: false,
