@@ -2,13 +2,13 @@
 
 A gorgeous responsive theme for Hexo blog framework 
 
-[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.11.0.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.11.0.jpg)](http://cherlas.github.io/hexo-theme-tranquilpeak)
 
 Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
 
 This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
 
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/cherlas/tranquilpeak-hexo-theme/issues/new).
 
 ## Summary ##
 
@@ -106,7 +106,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-2.0.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.11.0/hexo-theme-tranquilpeak-built-for-production-1.11.0.zip)
+1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-2.0.0](https://github.com/cherlas/hexo-theme-tranquilpeak/releases/download/v2.0.0/hexo-theme-tranquilpeak-built-for-production-2.0.0.zip)
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
@@ -524,7 +524,7 @@ Follow these steps, to add new filter :
 
 ### Prerequisites ###
 
-Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
+Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
 
 **Run command in theme folder : `hexo-blog/themes/tranquilpeak`**
 
@@ -541,7 +541,7 @@ Follow these steps :
 
 1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
 2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
-3. Build the theme with `npm run prod` or `grunt buildProd`. Learn more about Grunt tasks : [Grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
+3. Build the theme with `npm run prod` or `grunt buildProd`. Learn more about Grunt tasks : [Grunt tasks](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
 
 ### Customize 404 error page
 
@@ -569,7 +569,7 @@ Finally, you need to tell your server to use `/404.html` (which Hexo generates o
 
 ### Prerequisites ###
 
-Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
+Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
 
 ### v1.3.0 or lower to v1.4.0 or higher ###
 

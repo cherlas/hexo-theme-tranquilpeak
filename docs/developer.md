@@ -2,7 +2,7 @@
 
 This documentation will help you to understand Tranquilpeak Hexo theme code.  
 
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/cherlas/hexo-theme-tranquilpeak/issues/new).
 
 ## Summary ##
 
@@ -43,7 +43,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Run `git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git`
+1. Run `git clone https://github.com/cherlas/hexo-theme-tranquilpeak.git`
 2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
 3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
 4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
@@ -52,7 +52,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 7. Run `npm install` to install [NPM dependencies](#npm-dependencies)
 8. Run `bower install` to install [Bower dependencies](#bower-dependencies) 
 
-If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
+If you want to configure the theme, please follow the [user documentation](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
 
 ## Code style ##
 
