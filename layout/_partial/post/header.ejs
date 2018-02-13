@@ -1,5 +1,5 @@
 <div class="post-header main-content-wrap <%= (post.metaAlignment ? 'text-' + post.metaAlignment : 'text-left') %> fadeInDown">
-    <div class="post-header-message <%= post.toc? 'content-with-table' : ''%>">
+    <div class="post-header-message <%= post.toc ? 'content-with-table' : ''%>">
         <% if (post.link) { %>
         <h1 itemprop="headline">
             <a class="link" href="<%- url_for(post.link) %>" target="_blank" rel="noopener" itemprop="url">
