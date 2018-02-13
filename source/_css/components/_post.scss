@@ -144,6 +144,11 @@
       width: 96%;
       display: block;
       position: relative;
+      code {
+        background: none;
+        border: none;
+        color: inherit;
+      }
       i.fa {
         position: absolute;
         font-size: 10px;
