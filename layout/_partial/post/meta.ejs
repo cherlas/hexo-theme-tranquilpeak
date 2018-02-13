@@ -15,7 +15,7 @@
     <img class="tag-img" src="/assets/images/tag-icon.svg"/>
     <div class="post-tags">
         <% post.tags.forEach(function(tag){ %>
-        <a href="/tags/<%- tag.name %>/">#<%- tag.name %></a>
+        <a href="/tags/<%- tag.name %>/"><%- tag.name %></a>
         <% }) %>
     </div>
     <% } %>
