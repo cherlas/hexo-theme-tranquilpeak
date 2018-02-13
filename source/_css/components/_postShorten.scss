@@ -50,6 +50,9 @@
       display: inline-block;
       & a {
         padding-right: 0.16em;
+        &::before {
+          content: '#';
+        }
       }
     }
     & .tag-img {
