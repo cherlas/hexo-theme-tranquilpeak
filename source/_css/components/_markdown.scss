@@ -1,3 +1,7 @@
+.markdown code {
+  margin: 0 5px;
+  padding: 0 2px;
+}
 // Set markdown headings font size on large screen and up
 @media #{$large-and-up} {
   .markdown {
