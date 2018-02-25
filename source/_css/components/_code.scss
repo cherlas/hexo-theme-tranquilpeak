@@ -9,7 +9,20 @@ figure.highlight,
   table {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    tr:hover {
+      background-color: transparent;
+    }
+    tr:last-child td:last-child,
+    tr:last-child td:first-child {
+      border-bottom: none;
+    }
+    td.gutter {
+      background-color: rgba(0, 0, 0, .05);
+      text-align: right ;
+      & pre {
+        background: transparent;
+      }
+    }
   }
 
   // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
@@ -92,23 +105,6 @@ figure.highlight,
           margin-right: 0;
         }
       }
-    }
-  }
-}
-
-figure.highlight table {
-  tr:hover {
-    background-color: transparent;
-  }
-  tr:last-child td:last-child,
-  tr:last-child td:first-child {
-    border-bottom: none;
-  }
-  td.gutter {
-    background-color: rgba(0, 0, 0, .05);
-    text-align: right ;
-    & pre {
-      background: transparent;
     }
   }
 }
