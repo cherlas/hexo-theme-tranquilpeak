@@ -91,6 +91,7 @@ figure.highlight,
     padding-bottom: 0;
   }
   figcaption {
+    background-color: rgba(209, 145, 9, 0.34);
     a, span {
       float: left !important;
     }
@@ -106,6 +107,9 @@ figure.highlight,
         }
       }
     }
+  }
+  .tabs-content figure{
+    margin: 0;
   }
 }
 
