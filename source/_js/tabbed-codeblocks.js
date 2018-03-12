@@ -10,6 +10,7 @@
    */
   var TabbedCodeBlock = function(elems) {
     this.$jsFixedContent = $(elems);
+    this.$table = this.$jsFixedContent.find('.tabs-content');
   };
 
   TabbedCodeBlock.prototype = {
@@ -30,6 +31,30 @@
         $tabsContent.hide();
         // show only the right one
         $tabsContent.eq($(this).index()).show();
+      });
+      this.resize();
+    },
+
+    /**
+     * Resize codeblocks
+     * @return {void}
+     */
+    resize: function() {
+      var self = this;
+      self.$table.find('figure').each(function() {
+        var code = $(this).find('td.code');
+        var windowWidth = $(window).width();
+        var gutter = $(this).find('.gutter');
+        var gutterWidth = gutter.outerWidth(); // always 15px;
+        var paddingLeft = parseInt(code.css('padding-left').substr(0, 2), 10);
+        var paddingRight = parseInt(code.css('padding-right').substr(0, 2), 10);
+
+        if (windowWidth < 768 || gutter.length <= 0) {
+          gutterWidth = 0;
+        }
+        var width = self.$table.width() - gutterWidth - paddingRight - paddingLeft;
+        code.find('pre').css('width', width);
+        console.log(gutter.outerWidth() + '---' + self.$table.width())
       });
     }
   };
