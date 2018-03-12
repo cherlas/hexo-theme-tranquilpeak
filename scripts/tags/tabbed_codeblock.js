@@ -14,7 +14,7 @@ jsDom.env('', function(err, window) {
     console.error(err);
     return;
   }
-  
+
   var $ = require('jquery')(window);
 
   /**
@@ -40,6 +40,10 @@ jsDom.env('', function(err, window) {
     // create tabs and tabs content
     for (var i = 0; i < matches.length; i += 2) {
       var lang = matches[i];
+      var tempLang = lang;
+      if (lang === 'ejs') {
+        tempLang = 'html';
+      }
       var code = matches[i + 1];
       var $code;
       // trim code
@@ -48,7 +52,7 @@ jsDom.env('', function(err, window) {
       if (config.enable) {
         // highlight code
         code = highlight(code, {
-          lang: lang,
+          lang: tempLang,
           gutter: config.line_number,
           tab: config.tab_replace,
           autoDetect: config.auto_detect
