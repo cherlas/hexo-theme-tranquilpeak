@@ -64,6 +64,9 @@ figure.highlight,
   // Gutter which contains line numbers
   .gutter {
     padding: 0.3em 10px;
+    ::selection {
+      background: none;
+    }
   }
   // Code container
   .code {
@@ -90,6 +93,13 @@ figure.highlight,
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  figure.highlight {
+    width: 100%;
+    border: none;
+  }
+  .codeblock--tabbed {
+    border: 1px solid #dfe2e5;
+  }
   figcaption {
     background-color: rgba(209, 145, 9, 0.34);
     a, span {
@@ -105,6 +115,9 @@ figure.highlight,
         &:last-child {
           margin-right: 0;
         }
+      }
+      ::selection {
+        background: none;
       }
     }
   }
