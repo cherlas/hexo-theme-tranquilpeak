@@ -30,9 +30,13 @@
         // hide all tab contents
         $tabsContent.hide();
         // show only the right one
-        $tabsContent.eq($(this).index()).show();
+        $tabsContent.eq($(this).index()).show()
+        self.resize();
       });
       this.resize();
+      $(window).resize(function() {
+        self.resize();
+      });
     },
 
     /**
@@ -54,7 +58,6 @@
         }
         var width = self.$table.width() - gutterWidth - paddingRight - paddingLeft;
         code.find('pre').css('width', width);
-        console.log(gutter.outerWidth() + '---' + self.$table.width())
       });
     }
   };
