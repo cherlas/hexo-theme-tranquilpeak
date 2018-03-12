@@ -36,19 +36,21 @@
     resize: function() {
       var self = this;
       self.$codeBlocks.each(function() {
-        var code = $(this).find('td.code');
-        var table = $(this).find('table');
-        var windowWidth = $(window).width();
-        var gutter = table.find('.gutter');
-        var gutterWidth = gutter.outerWidth(); // always 15px;
-        var paddingLeft = parseInt(code.css('padding-left').substr(0, 2), 10);
-        var paddingRight = parseInt(code.css('padding-right').substr(0, 2), 10);
+        if (!self.$codeBlocks.parent().hasClass('tabs-content')) {
+          var code = $(this).find('td.code');
+          var table = $(this).find('table');
+          var windowWidth = $(window).width();
+          var gutter = table.find('.gutter');
+          var gutterWidth = gutter.outerWidth(); // always 15px;
+          var paddingLeft = parseInt(code.css('padding-left').substr(0, 2), 10);
+          var paddingRight = parseInt(code.css('padding-right').substr(0, 2), 10);
 
-        if (windowWidth < 768 || gutter.length <= 0) {
-          gutterWidth = 0;
+          if (windowWidth < 768 || gutter.length <= 0) {
+            gutterWidth = 0;
+          }
+          var width = table.width() - gutterWidth - paddingRight - paddingLeft;
+          code.find('pre').css('width', width);
         }
-        var width = table.width() - gutterWidth - paddingRight - paddingLeft;
-        code.find('pre').css('width', width);
       });
     }
   };
