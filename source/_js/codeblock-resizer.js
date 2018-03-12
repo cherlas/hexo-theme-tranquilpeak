@@ -36,7 +36,7 @@
     resize: function() {
       var self = this;
       self.$codeBlocks.each(function() {
-        if (!self.$codeBlocks.parent().hasClass('tabs-content')) {
+        if (self.$codeBlocks.parent('.tabs-content')) {
           var code = $(this).find('td.code');
           var table = $(this).find('table');
           var windowWidth = $(window).width();
