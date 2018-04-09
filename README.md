@@ -48,6 +48,56 @@ git pull
 
 请阅读大神[Louis Barranqueiro](https://github.com/LouisBarranqueiro)的[文档](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/user.md), 写的很详细
 
+### 个性化文章
+
+#### 目录
+
+为了达到定制化的需求，使用 `markdown-it-toc-and-anchor`插件生成目录，并在 Front Matter部分添加了`toc`参数：
+
+```yaml
+toc: true
+# toc: false
+```
+
+- `false`: 在 toc 设置为false时，如果在文章中有`@[toc]` 标记时，会将`@[toc]`标记替换为当前文章的目录，并且一直停留在文章的最上方，如果没有该标志，则不会生成目录；
+- `true`:  toc 为 true 时，如果在文章中有`@[toc]` 标记时，会将`@[toc]`标记替换为当前文章的目录，在文章的右上角位置，并且随鼠标滚动可以悬停；
+
+如果要使用悬停，则需要在在 hexo 配置文件中添加如下配置内容：
+
+```yaml
+markdown_it_plus:
+	...
+    plugins:
+        - plugin:
+            name: markdown-it-toc-and-anchor
+            enable: true
+            options:
+              tocClassName: 'toc js-fixedContent'
+              anchorClassName: 'anchor'
+```
+
+如果要修改 `tocClassName`值，则需要同步修改`source/_js/fix-content.js`文件中的以下语句
+
+```js
+this.$jsFixedContent = $('.toc.js-fixedContent');
+```
+
+### wide-image
+
+原主题中提供了 wide-image 功能，在个性化主题中为了添加文章目录悬停，现在的wide-image只能填充博客文章内容所在区域，而不能填充到整个页面宽度
+
+### 文章页面顶部的图片
+
+在 Front Matter 区域添加了两个参数：
+
+```yaml
+coverHeight: 60%
+blur: 0
+```
+
+- coverHeight 指背景图片所占页面高度的百分比，**一定要带上`%`**
+- blur 指背景图片的模糊程度，改变该值可以对背景图片进行不同程度的模糊
+
 ## License ##
 
 hexo-theme-tranquilpeak 采用 [GNU General Public License v3.0](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/LICENSE)协议
