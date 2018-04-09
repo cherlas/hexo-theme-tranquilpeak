@@ -64,6 +64,7 @@ post:
     image:
         one: "образ"
         other: "%d изображений"
+    copyright_content:
 
 author:
     # Расскажите немного о себе (поддерживаются Markdown и HTML)
