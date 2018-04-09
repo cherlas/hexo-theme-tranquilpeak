@@ -61,6 +61,7 @@ post:
     image:
         one: "bild"
         other: "%d bild"
+    copyright_content:
 
 author:
     # Deine Biografie (Markdown and HTML supported)
