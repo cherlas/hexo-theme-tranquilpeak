@@ -1,0 +1,135 @@
+pre > code {
+  background: #0F1419;
+  color: #BFBAB0;
+}
+
+// Default inline code
+//code {
+//  background-color: map-get($highlight, 'code-background-solarized');
+//  color: #040;
+//}
+
+// Tabbed code block tab
+// If your theme is dark then use a lighter background
+// to see clearly which tab is active
+.codeblock--tabbed figcaption .tab.active {
+  background-color: rgba(209, 145, 9, 0.05);
+  color: map-get($highlight, 'codeblock-tabbed-active');
+  font-weight: bold;
+}
+
+// highlight code block
+figure.highlight {
+  border-radius: 8px;
+  border: map_get($highlight, 'code-block-border');
+}
+
+figure.highlight,
+.codeblock {
+  background: #0F1419;
+  color: #BFBAB0;
+
+  figcaption {
+    color: #BFBAB0;
+  }
+  .gutter {
+    .line {
+      color: #252D33;
+    }
+  }
+  // PUT YOUR THEME HERE
+  .comment,
+  .quote {
+    color: #5C6773;
+    font-size: map-get($font-size, 'medium');
+    font-weight: normal;
+    font-family: Consolas, "Microsoft YaHei", monospace;
+    line-height: map_get($highlight, 'line-height');
+  }
+
+  /* Solarized Green */
+  .keyword,
+  .selector-tag,
+  .addition {
+    color: #FF7733;
+  }
+
+  .meta .meta-string,
+  .literal,
+  .doctag,
+  .regexp {
+    color: #95E6CB;
+  }
+
+  .number {
+    color: #F29718;
+  }
+
+  .string {
+    color: #C2D94C
+  }
+
+  .title {
+    color: #FFB454;
+  }
+
+  .section,
+  .name,
+  .selector-id,
+  .selector-class {
+    color: #268bd2;
+  }
+
+  .attribute,
+  .attr {
+    color: #FFB454;
+  }
+  .variable,
+  .template-variable,
+  .class .title,
+  .type {
+    color: #BFBAB0;
+  }
+
+  .symbol,
+  .bullet,
+  .subst,
+  .meta,
+  .meta .keyword,
+  .selector-attr,
+  .selector-pseudo,
+  .link {
+    color: #cb4b16;
+  }
+
+  .built_in,
+  .deletion {
+    color: #F29718;
+  }
+
+  .formula {
+    background: #eee8d5;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .link {
+    text-decoration: underline;
+  }
+
+  @import "scrollbar";
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: transparent;
+  }
+}
