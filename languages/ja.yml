@@ -64,7 +64,7 @@ post:
     image:
         one: "偶像"
         other: "%d イメージ"
-    copyright_content:
+    copyright_content: ""
 
 author:
     # Your biography (Markdown and HTML supported)
