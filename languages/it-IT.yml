@@ -58,7 +58,7 @@ post:
     image:
         one: "immagine"
         other: "%d immagini"
-    copyright_content:
+    copyright_content: ""
 
 author:
     # LA tua biografia (Markdown e HTML sono supportati)

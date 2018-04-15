@@ -62,7 +62,7 @@ post:
     image:
         one: "تصویر"
         other: "%d تصورات"
-    copyright_content:
+    copyright_content: ""
 
 author:
     # Your biography (Markdown and HTML supported)
