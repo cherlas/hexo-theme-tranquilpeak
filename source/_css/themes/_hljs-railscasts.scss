@@ -11,16 +11,16 @@
 
 // Default code block
 pre > code {
-    background: map-get($highlight, 'code-background');
-    color: map-get($highlight, 'code-color');
+  background: map-get($highlight, 'code-background');
+  color: map-get($highlight, 'code-color');
 }
 
 // Tabbed code block tab
 // If your theme is dark then use a lighter background
 // to see clearly which tab is active
 .codeblock--tabbed figcaption .tab.active {
-    background: map-get($highlight, 'code-background');
-    color: map-get($highlight, 'code-color');
+  background: map-get($highlight, 'code-background');
+  color: map-get($highlight, 'code-color');
 }
 
 // highlight code block
@@ -30,21 +30,22 @@ figure.highlight {
 
 figure.highlight,
 .codeblock {
-    background: map-get($highlight, 'code-background');
-    color: map-get($highlight, 'code-color');
+  background: map-get($highlight, 'code-background');
+  color: map-get($highlight, 'code-color');
 
-    figcaption {
-        background: map-get($highlight, 'code-background');
-        color: map-get($highlight, 'code-color');
+  figcaption {
+    //background: #e8f2fb;
+    color: peru;
+    border-bottom: 1px solid dimgray;
+  }
+  .gutter {
+    background: map-get($highlight, 'code-color-solarized-atelier-dune');
+    border-right-color: #999999;
+    .line {
+      color: map-get($highlight, 'code-color');
     }
-    .gutter {
-        background: map-get($highlight, 'code-background');
-        border-right-color: #999999;
-        .line {
-            color: map-get($highlight, 'code-color');
-        }
-    }
-    // PUT YOUR THEME HERE
+  }
+  // PUT YOUR THEME HERE
   .comment,
   .quote {
     color: #bc9458;
@@ -79,7 +80,6 @@ figure.highlight,
   .type {
     color: #da4939;
   }
-
 
   .symbol,
   .bullet,
@@ -144,7 +144,7 @@ figure.highlight,
   @import "scrollbar";
 
   ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: map-get($highlight, 'code-background');
   }
 }
