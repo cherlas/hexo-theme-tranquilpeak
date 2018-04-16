@@ -1,7 +1,7 @@
 // Highlight code block
 figure.highlight,
 .codeblock {
-  margin: 20px 0;
+  margin: 5px 0 0;
   line-height: map-get($highlight, line-height);
   overflow: hidden;
   border-radius: 8px;
@@ -17,7 +17,7 @@ figure.highlight,
       border-bottom: none;
     }
     td.gutter {
-      background-color: rgba(0, 0, 0, .05);
+      background-color: rgba(0, 0, 0, .5);
       text-align: right ;
       & pre {
         background: transparent;
@@ -53,7 +53,7 @@ figure.highlight,
   // Meta bar which contains name of the file and his link
   figcaption {
     font-size: 1.3rem;
-    padding: 0 15px 20px;
+    padding: 5px 15px 22px 20px;
     margin: 0;
 
     a {
@@ -70,7 +70,7 @@ figure.highlight,
   }
   // Code container
   .code {
-    padding: 0.3em 0.8em 0.3em 0.8em;
+    padding: 0.5em 0.8em 0.3em 0.8em;
 
     pre {
       overflow-x: auto;
@@ -101,7 +101,6 @@ figure.highlight,
     border: 1px solid #dfe2e5;
   }
   figcaption {
-    background-color: rgba(209, 145, 9, 0.34);
     a, span {
       float: left !important;
     }
