@@ -9,6 +9,7 @@ module.exports = function(grunt) {
     'concat',
     'cssmin',
     'uglify',
-    'linkAssetsProd'
+    'linkAssetsProd',
+    'clean:cleanRedundant'
   ]);
 };
