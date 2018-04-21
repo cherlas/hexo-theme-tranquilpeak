@@ -98,6 +98,24 @@ blur: 0
 - coverHeight 指背景图片所占页面高度的百分比，**一定要带上`%`**；
 - blur 指背景图片的模糊程度，改变该值可以对背景图片进行不同程度的模糊；
 
+### 搜索栏配置
+
+搜索是基于 `algolia`, 为保证能正常使用搜索，请按照步骤正确配置`algolia`。
+配置方法：https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/docs/user.md#algolia
+并且在`field`中添加`path`、`permalink`二者之一或者二者皆有：
+```yaml
+algolia:
+  appId: "Z7A3XW4R2I"
+  apiKey: "12db1ad54372045549ef465881c17e743"
+  adminApiKey: "40321c7c207e7f73b63a19aa24c4761b"
+  indexName: "blog-index"
+  ...
+  fields:
+    - path
+    - permalink
+    ...
+```
+
 ## License ##
 
 hexo-theme-tranquilpeak 采用 [GNU General Public License v3.0](https://github.com/cherlas/hexo-theme-tranquilpeak/blob/master/LICENSE)协议
