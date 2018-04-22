@@ -154,6 +154,7 @@
         width: calc(90% - 200px);
         padding-right: map_get($table-content, width);
         margin: 0 auto ;
+        padding-left: 0;
       }
     }
   }
@@ -178,6 +179,12 @@
     animation-duration: 1s;
     transform-origin: center bottom;
   }
+}
+
+div.post-header-message.content-with-table {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding-left: 40px;
 }
 
 // Decrease height of cover image
