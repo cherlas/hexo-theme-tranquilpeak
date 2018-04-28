@@ -26,25 +26,29 @@
             <div class="tableContent fade-in"
                  data-message="<%= post.toc %>"></div>
         <% } %>
-        <%- partial('post/copyright')%>
+        <% if (is_post()) { %>
+            <%- partial('post/copyright')%>
+        <% } %>
     </div>
-    <div id="post-footer" class="post-footer main-content-wrap <%= post.toc? 'content-with-table' : ''%>">
-        <% if ((post.tags) && (post.tags.length > 0)) { %>
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small"><%= __('post.tagged_in') %></span><br/>
-                <%- partial('post/tag', {tags: post.tags})%>
-            </div>
-        <% } %>
-        <% if (post.actions === undefined || post.actions) { %>
-            <%- partial('post/actions', {postContent: postContent}) %>
-        <% } %>
-        <% if (post.comments) { %>
-            <% if (theme.disqus_shortname) { %>
-                <%- partial('post/disqus') %>
-            <% } else if (theme.gitment.enable) { %>
-                <%- partial('post/gitment') %>
+    <% if (is_post()) { %>
+        <div id="post-footer" class="post-footer main-content-wrap <%= post.toc? 'content-with-table' : ''%>">
+            <% if ((post.tags) && (post.tags.length > 0)) { %>
+                <div class="post-footer-tags">
+                    <span class="text-color-light text-small"><%= __('post.tagged_in') %></span><br/>
+                    <%- partial('post/tag', {tags: post.tags})%>
+                </div>
             <% } %>
-        <% } %>
-    </div>
+            <% if (post.actions === undefined || post.actions) { %>
+                <%- partial('post/actions', {postContent: postContent}) %>
+            <% } %>
+            <% if (post.comments) { %>
+                <% if (theme.disqus_shortname) { %>
+                    <%- partial('post/disqus') %>
+                <% } else if (theme.gitment.enable) { %>
+                    <%- partial('post/gitment') %>
+                <% } %>
+            <% } %>
+        </div>
+    <% } %>
 </article>
 
