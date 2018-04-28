@@ -197,8 +197,10 @@
     showResults: function(posts) {
       var html = '';
       posts.forEach(function(post) {
+        var postPath = post.path === 'undefined' ? post.permalink === 'undefined' ?
+                       'you must set up algolia search follow by docs.' : post.permalink : '/' + post.path;
         html += '<div class="media">';
-        html += '<a class="search-title" href="' + post.path + '">';
+        html += '<a class="search-title" href="' + postPath + '">';
         html += '<i class="fa fa-quote-left"></i>';
         html += '<span id="search-post-title">' + post.title + '</span>';
         html += '</a>';
