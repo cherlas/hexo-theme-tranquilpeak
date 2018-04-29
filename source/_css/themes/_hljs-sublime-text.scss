@@ -1,0 +1,150 @@
+// Highlight.js custom theme
+// Follow guidelines
+// 1. Uncomment the block just below - remove `/*` and `*/`
+// 2. Fill `background`, `color`, `border-right-color` properties
+// with properties of `.hljs` CSS class of your theme
+// 3. Put your theme where it's indicated just below
+// 4. Remove `.hljs {...}` rules
+// 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment`
+// 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
+// 7. Run `grunt buildProd` to build the theme and see the result
+
+// Default code block
+pre > code {
+  background: map-get($highlight, 'code-background');
+  color: map-get($highlight, 'code-color');
+}
+
+// Tabbed code block tab
+// If your theme is dark then use a lighter background
+// to see clearly which tab is active
+.codeblock--tabbed figcaption .tab.active {
+  background: map-get($highlight, 'code-background');
+  color: map-get($highlight, 'code-color');
+}
+
+// highlight code block
+figure.highlight {
+  border-radius: 8px;
+}
+
+figure.highlight,
+.codeblock {
+  background: map-get($highlight, 'code-background');
+  color: #CFBFAD;;
+
+  figcaption {
+    //background: #e8f2fb;
+    color: peru;
+    border-bottom: 1px solid dimgray;
+  }
+  .gutter {
+    background: map-get($highlight, 'code-color-solarized-atelier-dune');
+    border-right-color: #999999;
+    .line {
+      color: map-get($highlight, 'code-color');
+    }
+  }
+  // PUT YOUR THEME HERE
+  .comment,
+  .quote {
+    color: #bc9458;
+    font-size: map-get($font-size, 'medium');
+    font-weight: normal;
+    font-family: Consolas, "Microsoft YaHei", monospace;
+    line-height: map_get($highlight, 'line-height');
+  }
+
+  .keyword,
+  .selector-tag {
+    color: #FF007F;
+  }
+
+  .string,
+  .number,
+  .regexp,
+  .variable,
+  .template-variable {
+    color: #a5c261;
+  }
+
+  .subst {
+    color: #519f50;
+  }
+
+  .tag,
+  .name {
+    color: #e8bf6a;
+  }
+
+  .type {
+    color: #da4939;
+  }
+
+  .symbol,
+  .bullet,
+  .built_in,
+  .builtin-name,
+  .attr,
+  .link {
+    color: #6d9cbe;
+  }
+
+  .params {
+    color: #52E3F6;
+  }
+
+  .attribute {
+    color: #cda869;
+  }
+
+  .meta {
+    color: #D9E577;
+  }
+
+  .title,
+  .section {
+    color: #ffc66d;
+  }
+
+  .addition {
+    background-color: #144212;
+    color: #e6e1dc;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .deletion {
+    background-color: #600;
+    color: #e6e1dc;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .selector-class {
+    color: #9b703f;
+  }
+
+  .selector-id {
+    color: #8b98ab;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .link {
+    text-decoration: underline;
+  }
+
+  @import "scrollbar";
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: map-get($highlight, 'code-background');
+  }
+}
