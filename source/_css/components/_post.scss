@@ -91,7 +91,39 @@
         }
       }
     }
+    span.katex {
+      width: 100%;
+      display: block;
+      margin-top: 0.8em;
+      span.katex-mathml {
+        display: none;
+      }
+      span.katex-html {
+        display: block;
+        text-align: center;
+        .mord {
+          text-indent: 0px;
+          line-height: normal;
+          word-spacing: normal;
+          letter-spacing: normal;
+          direction: ltr;
+          font-size: map_get($font-size, 'xxlarge');
+          font-style: normal;
+          font-family: $katex-fonts;
+        }
+        .mathit {
+          font-style: italic;
+        }
+        .mbin {
+          font-size: map_get($font-size, 'xxlarge') + .2rem;
+          font-weight: 300;;
+        }
+        .mclose {
+          padding-left: 0.1em;
+        }
+      }
     }
+  }
   .post-footer {
     margin-top: 20px;
     width: map_get($post-footer, 'width');
