@@ -23,9 +23,9 @@
   "author": "Louis Barranqueiro",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues"
+    "url": "https://github.com/Cherlas/hexo-theme-tranquilpeak/issues"
   },
-  "homepage": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak",
+  "homepage": "https://github.com/Cherlas/hexo-theme-tranquilpeak",
   "devDependencies": {
     "bower": "^1.3.12",
     "eslint": "^2.11.1",
@@ -44,6 +44,7 @@
     "grunt-sync": "^0.2.3",
     "grunt-text-replace": "^0.4.0",
     "hexo-renderer-markdown-it-plus": "^1.0.2",
+    "@iktakahiro/markdown-it-katex": "^3.0.3",
     "include-all": "^0.1.6",
     "load-grunt-tasks": "~0.2.0",
     "rand-token": "^0.2.1"
