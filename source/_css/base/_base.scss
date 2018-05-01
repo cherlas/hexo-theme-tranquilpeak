@@ -218,7 +218,7 @@ blockquote {
   border-left: 3px solid map-get($colors, 'blockquote');
   padding: 0 15px;
   margin: 1.5em 0 0;
-  word-break: break-all;
+  word-break: keep-all;
 
   cite {
     &:before {
